@@ -32,9 +32,16 @@ app.config['SECRET_KEY'] = os.urandom(24)  # Important for session security
 CORS(app, resources={
     r"/*": {
         "origins": "*",
-        "allow_headers": ["Content-Type", "Authorization"],
+        "allow_headers": [
+            "Content-Type", 
+            "Authorization", 
+            "Accept", 
+            "Cache-Control", 
+            "X-Requested-With", 
+            "X-Debug-Env"
+        ],
         "supports_credentials": True,
-        "methods": ["GET", "POST", "OPTIONS"]
+        "methods": ["GET", "POST", "OPTIONS", "HEAD"]
     }
 })
 
@@ -235,8 +242,12 @@ def register():
         flash('An error occurred during registration')
         return render_template('register.html'), 500
 
-@app.route('/logout', methods=['GET'])
+@app.route('/logout', methods=['GET', 'POST', 'OPTIONS'])
 def logout():
+    # Handle CORS preflight request
+    if request.method == 'OPTIONS':
+        return '', 204
+
     # If user is not authenticated, return a success-like response
     if not current_user.is_authenticated:
         return jsonify({

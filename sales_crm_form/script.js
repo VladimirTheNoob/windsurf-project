@@ -44,9 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'POST',
                 credentials: 'same-origin', // Important for session-based auth
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
                 body: JSON.stringify(formData)
             });
 
@@ -155,9 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         credentials: 'include',
                         headers: {
                             'Content-Type': 'application/json',
-                            'Accept': 'application/json, text/html',
-                            'Cache-Control': 'no-cache',
-                            'X-Requested-With': 'XMLHttpRequest'
+                            'Accept': 'application/json'
                         },
                         body: JSON.stringify({
                             loginIdentifier: loginData.loginIdentifier,
@@ -368,9 +366,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         credentials: 'include',
                         headers: {
                             'Content-Type': 'application/json',
-                            'Accept': 'application/json, text/html',
-                            'Cache-Control': 'no-cache',
-                            'X-Requested-With': 'XMLHttpRequest'
+                            'Accept': 'application/json'
                         }
                     };
 
