@@ -6,11 +6,22 @@
 /* /index.html 200
 
 # API route handling
-/login/* /login 200
-/logout/* /logout 200
-/submit_crm/* /submit_crm 200
+/api/login /login 200
+/api/logout /logout 200
+/api/submit_crm /submit_crm 200
 
-# Proxy API requests
+# CORS and proxy configuration
 /login https://mavericka-crm.netlify.app/login 200
 /logout https://mavericka-crm.netlify.app/logout 200
 /submit_crm https://mavericka-crm.netlify.app/submit_crm 200
+
+# Headers for CORS
+/login
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: POST, GET, OPTIONS
+  Access-Control-Allow-Headers: Content-Type, Authorization
+
+/logout
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: POST, GET, OPTIONS
+  Access-Control-Allow-Headers: Content-Type, Authorization

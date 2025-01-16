@@ -128,13 +128,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         return '/login';
                     }
                     
-                    // For deployed environments, use relative path
-                    return '/login';
+                    // For deployed environments, use full URL
+                    return 'https://mavericka-crm.netlify.app/login';
                 })();
 
                 const response = await fetch(loginEndpoint, {
                     method: 'POST',
-                    credentials: 'include', // Changed from same-origin to include
+                    credentials: 'include',
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
