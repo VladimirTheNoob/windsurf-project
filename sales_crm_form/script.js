@@ -318,140 +318,193 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Logout function with comprehensive error handling
+    // Comprehensive logout function with multiple fallback strategies
     const performLogout = async (fallbackLoginUrl = '/login') => {
-        try {
-            // Determine logout endpoint based on environment
-            const logoutEndpoints = [
-                `${window.location.origin}/logout`,
-                `${window.location.origin}/api/logout`,
-                '/logout',
-                '/api/logout',
-                'https://mavericka-crm.netlify.app/logout',
-                'https://mavericka-crm.netlify.app/api/logout'
-            ];
+        // Logging utility
+        const debugLog = (message, ...args) => {
+            const timestamp = new Date().toISOString();
+            console.log(`[LOGOUT_DEBUG ${timestamp}] ${message}`, ...args);
+        };
 
-            let logoutResponse;
-            let logoutError;
-
-            // Try multiple endpoints with different methods
-            const logoutMethods = ['POST', 'GET'];
+        // Error handling utility
+        const handleLogoutError = (errorMessage, details = null) => {
+            debugLog('Logout Error:', errorMessage, details);
             
-            for (const method of logoutMethods) {
-                for (const endpoint of logoutEndpoints) {
-                    try {
-                        console.log(`Attempting logout with endpoint: ${endpoint}, method: ${method}`);
-                        
-                        const response = await fetch(endpoint, {
-                            method: method,
-                            credentials: 'include',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Accept': 'application/json',
-                                'Cache-Control': 'no-cache',
-                                'X-Requested-With': 'XMLHttpRequest'
-                            }
-                        });
-
-                        console.log('Logout Response:', {
-                            endpoint,
-                            method,
-                            status: response.status,
-                            statusText: response.statusText,
-                            headers: Object.fromEntries(response.headers.entries()),
-                            type: response.type,
-                            ok: response.ok
-                        });
-
-                        // Consider 401 or 403 as potential logout success
-                        if (response.ok || response.status === 401 || response.status === 403) {
-                            logoutResponse = response;
-                            break;
-                        }
-                    } catch (endpointError) {
-                        console.warn(`Logout failed with endpoint ${endpoint}, method ${method}:`, endpointError);
-                        logoutError = endpointError;
-                    }
-                }
-
-                if (logoutResponse) break;
+            const messageContainer = document.getElementById('message-container');
+            if (messageContainer) {
+                messageContainer.innerHTML = `
+                    <div class="error-message">
+                        ${errorMessage}
+                        ${details ? `<small>${details}</small>` : ''}
+                    </div>
+                `;
             }
 
-            // Fallback to direct client-side logout if all attempts fail
-            if (!logoutResponse) {
-                console.warn('All logout attempts failed. Performing client-side logout.');
-                
-                // Clear authentication-related items
-                localStorage.removeItem('authToken');
-                sessionStorage.removeItem('authToken');
-                
-                // Clear cookies by setting expiration to past
-                document.cookie.split(";").forEach((c) => {
-                    document.cookie = c
-                        .replace(/^ +/, "")
-                        .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-                });
-
-                // Redirect to login
-                window.location.href = fallbackLoginUrl;
-                return;
-            }
-
-            // Parse response
-            let data;
-            const contentType = logoutResponse.headers.get('content-type') || '';
+            // Perform client-side logout
+            localStorage.removeItem('authToken');
+            sessionStorage.removeItem('authToken');
             
-            try {
-                if (contentType.includes('application/json')) {
-                    data = await logoutResponse.json();
-                } else {
-                    const text = await logoutResponse.text();
-                    console.warn('Non-JSON logout response:', text);
+            // Clear cookies
+            document.cookie.split(";").forEach((c) => {
+                document.cookie = c
+                    .replace(/^ +/, "")
+                    .replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+            });
+
+            // Redirect to login page
+            window.location.href = fallbackLoginUrl;
+        };
+
+        // Environment detection
+        const getEnvironmentInfo = () => {
+            return {
+                hostname: window.location.hostname,
+                origin: window.location.origin,
+                protocol: window.location.protocol,
+                isLocalhost: ['localhost', '127.0.0.1'].includes(window.location.hostname),
+                userAgent: navigator.userAgent,
+                timestamp: new Date().toISOString()
+            };
+        };
+
+        const envInfo = getEnvironmentInfo();
+        debugLog('Environment Details:', envInfo);
+
+        // Determine logout endpoints with multiple fallback strategies
+        const loginEndpoints = [
+            `${envInfo.origin}/logout`,
+            `${envInfo.origin}/api/logout`,
+            '/logout',
+            '/api/logout'
+        ];
+
+        // Logout methods to try (prioritize GET for local server)
+        const logoutMethods = ['GET', 'POST'];
+
+        let logoutResponse;
+        let logoutError;
+
+        // Try multiple methods and endpoints
+        for (const method of logoutMethods) {
+            for (const endpoint of loginEndpoints) {
+                try {
+                    debugLog(`Attempting logout with endpoint: ${endpoint}, method: ${method}`);
                     
-                    try {
-                        data = JSON.parse(text);
-                    } catch (parseError) {
-                        data = {
-                            message: 'Logout successful',
-                            details: text,
-                            parseError: parseError.message
-                        };
-                        console.error('Failed to parse logout response:', parseError);
+                    const fetchOptions = {
+                        method: method,
+                        credentials: 'include',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json, text/html',
+                            'Cache-Control': 'no-cache',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    };
+
+                    // Only add body for POST requests
+                    if (method === 'POST') {
+                        fetchOptions.body = JSON.stringify({
+                            action: 'logout'
+                        });
                     }
+
+                    const response = await fetch(endpoint, fetchOptions);
+
+                    debugLog('Logout Response:', {
+                        endpoint,
+                        method,
+                        status: response.status,
+                        statusText: response.statusText,
+                        headers: Object.fromEntries(response.headers.entries()),
+                        type: response.type,
+                        ok: response.ok
+                    });
+
+                    // Consider various success scenarios
+                    if (response.ok || 
+                        response.status === 200 || 
+                        response.status === 204 || 
+                        response.status === 302) {
+                        logoutResponse = response;
+                        break;
+                    }
+
+                    // Handle specific error scenarios
+                    if (response.status === 405) {
+                        debugLog('Method Not Allowed, trying alternative method');
+                        continue;
+                    }
+                } catch (endpointError) {
+                    debugLog(`Logout failed with endpoint ${endpoint}, method ${method}:`, endpointError);
+                    logoutError = endpointError;
                 }
-            } catch (parseError) {
-                console.error('Logout response parsing error:', parseError);
-                data = { 
-                    message: 'Logout successful', 
-                    parseError: parseError.message 
-                };
             }
 
-            console.log('Logout response data:', data);
+            if (logoutResponse) break;
+        }
 
-            // Handle logout response
-            if (data.message === 'Logout successful' || 
-                data.status === 'success' || 
-                data.success === true) {
-                // Prefer provided redirect, fallback to default
-                const redirectUrl = data.redirect || fallbackLoginUrl;
-                console.log('Redirecting to:', redirectUrl);
-                
-                // Ensure valid URL
-                const fullRedirectUrl = new URL(redirectUrl, window.location.origin).href;
-                console.log('Full redirect URL:', fullRedirectUrl);
-                
-                // Redirect
-                window.location.href = fullRedirectUrl;
+        // If no successful response, perform client-side logout
+        if (!logoutResponse) {
+            handleLogoutError(
+                logoutError 
+                    ? `Logout failed: ${logoutError.message}` 
+                    : 'Unable to log out. Performing client-side logout.'
+            );
+            return;
+        }
+
+        // Parse response with multiple parsing strategies
+        let data;
+        const contentType = logoutResponse.headers.get('content-type') || '';
+
+        try {
+            // Try JSON parsing first
+            if (contentType.includes('application/json')) {
+                data = await logoutResponse.json();
             } else {
-                console.error('Logout failed:', data.error || 'Unknown error');
-                alert(data.error || 'Logout failed. Please try again.');
-                window.location.href = fallbackLoginUrl;
+                // Fallback text parsing
+                const text = await logoutResponse.text();
+                debugLog('Non-JSON logout response:', text);
+
+                try {
+                    // Attempt to parse text as JSON
+                    data = JSON.parse(text);
+                } catch (parseError) {
+                    // Fallback parsing strategies
+                    data = { 
+                        message: 'Logout successful', 
+                        redirect: fallbackLoginUrl 
+                    };
+                }
             }
         } catch (error) {
-            console.error('Logout error details:', error);
-            alert(`Logout failed: ${error.message}`);
-            window.location.href = fallbackLoginUrl;
+            handleLogoutError(
+                'Unable to process logout response', 
+                error.message
+            );
+            return;
+        }
+
+        debugLog('Parsed logout response:', data);
+
+        // Handle logout response
+        if (data.message === 'Logout successful' || 
+            data.status === 'success' || 
+            data.success === true) {
+            // Determine redirect URL
+            const redirectUrl = data.redirect || fallbackLoginUrl;
+            debugLog('Redirecting to:', redirectUrl);
+
+            // Ensure valid URL
+            const fullRedirectUrl = new URL(redirectUrl, window.location.origin).href;
+            debugLog('Full redirect URL:', fullRedirectUrl);
+
+            // Redirect
+            window.location.href = fullRedirectUrl;
+        } else {
+            handleLogoutError(
+                data.error || data.details || 'Logout failed. Performing client-side logout.'
+            );
         }
     };
 

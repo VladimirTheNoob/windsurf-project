@@ -5352,3 +5352,224 @@ FROM crm_entry ORDER BY crm_entry.submission_time DESC
 2025-01-16 15:24:44,331 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 15:24:44] "[36mGET /styles.css HTTP/1.1[0m" 304 -
 2025-01-16 15:24:44,335 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 15:24:44] "[36mGET /logo.png HTTP/1.1[0m" 304 -
 2025-01-16 15:24:44,335 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 15:24:44] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 16:03:01,124 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:01] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 16:03:01,153 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:01] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:03:01,155 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:01] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:03:01,156 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:01] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 16:03:01,176 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 16:03:01,177 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 16:03:01,186 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 16:03:01,189 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:01] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 16:03:02,105 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:02] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-16 16:03:02,140 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:02] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:03:02,140 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:02] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:03:02,142 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:02] "GET /script.js HTTP/1.1" 200 -
+2025-01-16 16:03:03,516 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:03] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:03,521 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:03] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:03,525 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:03] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:03,528 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:03] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:04,068 - root - INFO - Logging out user: Vladimir
+2025-01-16 16:03:04,069 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:04] "GET /logout HTTP/1.1" 200 -
+2025-01-16 16:03:04,081 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:04] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:03:04,111 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:04] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:03:04,114 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:04] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:03:09,053 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:09] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:03:09,067 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:09] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 16:03:09,101 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:09] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:03:09,103 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:09] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:03:09,105 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:09] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 16:03:10,746 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:10] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:10,750 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:10] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:10,754 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:10] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:10,758 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:10] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:11,102 - root - INFO - Logging out user: Vladimir
+2025-01-16 16:03:11,103 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:11] "GET /logout HTTP/1.1" 200 -
+2025-01-16 16:03:11,114 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:11] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:03:11,147 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:11] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:03:11,148 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:11] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:03:14,657 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:14] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:03:14,669 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:14] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 16:03:14,708 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:14] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:03:14,712 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:14] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:03:14,720 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:14] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 16:03:20,594 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:20] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:20,598 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:20] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:20,601 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:20] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:20,606 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:20] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:21,247 - root - INFO - Logging out user: Vladimir
+2025-01-16 16:03:21,248 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:21] "GET /logout HTTP/1.1" 200 -
+2025-01-16 16:03:21,261 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:21] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:03:21,295 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:21] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:03:21,304 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:21] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:03:49,757 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:49] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:03:49,771 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:49] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 16:03:49,811 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:49] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:03:49,813 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:49] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:03:49,814 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:49] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 16:03:51,688 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:51] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:51,692 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:51] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:51,696 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:51] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:51,700 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:51] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:03:52,341 - root - INFO - Logging out user: Vladimir
+2025-01-16 16:03:52,342 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:52] "GET /logout HTTP/1.1" 200 -
+2025-01-16 16:03:52,352 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:52] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:03:52,388 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:52] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:03:52,389 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:03:52] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:04:06,570 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:06] "[36mGET /login HTTP/1.1[0m" 304 -
+2025-01-16 16:04:06,593 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:06] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:04:06,596 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:06] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:04:07,337 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:07] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:04:07,349 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:07] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 16:04:07,388 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:07] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:04:07,402 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:07] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:04:07,406 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:07] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 16:04:07,629 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:07] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:04:07,633 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:07] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:04:07,638 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:07] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:04:07,642 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:07] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:04:07,986 - root - INFO - Logging out user: Vladimir
+2025-01-16 16:04:07,986 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:07] "GET /logout HTTP/1.1" 200 -
+2025-01-16 16:04:07,997 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:07] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:04:08,034 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:08] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:04:08,036 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:08] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:04:50,511 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:50] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:04:50,525 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:50] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 16:04:50,565 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:50] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:04:50,567 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:50] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:04:50,569 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:50] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 16:04:51,985 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:51] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:04:51,990 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:51] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:04:51,994 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:51] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:04:52,003 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:52] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:04:52,465 - root - INFO - Logging out user: Vladimir
+2025-01-16 16:04:52,466 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:52] "GET /logout HTTP/1.1" 200 -
+2025-01-16 16:04:52,477 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:52] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:04:52,511 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:52] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:04:52,513 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:04:52] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:05:04,979 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:04] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:05:04,992 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:04] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 16:05:05,036 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:05] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:05:05,037 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:05] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:05:05,044 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:05] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 16:05:06,276 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:06] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:05:06,281 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:06] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:05:06,292 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:06] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:05:06,298 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:06] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:05:06,647 - root - INFO - Logging out user: Vladimir
+2025-01-16 16:05:06,648 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:06] "GET /logout HTTP/1.1" 200 -
+2025-01-16 16:05:06,659 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:06] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:05:06,695 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:06] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:05:06,697 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:06] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:05:09,334 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:09] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:05:09,346 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:09] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 16:05:09,390 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:09] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:05:09,391 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:09] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:05:09,392 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:09] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 16:05:10,325 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:10] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:05:10,330 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:10] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:05:10,334 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:10] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:05:10,338 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:10] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:05:10,691 - root - INFO - Logging out user: Vladimir
+2025-01-16 16:05:10,692 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:10] "GET /logout HTTP/1.1" 200 -
+2025-01-16 16:05:10,706 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:10] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:05:10,749 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:10] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:05:10,750 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:10] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:05:50,519 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:05:50] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:06:01,940 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:06:01] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:06:01,956 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:06:01] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 16:06:01,997 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:06:01] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:06:01,998 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:06:01] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:06:01,999 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:06:01] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 16:06:03,533 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:06:03] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:06:03,538 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:06:03] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:06:03,577 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:06:03] "[31m[1mPOST /logout HTTP/1.1[0m" 405 -
+2025-01-16 16:06:03,611 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:06:03] "[31m[1mPOST /api/logout HTTP/1.1[0m" 405 -
+2025-01-16 16:06:04,145 - root - INFO - Logging out user: Vladimir
+2025-01-16 16:06:04,146 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:06:04] "GET /logout HTTP/1.1" 200 -
+2025-01-16 16:06:04,156 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:06:04] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:06:04,192 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:06:04] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:06:04,194 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:06:04] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:09:40,330 - root - INFO - Database tables created successfully
+2025-01-16 16:09:40,343 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 16:09:40,343 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 16:09:40,345 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:09:40,759 - root - INFO - Database tables created successfully
+2025-01-16 16:09:40,767 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:09:40,769 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:11:35,608 - root - INFO - Database tables created successfully
+2025-01-16 16:11:35,623 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 16:11:35,623 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 16:11:35,624 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:11:36,026 - root - INFO - Database tables created successfully
+2025-01-16 16:11:36,035 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:11:36,036 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:12:05,488 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:05] "[36mGET /login HTTP/1.1[0m" 304 -
+2025-01-16 16:12:05,514 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:05] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:12:05,514 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:05] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:12:05,593 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:05] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-16 16:12:07,077 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:07] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:12:07,088 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:07] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 16:12:07,128 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:07] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:12:07,130 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:07] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:12:07,130 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:07] "GET /script.js HTTP/1.1" 200 -
+2025-01-16 16:12:20,684 - root - INFO - Logging out user: Vladimir
+2025-01-16 16:12:20,685 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:20] "GET /logout HTTP/1.1" 200 -
+2025-01-16 16:12:20,698 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:20] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:12:20,732 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:20] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:12:20,734 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:20] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:12:22,952 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:22] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:12:22,964 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:22] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 16:12:23,003 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:23] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:12:23,006 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:23] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:12:23,007 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:23] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 16:12:26,639 - root - INFO - Logging out user: Vladimir
+2025-01-16 16:12:26,640 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:26] "GET /logout HTTP/1.1" 200 -
+2025-01-16 16:12:26,651 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:26] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:12:26,682 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:26] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:12:26,685 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:26] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:12:28,464 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:28] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:12:28,477 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:28] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 16:12:28,514 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:28] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:12:28,519 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:28] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:12:28,528 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:28] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 16:12:39,763 - root - INFO - Logging out user: Vladimir
+2025-01-16 16:12:39,764 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:39] "GET /logout HTTP/1.1" 200 -
+2025-01-16 16:12:39,777 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:39] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:12:39,811 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:39] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:12:39,811 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:39] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:12:41,441 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:41] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:12:41,455 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:41] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 16:12:41,496 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:41] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:12:41,500 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:41] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:12:41,501 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:41] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 16:12:42,942 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:42] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 16:12:42,980 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:42] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:12:42,981 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:42] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:12:42,982 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:42] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 16:12:43,006 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 16:12:43,007 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 16:12:43,015 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 16:12:43,018 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:43] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 16:12:46,372 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 16:12:46,372 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 16:12:46,381 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 16:12:46,383 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:46] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 16:12:48,934 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:48] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-16 16:12:48,973 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:48] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:12:48,976 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:48] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:12:48,978 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:48] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 16:12:49,942 - root - INFO - Logging out user: Vladimir
+2025-01-16 16:12:49,942 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:49] "GET /logout HTTP/1.1" 200 -
+2025-01-16 16:12:49,953 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:49] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:12:49,989 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:49] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:12:49,991 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:49] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:12:51,635 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:51] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:12:51,650 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:51] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 16:12:51,691 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:51] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:12:51,696 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:51] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:12:51,699 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:12:51] "[36mGET /script.js HTTP/1.1[0m" 304 -
