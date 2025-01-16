@@ -90,19 +90,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Logout functionality
     function handleLogout() {
-        console.log('Logout button clicked'); // Debug log
         fetch('/logout', {
             method: 'GET',
-            credentials: 'same-origin'
+            credentials: 'same-origin',
+            headers: {
+                'Accept': 'application/json'
+            }
         })
         .then(response => {
-            console.log('Logout response:', response); // Debug log
+            // Check if response is OK and is JSON
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                throw new TypeError("Oops, we haven't got JSON!");
+            }
             return response.json();
         })
         .then(data => {
-            console.log('Logout data:', data); // Debug log
             if (data.message === 'Logout successful') {
-                // Redirect to login page
                 window.location.href = data.redirect;
             } else {
                 console.error('Logout failed:', data);
@@ -111,19 +118,21 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => {
             console.error('Logout error:', error);
-            alert('An error occurred during logout. Please try again.');
+            // More specific error handling
+            if (error.message.includes('JSON')) {
+                alert('Server returned an unexpected response. Please try logging out again.');
+            } else {
+                alert('An error occurred during logout. Please try again.');
+            }
         });
     }
 
     // Add logout button event listener if it exists
     const logoutButton = document.getElementById('logoutBtn');
-    console.log('Logout button:', logoutButton); // Debug log
     if (logoutButton) {
         logoutButton.addEventListener('click', function(event) {
             event.preventDefault();
             handleLogout();
         });
-    } else {
-        console.error('Logout button not found'); // Debug log
     }
 });
