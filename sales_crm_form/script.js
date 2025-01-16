@@ -96,6 +96,24 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(`[LOGIN_DEBUG ${timestamp}] ${message}`, ...args);
         };
 
+        // Error handling utility
+        const handleLoginError = (errorMessage, details = null) => {
+            debugLog('Login Error:', errorMessage, details);
+            
+            const messageContainer = document.getElementById('message-container');
+            if (messageContainer) {
+                messageContainer.innerHTML = `
+                    <div class="error-message">
+                        ${errorMessage}
+                        ${details ? `<small>${details}</small>` : ''}
+                    </div>
+                `;
+            }
+
+            // Redirect to login page
+            window.location.href = '/login';
+        };
+
         // Environment detection
         const getEnvironmentInfo = () => {
             return {
@@ -133,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Fallback redirect URLs
         const successRedirect = '/index';
-        const fallbackLoginUrl = '/login';
 
         let loginResponse;
         let loginError;
@@ -149,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         credentials: 'include',
                         headers: {
                             'Content-Type': 'application/json',
-                            'Accept': 'application/json',
+                            'Accept': 'application/json, text/html',
                             'Cache-Control': 'no-cache',
                             'X-Requested-With': 'XMLHttpRequest',
                             'X-Debug-Env': JSON.stringify(envInfo)
@@ -167,13 +184,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         ok: response.ok
                     });
 
-                    // Check for successful response
+                    // Handle response text for debugging
+                    const contentType = response.headers.get('content-type') || '';
+                    debugLog('Content-Type:', contentType);
+
+                    // Check for successful response or handle specific scenarios
                     if (response.ok || response.status === 200) {
                         loginResponse = response;
                         break;
                     }
 
-                    // Handle HTML or non-JSON responses
+                    // Detailed error handling for non-successful responses
                     if (response.status === 404 || response.status === 500) {
                         const text = await response.text();
                         debugLog('Non-OK Response Text:', text);
@@ -181,7 +202,18 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Check if response is HTML error page
                         if (text.includes('<!DOCTYPE') || text.includes('<html')) {
                             debugLog('Received HTML error response');
-                            continue;
+                            
+                            // Extract potential error message from HTML
+                            const errorMatch = text.match(/<title>(.*?)<\/title>/i);
+                            const errorMessage = errorMatch 
+                                ? errorMatch[1] 
+                                : 'Server returned an HTML error page';
+                            
+                            handleLoginError(
+                                'Login failed due to server configuration', 
+                                errorMessage
+                            );
+                            return;
                         }
                     }
                 } catch (endpointError) {
@@ -195,24 +227,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Fallback error handling if no successful response
         if (!loginResponse) {
-            debugLog('All login attempts failed');
-            
             const errorMessage = loginError 
                 ? `Login failed: ${loginError.message}` 
                 : 'Unable to log in. Please try again.';
             
-            // Show error message
-            const messageContainer = document.getElementById('message-container');
-            if (messageContainer) {
-                messageContainer.innerHTML = `
-                    <div class="error-message">
-                        ${errorMessage}
-                    </div>
-                `;
-            }
-
-            // Redirect to login page
-            window.location.href = fallbackLoginUrl;
+            handleLoginError(errorMessage);
             return;
         }
 
@@ -240,21 +259,20 @@ document.addEventListener('DOMContentLoaded', function() {
                             redirect: successRedirect 
                         };
                     } else {
-                        data = {
-                            error: 'Invalid response format',
-                            details: text,
-                            parseError: parseError.message
-                        };
-                        debugLog('Failed to parse login response:', parseError);
+                        handleLoginError(
+                            'Invalid response format', 
+                            parseError.message
+                        );
+                        return;
                     }
                 }
             }
         } catch (error) {
-            debugLog('Login response parsing error:', error);
-            data = { 
-                error: 'Unable to process login response', 
-                details: error.message 
-            };
+            handleLoginError(
+                'Unable to process login response', 
+                error.message
+            );
+            return;
         }
 
         debugLog('Parsed login response:', data);
@@ -274,20 +292,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Redirect
             window.location.href = fullRedirectUrl;
         } else {
-            // Show error message
-            const messageContainer = document.getElementById('message-container');
-            if (messageContainer) {
-                messageContainer.innerHTML = `
-                    <div class="error-message">
-                        ${data.error || data.details || 'Login failed. Please try again.'}
-                    </div>
-                `;
-            }
-
-            debugLog('Login failed:', data.error || 'Unknown error');
-            
-            // Redirect to login page
-            window.location.href = fallbackLoginUrl;
+            handleLoginError(
+                data.error || data.details || 'Login failed. Please try again.'
+            );
         }
     };
 
