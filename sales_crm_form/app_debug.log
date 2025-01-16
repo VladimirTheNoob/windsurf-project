@@ -6142,3 +6142,179 @@ ly
 2025-01-16 16:27:45,014 - werkzeug - WARNING -  * Debugger is active!
 2025-01-16 16:27:45,016 - werkzeug - INFO -  * Debugger PIN: 578-954-094
 2025-01-16 16:27:45,016 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:33:29,145 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:33:29] "OPTIONS /login HTTP/1.1" 200 -
+2025-01-16 16:33:29,786 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:33:29] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:33:36,195 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:33:36] "[35m[1mOPTIONS /get_crm_entries HTTP/1.1[0m" 204 -
+2025-01-16 16:33:36,197 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:33:36] "[31m[1mGET /get_crm_entries HTTP/1.1[0m" 401 -
+2025-01-16 16:33:36,202 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:33:36] "[35m[1mOPTIONS /get_crm_entries HTTP/1.1[0m" 204 -
+2025-01-16 16:33:36,204 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:33:36] "[31m[1mGET /get_crm_entries HTTP/1.1[0m" 401 -
+2025-01-16 16:35:10,276 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,276 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,277 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,278 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,279 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,280 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,280 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,388 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,389 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,395 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,395 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,396 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,399 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,401 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,410 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,410 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,411 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,519 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,524 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,524 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,597 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,665 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,709 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,749 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,749 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,751 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,752 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,760 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,762 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,762 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,764 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,768 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,776 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,779 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,780 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,800 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,854 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:10,922 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,926 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,926 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,931 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,935 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,935 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,937 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,937 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,945 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,957 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,961 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:10,963 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:11,014 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:11,141 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:11,143 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:11,145 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:11,151 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:11,155 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:11,157 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:11,157 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:11,160 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:11,211 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:35:11,298 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:11,310 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:11,316 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:11,319 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:11,324 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:11,324 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:11,331 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:11,343 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:11,366 - root - INFO - Database tables created successfully
+2025-01-16 16:35:11,367 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:35:11,399 - root - INFO - Database tables created successfully
+2025-01-16 16:35:11,415 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:11,418 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:11,426 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:11,445 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:11,497 - root - INFO - Database tables created successfully
+2025-01-16 16:35:11,513 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:11,516 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:11,569 - root - INFO - Database tables created successfully
+2025-01-16 16:35:11,624 - root - INFO - Database tables created successfully
+2025-01-16 16:35:11,628 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:11,632 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:11,662 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:11,665 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:11,736 - root - INFO - Database tables created successfully
+2025-01-16 16:35:11,748 - root - INFO - Database tables created successfully
+2025-01-16 16:35:11,764 - root - INFO - Database tables created successfully
+2025-01-16 16:35:11,772 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:11,774 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:11,775 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:11,777 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:11,779 - root - INFO - Database tables created successfully
+2025-01-16 16:35:11,784 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:11,786 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:11,800 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:11,802 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:11,903 - root - INFO - Database tables created successfully
+2025-01-16 16:35:11,909 - root - INFO - Database tables created successfully
+2025-01-16 16:35:11,917 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:11,920 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:11,942 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:11,945 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:11,980 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,001 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,004 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,056 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,073 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,092 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,100 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,103 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,104 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,105 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,107 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,107 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,163 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,177 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,179 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,184 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,187 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,188 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,196 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,199 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,200 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,201 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,202 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,203 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,204 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,214 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,214 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,217 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,223 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,224 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,228 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,228 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,230 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,236 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,238 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,238 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,240 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,242 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,242 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,246 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,260 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,262 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,309 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,322 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,326 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,327 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,329 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,337 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,339 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,340 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,341 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,341 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,342 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,342 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,344 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,351 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,352 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,352 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,352 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,354 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,354 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,354 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,356 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,358 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,359 - root - INFO - Database tables created successfully
+2025-01-16 16:35:12,364 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,366 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:35:12,370 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 16:35:12,372 - werkzeug - INFO -  * Debugger PIN: 578-954-094

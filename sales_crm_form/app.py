@@ -74,10 +74,14 @@ def handle_global_exception(e):
     return jsonify(error_details), 500
 
 # Modify login_required decorator to return JSON
-login_manager.unauthorized_handler(lambda: (jsonify({
-    'error': 'Unauthorized',
-    'details': 'Authentication required'
-}), 401))
+login_manager.unauthorized_handler(lambda: (
+    jsonify({
+        'error': 'Unauthorized',
+        'details': 'Authentication required',
+        'redirect': url_for('login', _external=True)
+    }), 
+    401
+))
 
 # Ensure all routes use JSON responses for errors
 @app.errorhandler(404)

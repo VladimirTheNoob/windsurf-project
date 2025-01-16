@@ -30,7 +30,34 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('[CRM Retrieval Debug]', ...args);
     }
 
-    // Function to fetch CRM entries
+    // Function to handle authentication and redirect
+    function handleAuthenticationError() {
+        debugLog('Authentication required. Redirecting to login.');
+        
+        // Create a message container if it doesn't exist
+        let messageContainer = document.getElementById('message-container');
+        if (!messageContainer) {
+            messageContainer = document.createElement('div');
+            messageContainer.id = 'message-container';
+            messageContainer.className = 'message-container';
+            document.body.insertBefore(messageContainer, document.body.firstChild);
+        }
+
+        // Display authentication error message
+        messageContainer.innerHTML = `
+            <div class="error-message">
+                You must be logged in to access this page.
+                <a href="/login.html" class="login-link">Go to Login</a>
+            </div>
+        `;
+
+        // Optional: Redirect to login page after a short delay
+        setTimeout(() => {
+            window.location.href = '/login.html';
+        }, 2000);
+    }
+
+    // Function to fetch CRM entries with enhanced authentication handling
     async function fetchCRMEntries(salePerson = '', status = '') {
         // Determine possible endpoints
         const endpoints = [
@@ -61,13 +88,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const response = await fetch(url, {
                     method: 'GET',
-                    credentials: 'include',
+                    credentials: 'include', // Important for maintaining session
                     headers: {
                         'Accept': 'application/json'
                     }
                 });
 
                 debugLog('Response Status:', response.status, response.statusText);
+
+                // Handle authentication errors specifically
+                if (response.status === 401 || response.status === 403) {
+                    handleAuthenticationError();
+                    return [];
+                }
 
                 // Check for non-OK responses
                 if (!response.ok) {
@@ -119,6 +152,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 debugLog('Retrieved CRM Entries:', data);
                 return data;
             } catch (error) {
+                // Check for specific authentication errors
+                if (error.name === 'TypeError' && error.message.includes('credentials')) {
+                    handleAuthenticationError();
+                    return [];
+                }
+
                 debugLog(`Error fetching from ${baseUrl}:`, error);
                 // Continue to next endpoint
                 continue;
@@ -126,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // If all endpoints fail
-        alert('Unable to retrieve CRM entries. Please check your connection.');
+        alert('Unable to retrieve CRM entries. Please check your connection or login status.');
         return [];
     }
 
