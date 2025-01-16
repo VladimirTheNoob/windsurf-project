@@ -2,23 +2,7 @@
 /* /index.html 200
 
 # API route redirects
+/login /login 200
+/logout /logout 200
 /api/login /login 200
 /api/logout /logout 200
-/api/submit_crm /submit_crm 200
-
-# Netlify headers configuration
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
-    Access-Control-Allow-Headers = "Content-Type, Authorization, X-Requested-With"
-    Access-Control-Allow-Credentials = "true"
-
-[[headers]]
-  for = "/api/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
-    Access-Control-Allow-Headers = "Content-Type, Authorization, X-Requested-With"
-    Access-Control-Allow-Credentials = "true"

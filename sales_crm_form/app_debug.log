@@ -5278,3 +5278,11 @@ FROM crm_entry ORDER BY crm_entry.submission_time DESC
 2025-01-16 15:09:38,655 - root - INFO - Database tables created successfully
 2025-01-16 15:09:38,664 - werkzeug - WARNING -  * Debugger is active!
 2025-01-16 15:09:38,665 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 15:13:08,045 - root - INFO - Database tables created successfully
+2025-01-16 15:13:08,057 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 15:13:08,057 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 15:13:08,057 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 15:13:08,443 - root - INFO - Database tables created successfully
+2025-01-16 15:13:08,451 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 15:13:08,453 - werkzeug - INFO -  * Debugger PIN: 578-954-094
