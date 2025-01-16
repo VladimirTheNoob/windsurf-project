@@ -59,68 +59,151 @@
             const password = document.getElementById('password').value;
             const nextPage = nextPageInput.value;
 
-            try {
-                console.log('Login attempt:', {
-                    loginIdentifier,
-                    nextPage: nextPage || 'No next page specified'
-                });
+            // Environment detection
+            const getEnvironmentInfo = () => {
+                return {
+                    hostname: window.location.hostname,
+                    origin: window.location.origin,
+                    protocol: window.location.protocol,
+                    isLocalhost: ['localhost', '127.0.0.1'].includes(window.location.hostname),
+                    userAgent: navigator.userAgent,
+                    timestamp: new Date().toISOString()
+                };
+            };
 
-                const response = await fetch('/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        username: loginIdentifier,
-                        password: password,
-                        next: nextPage
-                    })
-                });
+            const envInfo = getEnvironmentInfo();
 
-                const result = await response.json();
+            // Determine login endpoints with multiple fallback strategies
+            const loginEndpoints = [
+                `${envInfo.origin}/login`,  // Current origin
+                `${envInfo.origin}/api/login`,
+                '/login',
+                'http://localhost:5000/login',
+                'http://127.0.0.1:5000/login'
+            ];
 
-                console.log('Login response:', {
-                    status: response.status,
-                    ok: response.ok,
-                    result: result
-                });
+            let loginResponse;
+            let loginError;
 
-                if (response.ok) {
-                    // Successful login
-                    messageContainer.innerHTML = `
-                        <div class="success-message">
-                            Login successful! Redirecting...
-                        </div>
-                    `;
-                    
-                    // Determine redirect URL
-                    const redirectUrl = result.redirect || '/index';
-                    console.log('Redirecting to:', redirectUrl);
-                    
-                    // Ensure valid URL
-                    const fullRedirectUrl = new URL(redirectUrl, window.location.origin).href;
-                    console.log('Full redirect URL:', fullRedirectUrl);
-                    
-                    // Redirect
-                    window.location.href = fullRedirectUrl;
-                } else {
-                    // Login failed
-                    messageContainer.innerHTML = `
-                        <div class="error-message">
-                            ${result.details || result.error || 'Login failed'}
-                        </div>
-                    `;
-                    console.error('Login failed:', result);
+            // Try multiple endpoints
+            for (const endpoint of loginEndpoints) {
+                try {
+                    console.log(`Attempting login with endpoint: ${endpoint}`);
+
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        credentials: 'include',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json, text/html',
+                            'Cache-Control': 'no-cache',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        },
+                        body: JSON.stringify({
+                            loginIdentifier: loginIdentifier,
+                            password: password,
+                            nextPage: nextPage || 'No next page specified'
+                        })
+                    });
+
+                    console.log('Login Response:', {
+                        endpoint,
+                        status: response.status,
+                        statusText: response.statusText,
+                        ok: response.ok
+                    });
+
+                    // Parse response content
+                    let responseData;
+                    const contentType = response.headers.get('content-type') || '';
+
+                    try {
+                        if (contentType.includes('application/json')) {
+                            responseData = await response.json();
+                        } else {
+                            // Attempt to parse HTML or text response
+                            const text = await response.text();
+                            console.log('Non-JSON login response:', text);
+
+                            // Check for HTML error pages
+                            if (text.includes('<!DOCTYPE') || text.includes('<html')) {
+                                throw new Error('Received HTML instead of JSON');
+                            }
+
+                            // Try parsing text as JSON
+                            try {
+                                responseData = JSON.parse(text);
+                            } catch (parseError) {
+                                responseData = { 
+                                    message: 'Login response could not be parsed', 
+                                    details: text 
+                                };
+                            }
+                        }
+                    } catch (parseError) {
+                        console.error('Response parsing error:', parseError);
+                        throw parseError;
+                    }
+
+                    // Consider various success scenarios
+                    if (response.ok || 
+                        response.status === 200 || 
+                        response.status === 201 || 
+                        responseData.success === true) {
+                        loginResponse = { response, data: responseData };
+                        break;
+                    }
+
+                    // Handle specific error scenarios
+                    if (response.status === 401 || response.status === 403) {
+                        messageContainer.innerHTML = `
+                            <div class="error-message">
+                                Invalid credentials
+                                ${responseData.details ? `<small>${responseData.details}</small>` : ''}
+                            </div>
+                        `;
+                        return;
+                    }
+                } catch (endpointError) {
+                    console.error(`Login failed with endpoint ${endpoint}:`, endpointError);
+                    loginError = endpointError;
                 }
-            } catch (error) {
-                console.error('Login error:', error);
+            }
+
+            // If no successful response, handle error
+            if (!loginResponse) {
+                const errorMessage = loginError 
+                    ? `Login failed: ${loginError.message}` 
+                    : 'Unable to log in. Please try again.';
+                
                 messageContainer.innerHTML = `
                     <div class="error-message">
-                        Network error. Please try again.
+                        ${errorMessage}
                     </div>
                 `;
+                return;
             }
+
+            // Extract redirect URL
+            const redirectUrl = 
+                loginResponse.data.redirect || 
+                loginResponse.data.nextPage || 
+                '/index.html';
+
+            console.log('Login successful. Redirecting to:', redirectUrl);
+
+            // Ensure valid URL
+            const fullRedirectUrl = new URL(redirectUrl, window.location.origin).href;
+            console.log('Full redirect URL:', fullRedirectUrl);
+
+            // Optional: Store authentication token if provided
+            if (loginResponse.data.token) {
+                localStorage.setItem('authToken', loginResponse.data.token);
+                sessionStorage.setItem('authToken', loginResponse.data.token);
+            }
+
+            // Redirect
+            window.location.href = fullRedirectUrl;
         });
     });
     </script>
