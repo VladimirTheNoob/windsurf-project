@@ -5239,3 +5239,11 @@ FROM crm_entry ORDER BY crm_entry.submission_time DESC
 2025-01-16 15:04:51,763 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 15:04:51] "[36mGET /styles.css HTTP/1.1[0m" 304 -
 2025-01-16 15:04:51,765 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 15:04:51] "[36mGET /logo.png HTTP/1.1[0m" 304 -
 2025-01-16 15:04:51,765 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 15:04:51] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 15:07:22,548 - root - INFO - Database tables created successfully
+2025-01-16 15:07:22,561 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 15:07:22,561 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 15:07:22,562 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 15:07:22,953 - root - INFO - Database tables created successfully
+2025-01-16 15:07:22,961 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 15:07:22,963 - werkzeug - INFO -  * Debugger PIN: 578-954-094

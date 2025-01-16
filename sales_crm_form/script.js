@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         return '/login';
                     }
                     
-                    // For deployed environments, use relative path with explicit API route
+                    // For deployed environments, use API route
                     return '/api/login';
                 })();
 
@@ -138,7 +138,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
-                        'Cache-Control': 'no-cache'
+                        'Cache-Control': 'no-cache',
+                        'X-Requested-With': 'XMLHttpRequest'
                     },
                     body: JSON.stringify({
                         username: loginIdentifier,
