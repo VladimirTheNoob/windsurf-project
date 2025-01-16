@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales CRM Input Form</title>
+    <link rel="icon" type="image/png" href="/favicon.ico">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="logo-container">
-            <img src="logo.png" alt="Company Logo" class="logo">
+        <div class="header">
+            <div class="logo-container">
+                <img src="logo.png" alt="Company Logo" class="logo">
+            </div>
+            
+            <div class="user-info">
+                <span>Welcome, <strong>{{ username }}</strong></span>
+                <a href="/logout" class="logout-btn">Logout</a>
+            </div>
         </div>
         
         <nav class="navigation">
@@ -19,15 +27,16 @@
         </nav>
         
         <h1>Sales CRM Input Form</h1>
-        <form id="salesCrmForm">
+        
+        <form id="salesCrmForm" class="crm-form">
             <div class="form-group">
                 <label for="personName">Person Name:</label>
-                <input type="text" id="personName" name="personName" required>
+                <input type="text" id="personName" name="person_name" required>
             </div>
             
             <div class="form-group">
                 <label for="companyName">Company Name:</label>
-                <input type="text" id="companyName" name="companyName" required>
+                <input type="text" id="companyName" name="company_name" required>
             </div>
             
             <div class="form-group">
@@ -42,38 +51,75 @@
             
             <div class="form-group">
                 <label for="nextSteps">Next Steps:</label>
-                <textarea id="nextSteps" name="nextSteps" rows="3"></textarea>
+                <textarea id="nextSteps" name="next_steps"></textarea>
             </div>
             
             <div class="form-group">
                 <label for="status">Status:</label>
                 <select id="status" name="status">
                     <option value="">Select Status</option>
-                    <option value="new">New</option>
-                    <option value="in_progress">In Progress</option>
-                    <option value="completed">Completed</option>
-                    <option value="on_hold">On Hold</option>
+                    <option value="New Lead">New Lead</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Negotiation">Negotiation</option>
+                    <option value="Closed Won">Closed Won</option>
+                    <option value="Closed Lost">Closed Lost</option>
                 </select>
             </div>
             
             <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" rows="4"></textarea>
+                <label for="description">Description/Notes:</label>
+                <textarea id="description" name="description"></textarea>
             </div>
             
             <div class="form-group">
                 <label for="salePerson">Sales Person:</label>
-                <select id="salePerson" name="salePerson" required>
-                    <option value="">Select Sales Person</option>
+                <select id="salePerson" name="sale_person" required>
+                    <option value="">Select or Enter Sales Person</option>
                     <option value="Vladimir Belyakov">Vladimir Belyakov</option>
                     <option value="Eugen Genzelew">Eugen Genzelew</option>
                     <option value="Konstantin Tokarev">Konstantin Tokarev</option>
+                    <option value="Other">Other (Please Specify)</option>
                 </select>
             </div>
             
-            <button type="submit">Submit</button>
+            <div class="form-actions">
+                <button type="submit">Submit CRM Entry</button>
+                <button type="reset">Clear Form</button>
+            </div>
         </form>
+        
+        <div id="message-container" class="message-container"></div>
     </div>
+
     <script src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const salePersonSelect = document.getElementById('salePerson');
+        
+        salePersonSelect.addEventListener('change', function() {
+            if (this.value === 'Other') {
+                // Create a text input if 'Other' is selected
+                const existingOtherInput = document.getElementById('salePersonOther');
+                if (!existingOtherInput) {
+                    const otherInput = document.createElement('input');
+                    otherInput.type = 'text';
+                    otherInput.id = 'salePersonOther';
+                    otherInput.name = 'sale_person';
+                    otherInput.placeholder = 'Enter Sales Person Name';
+                    otherInput.required = true;
+                    
+                    // Insert the input after the select
+                    this.parentNode.insertBefore(otherInput, this.nextSibling);
+                }
+            } else {
+                // Remove the text input if it exists
+                const otherInput = document.getElementById('salePersonOther');
+                if (otherInput) {
+                    otherInput.remove();
+                }
+            }
+        });
+    });
+    </script>
 </body>
 </html>

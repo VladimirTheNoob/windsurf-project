@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sales CRM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.png" alt="Company Logo" class="logo">
+        </div>
+        
+        <form id="loginForm" class="login-form">
+            <!-- Hidden input for next parameter -->
+            <input type="hidden" id="nextPage" name="next" value="{{ request.args.get('next') or '' }}">
+            
+            <div class="form-group">
+                <label for="loginIdentifier">Username or Email:</label>
+                <input type="text" id="loginIdentifier" name="username" required 
+                       placeholder="Enter username or email">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit">Login</button>
+                <a href="{{ url_for('register') }}" class="register-link">Register</a>
+            </div>
+            
+            <div id="message-container" class="message-container"></div>
+        </form>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loginForm = document.getElementById('loginForm');
+        const messageContainer = document.getElementById('message-container');
+        const nextPageInput = document.getElementById('nextPage');
+        const loginIdentifierInput = document.getElementById('loginIdentifier');
+
+        loginForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            // Clear previous messages
+            messageContainer.innerHTML = '';
+            
+            const loginIdentifier = loginIdentifierInput.value;
+            const password = document.getElementById('password').value;
+            const nextPage = nextPageInput.value;
+
+            try {
+                console.log('Login attempt:', {
+                    loginIdentifier,
+                    nextPage: nextPage || 'No next page specified'
+                });
+
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: loginIdentifier,
+                        password: password,
+                        next: nextPage
+                    })
+                });
+
+                const result = await response.json();
+
+                console.log('Login response:', {
+                    status: response.status,
+                    ok: response.ok,
+                    result: result
+                });
+
+                if (response.ok) {
+                    // Successful login
+                    messageContainer.innerHTML = `
+                        <div class="success-message">
+                            Login successful! Redirecting...
+                        </div>
+                    `;
+                    
+                    // Determine redirect URL
+                    const redirectUrl = result.redirect || '/index';
+                    console.log('Redirecting to:', redirectUrl);
+                    
+                    // Redirect with full URL handling
+                    if (redirectUrl.startsWith('http') || redirectUrl.startsWith('//')) {
+                        window.location.href = redirectUrl;
+                    } else {
+                        window.location.href = window.location.origin + redirectUrl;
+                    }
+                } else {
+                    // Login failed
+                    messageContainer.innerHTML = `
+                        <div class="error-message">
+                            ${result.error || 'Login failed'}
+                        </div>
+                    `;
+                    console.error('Login failed:', result);
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                messageContainer.innerHTML = `
+                    <div class="error-message">
+                        Network error. Please try again.
+                    </div>
+                `;
+            }
+        });
+    });
+    </script>
+</body>
+</html>

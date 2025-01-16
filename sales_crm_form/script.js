@@ -4,6 +4,20 @@ document.addEventListener('DOMContentLoaded', function() {
     messageContainer.id = 'message-container';
     form.appendChild(messageContainer);
 
+    // Function to display messages
+    function showMessage(message, isError = false) {
+        messageContainer.innerHTML = `
+            <div class="${isError ? 'error-message' : 'success-message'}">
+                ${message}
+            </div>
+        `;
+        
+        // Auto-clear message after 5 seconds
+        setTimeout(() => {
+            messageContainer.innerHTML = '';
+        }, 5000);
+    }
+
     form.addEventListener('submit', async function(event) {
         event.preventDefault();
         
@@ -19,9 +33,16 @@ document.addEventListener('DOMContentLoaded', function() {
             sale_person: document.getElementById('salePerson').value
         };
         
+        // Validate required fields
+        if (!formData.person_name || !formData.company_name) {
+            showMessage('Please fill in Person Name and Company Name', true);
+            return;
+        }
+        
         try {
-            const response = await fetch('http://localhost:5000/submit_crm', {
+            const response = await fetch('/submit_crm', {
                 method: 'POST',
+                credentials: 'same-origin', // Important for session-based auth
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
@@ -29,31 +50,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 body: JSON.stringify(formData)
             });
 
+            // Check for non-OK responses
+            if (!response.ok) {
+                // Try to parse error details
+                const errorData = await response.json().catch(() => ({
+                    error: 'Unknown error',
+                    details: 'Could not parse error response'
+                }));
+
+                // Log detailed error
+                console.error('Submission error:', {
+                    status: response.status,
+                    statusText: response.statusText,
+                    errorDetails: errorData
+                });
+
+                // Show user-friendly error message
+                showMessage(`Error: ${errorData.details || errorData.error || 'Submission failed'}`, true);
+                return;
+            }
+
+            // Parse successful response
             const result = await response.json();
 
-            if (response.ok) {
-                messageContainer.innerHTML = `
-                    <div class="success-message">
-                        CRM Entry Submitted Successfully! 
-                        Entry ID: ${result.entry_id}
-                    </div>
-                `;
-                form.reset();
-            } else {
-                messageContainer.innerHTML = `
-                    <div class="error-message">
-                        Error: ${result.error || 'Unknown error occurred'}
-                    </div>
-                `;
-                console.error('Server response:', result);
-            }
+            // Show success message
+            showMessage(`CRM Entry Submitted Successfully! Entry ID: ${result.entry_id}`);
+            
+            // Reset form
+            form.reset();
+
         } catch (error) {
-            messageContainer.innerHTML = `
-                <div class="error-message">
-                    Network Error: Unable to submit CRM entry
-                </div>
-            `;
+            // Network errors or JSON parsing errors
             console.error('Fetch error:', error);
+            
+            // Show user-friendly network error
+            showMessage('Network Error: Unable to submit CRM entry. Please check your connection.', true);
         }
     });
 });

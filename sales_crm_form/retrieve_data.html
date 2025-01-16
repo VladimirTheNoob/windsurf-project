@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM Data Retrieval</title>
+    <link rel="icon" type="image/png" href="/favicon.ico">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,7 +15,7 @@
         
         <nav class="navigation">
             <ul>
-                <li><a href="index.html">Input Form</a></li>
+                <li><a href="index.html" class="nav-button">Input Form</a></li>
             </ul>
         </nav>
         
@@ -23,12 +24,14 @@
         <div class="controls-container">
             <div class="form-group">
                 <label for="salesPersonFilter">Sales Person:</label>
-                <select id="salesPersonFilter" name="salesPersonFilter">
+                <select id="salePerson" name="sale_person">
                     <option value="">All Sales Persons</option>
                     <option value="Vladimir Belyakov">Vladimir Belyakov</option>
                     <option value="Eugen Genzelew">Eugen Genzelew</option>
                     <option value="Konstantin Tokarev">Konstantin Tokarev</option>
+                    <option value="Other">Other</option>
                 </select>
+                <input type="text" id="salePersonOther" name="sale_person" placeholder="Enter Sales Person Name" style="display: none; margin-left: 10px;">
             </div>
             
             <div class="button-group">
@@ -37,30 +40,46 @@
                 <button id="clearDataBtn">Clear All Data</button>
             </div>
         </div>
-    </div>
 
-    <div class="table-standalone-container">
-        <table id="crmDataTable">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Person Name</th>
-                    <th>Company Name</th>
-                    <th>Department</th>
-                    <th>Case</th>
-                    <th>Next Steps</th>
-                    <th>Status</th>
-                    <th>Description</th>
-                    <th>Sales Person</th>
-                    <th>Submission Time</th>
-                </tr>
-            </thead>
-            <tbody id="crmDataBody">
-                <!-- Data will be dynamically populated here -->
-            </tbody>
-        </table>
+        <div class="data-retrieval-wrapper">
+            <div class="table-scrollable-container">
+                <table id="crmDataTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Person Name</th>
+                            <th>Company Name</th>
+                            <th>Department</th>
+                            <th>Case</th>
+                            <th>Next Steps</th>
+                            <th>Status</th>
+                            <th>Description</th>
+                            <th>Sales Person</th>
+                            <th>Submission Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="crmDataBody">
+                        <!-- Data will be dynamically populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <script src="retrieve_data.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const salesPersonFilterSelect = document.getElementById('salePerson');
+        
+        salesPersonFilterSelect.addEventListener('change', function() {
+            const salePersonOtherInput = document.getElementById('salePersonOther');
+            if (this.value === 'Other') {
+                salePersonOtherInput.style.display = 'inline-block';
+            } else {
+                salePersonOtherInput.style.display = 'none';
+            }
+        });
+    });
+    </script>
 </body>
 </html>
