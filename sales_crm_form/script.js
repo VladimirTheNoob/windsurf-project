@@ -88,11 +88,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Debugging utility function
+    const debugLog = (message, ...args) => {
+        const timestamp = new Date().toISOString();
+        console.log(`[LOGIN_DEBUG ${timestamp}] ${message}`, ...args);
+    };
+
+    // Environment detection utility
+    const getEnvironmentInfo = () => {
+        return {
+            hostname: window.location.hostname,
+            origin: window.location.origin,
+            protocol: window.location.protocol,
+            isLocalhost: ['localhost', '127.0.0.1'].includes(window.location.hostname),
+            userAgent: navigator.userAgent,
+            timestamp: new Date().toISOString()
+        };
+    };
+
     // Login form submission handler
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
         loginForm.addEventListener('submit', async function(event) {
             event.preventDefault();
+            
+            // Comprehensive environment logging
+            const envInfo = getEnvironmentInfo();
+            debugLog('Environment Details:', envInfo);
             
             // Clear previous messages
             const messageContainer = document.getElementById('message-container');
@@ -104,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Timeout to ensure we handle cases where fetch fails
             const submitTimer = setTimeout(() => {
-                console.warn('Login timeout: Forcing redirect');
+                debugLog('Login timeout triggered');
                 window.location.href = loginUrl;
             }, 5000);
 
@@ -113,51 +135,43 @@ document.addEventListener('DOMContentLoaded', function() {
             const password = document.getElementById('password').value;
             const nextPage = document.getElementById('nextPage').value;
 
+            // Log login attempt with sanitized information
+            debugLog('Login Attempt', {
+                loginIdentifier: loginIdentifier.replace(/(.{2}).*@/, '$1***@'),
+                nextPage: nextPage || 'No next page specified'
+            });
+
             // Logging function to capture detailed information
             const logDetailedError = (context, error, response) => {
-                console.group(`Login Error: ${context}`);
-                console.error('Error:', error);
-                
+                debugLog(`Detailed Error: ${context}`, {
+                    errorMessage: error.message,
+                    errorStack: error.stack,
+                    responseStatus: response ? response.status : 'N/A',
+                    responseHeaders: response ? Object.fromEntries(response.headers.entries()) : 'N/A'
+                });
+
                 if (response) {
-                    console.log('Response Status:', response.status);
-                    console.log('Response Headers:', Object.fromEntries(response.headers.entries()));
-                    
-                    // Try to get response text for additional context
                     response.text().then(text => {
-                        console.log('Response Text:', text);
-                        console.groupEnd();
+                        debugLog(`Response Text for ${context}:`, text);
                     }).catch(textError => {
-                        console.error('Could not read response text:', textError);
-                        console.groupEnd();
+                        debugLog(`Could not read response text: ${textError.message}`);
                     });
-                } else {
-                    console.groupEnd();
                 }
             };
 
             try {
-                console.log('Login attempt:', JSON.stringify({
-                    loginIdentifier,
-                    nextPage: nextPage || 'No next page specified'
-                }));
-
                 // Determine login endpoint based on environment
                 const loginEndpoints = (() => {
-                    const hostname = window.location.hostname;
-                    const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1';
-                    
-                    if (isLocalhost) {
-                        return ['/login', '/api/login'];
-                    }
-                    
-                    // Multiple fallback strategies for deployed environments
-                    return [
-                        `${window.location.origin}/login`,
-                        `${window.location.origin}/api/login`,
+                    const endpoints = [
+                        `${envInfo.origin}/login`,
+                        `${envInfo.origin}/api/login`,
                         '/login',
                         '/api/login',
                         'https://mavericka-crm.netlify.app/login'
                     ];
+
+                    debugLog('Configured Login Endpoints:', endpoints);
+                    return endpoints;
                 })();
 
                 // Function to attempt login with multiple endpoints
@@ -170,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     for (const endpoint of endpoints) {
                         try {
-                            console.log(`Attempting login with endpoint: ${endpoint}`);
+                            debugLog(`Attempting login with endpoint: ${endpoint}`);
                             
                             const response = await fetch(endpoint, {
                                 method: 'POST',
@@ -179,13 +193,14 @@ document.addEventListener('DOMContentLoaded', function() {
                                     'Content-Type': 'application/json',
                                     'Accept': 'application/json',
                                     'Cache-Control': 'no-cache',
-                                    'X-Requested-With': 'XMLHttpRequest'
+                                    'X-Requested-With': 'XMLHttpRequest',
+                                    'X-Debug-Env': JSON.stringify(envInfo)
                                 },
                                 body: JSON.stringify(loginPayload)
                             });
 
                             // Log full response details for debugging
-                            console.log('Login Response:', {
+                            debugLog('Login Response:', {
                                 endpoint,
                                 status: response.status,
                                 statusText: response.statusText,
@@ -200,10 +215,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             }
 
                             // Log unsuccessful responses
-                            console.warn(`Unsuccessful login attempt with ${endpoint}:`, 
+                            debugLog(`Unsuccessful login attempt with ${endpoint}:`, 
                                 response.status, response.statusText);
                         } catch (endpointError) {
-                            console.warn(`Failed to login with endpoint ${endpoint}:`, endpointError);
+                            debugLog(`Failed to login with endpoint ${endpoint}:`, endpointError);
                         }
                     }
                     
@@ -226,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     // Try to parse text response
                     const text = await response.text();
-                    console.warn('Non-JSON response text:', text);
+                    debugLog('Non-JSON response text:', text);
                     
                     // Attempt to parse as JSON
                     try {
@@ -242,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
 
-                console.log('Parsed login response:', result);
+                debugLog('Parsed login response:', result);
 
                 // Check for login success or handle potential error response
                 if (response.ok) {
@@ -255,11 +270,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Determine redirect URL
                     const redirectUrl = result.redirect || successRedirect;
-                    console.log('Redirecting to:', redirectUrl);
+                    debugLog('Redirecting to:', redirectUrl);
                     
                     // Ensure valid URL
                     const fullRedirectUrl = new URL(redirectUrl, window.location.origin).href;
-                    console.log('Full redirect URL:', fullRedirectUrl);
+                    debugLog('Full redirect URL:', fullRedirectUrl);
                     
                     // Redirect
                     window.location.href = fullRedirectUrl;
@@ -270,13 +285,13 @@ document.addEventListener('DOMContentLoaded', function() {
                             ${result.details || result.error || 'Login failed'}
                         </div>
                     `;
-                    console.error('Login failed:', result);
+                    debugLog('Login failed:', result);
                 }
             } catch (error) {
                 // Clear the timeout
                 clearTimeout(submitTimer);
 
-                console.error('Login error:', error);
+                debugLog('Login error:', error);
                 logDetailedError('Network Error', error);
                 
                 messageContainer.innerHTML = `
@@ -370,7 +385,14 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.message === 'Logout successful') {
                 // Prefer provided redirect, fallback to default
                 const redirectUrl = data.redirect || fallbackLoginUrl;
-                window.location.href = redirectUrl;
+                console.log('Redirecting to:', redirectUrl);
+                
+                // Ensure valid URL
+                const fullRedirectUrl = new URL(redirectUrl, window.location.origin).href;
+                console.log('Full redirect URL:', fullRedirectUrl);
+                
+                // Redirect
+                window.location.href = fullRedirectUrl;
             } else if (data.error) {
                 console.error('Logout failed:', data.error);
                 alert(data.error);
