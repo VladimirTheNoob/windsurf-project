@@ -1,8 +1,8 @@
 # SPA routing
 /* /index.html 200
 
-# API route redirects
-/login /login 200
-/logout /logout 200
-/api/login /login 200
-/api/logout /logout 200
+# Proxy routes
+/login https://mavericka-crm.netlify.app/login 200
+/logout https://mavericka-crm.netlify.app/logout 200
+/api/login https://mavericka-crm.netlify.app/login 200
+/api/logout https://mavericka-crm.netlify.app/logout 200

@@ -128,8 +128,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         return '/login';
                     }
                     
-                    // For deployed environments, use API route
-                    return '/api/login';
+                    // For deployed environments, use full Netlify URL
+                    return 'https://mavericka-crm.netlify.app/login';
                 })();
 
                 const response = await fetch(loginEndpoint, {
@@ -174,11 +174,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Attempt to parse as JSON
                     try {
                         result = JSON.parse(text);
-                    } catch {
+                    } catch (parseError) {
                         // Fallback error handling
                         result = {
                             error: 'Unexpected response format',
-                            details: text
+                            details: text,
+                            parseError: parseError.message
                         };
                     }
                 }
@@ -220,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Login error:', error);
                 messageContainer.innerHTML = `
                     <div class="error-message">
-                        Network error. Please try again.
+                        Network error: ${error.message}. Please try again.
                     </div>
                 `;
             }
