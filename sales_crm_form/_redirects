@@ -1,31 +1,24 @@
-# Redirect all routes to index.html for SPA routing
-/login /login.html 200
-/index /index.html 200
-/logout /index.html 200
-/retrieve_data /index.html 200
+# SPA routing
 /* /index.html 200
 
-# API route handling
+# API route redirects
 /api/login /login 200
 /api/logout /logout 200
 /api/submit_crm /submit_crm 200
 
 # Netlify headers configuration
-/api/login
-  Access-Control-Allow-Origin: *
-  Access-Control-Allow-Methods: POST, GET, OPTIONS
-  Access-Control-Allow-Headers: Content-Type, Authorization
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization, X-Requested-With"
+    Access-Control-Allow-Credentials = "true"
 
-/api/logout
-  Access-Control-Allow-Origin: *
-  Access-Control-Allow-Methods: POST, GET, OPTIONS
-  Access-Control-Allow-Headers: Content-Type, Authorization
-
-# Alternate headers configuration
 [[headers]]
   for = "/api/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
-    Access-Control-Allow-Methods = "POST, GET, OPTIONS"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
     Access-Control-Allow-Headers = "Content-Type, Authorization, X-Requested-With"
     Access-Control-Allow-Credentials = "true"
