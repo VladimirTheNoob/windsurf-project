@@ -88,22 +88,207 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Debugging utility function
-    const debugLog = (message, ...args) => {
-        const timestamp = new Date().toISOString();
-        console.log(`[LOGIN_DEBUG ${timestamp}] ${message}`, ...args);
-    };
-
-    // Environment detection utility
-    const getEnvironmentInfo = () => {
-        return {
-            hostname: window.location.hostname,
-            origin: window.location.origin,
-            protocol: window.location.protocol,
-            isLocalhost: ['localhost', '127.0.0.1'].includes(window.location.hostname),
-            userAgent: navigator.userAgent,
-            timestamp: new Date().toISOString()
+    // Comprehensive login function with multiple fallback strategies
+    const performLogin = async (loginIdentifier, password, nextPage = null) => {
+        // Logging utility
+        const debugLog = (message, ...args) => {
+            const timestamp = new Date().toISOString();
+            console.log(`[LOGIN_DEBUG ${timestamp}] ${message}`, ...args);
         };
+
+        // Environment detection
+        const getEnvironmentInfo = () => {
+            return {
+                hostname: window.location.hostname,
+                origin: window.location.origin,
+                protocol: window.location.protocol,
+                isLocalhost: ['localhost', '127.0.0.1'].includes(window.location.hostname),
+                userAgent: navigator.userAgent,
+                timestamp: new Date().toISOString()
+            };
+        };
+
+        const envInfo = getEnvironmentInfo();
+        debugLog('Environment Details:', envInfo);
+
+        // Determine login endpoints with multiple fallback strategies
+        const loginEndpoints = [
+            `${envInfo.origin}/login`,
+            `${envInfo.origin}/api/login`,
+            '/login',
+            '/api/login',
+            'https://mavericka-crm.netlify.app/login',
+            'https://mavericka-crm.netlify.app/api/login'
+        ];
+
+        // Login payload
+        const loginPayload = {
+            username: loginIdentifier,
+            password: password,
+            next: nextPage || 'No next page specified'
+        };
+
+        // Login methods to try
+        const loginMethods = ['POST', 'GET'];
+
+        // Fallback redirect URLs
+        const successRedirect = '/index';
+        const fallbackLoginUrl = '/login';
+
+        let loginResponse;
+        let loginError;
+
+        // Try multiple methods and endpoints
+        for (const method of loginMethods) {
+            for (const endpoint of loginEndpoints) {
+                try {
+                    debugLog(`Attempting login with endpoint: ${endpoint}, method: ${method}`);
+                    
+                    const response = await fetch(endpoint, {
+                        method: method,
+                        credentials: 'include',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                            'Cache-Control': 'no-cache',
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'X-Debug-Env': JSON.stringify(envInfo)
+                        },
+                        body: method === 'POST' ? JSON.stringify(loginPayload) : undefined
+                    });
+
+                    debugLog('Login Response:', {
+                        endpoint,
+                        method,
+                        status: response.status,
+                        statusText: response.statusText,
+                        headers: Object.fromEntries(response.headers.entries()),
+                        type: response.type,
+                        ok: response.ok
+                    });
+
+                    // Check for successful response
+                    if (response.ok || response.status === 200) {
+                        loginResponse = response;
+                        break;
+                    }
+
+                    // Handle HTML or non-JSON responses
+                    if (response.status === 404 || response.status === 500) {
+                        const text = await response.text();
+                        debugLog('Non-OK Response Text:', text);
+                        
+                        // Check if response is HTML error page
+                        if (text.includes('<!DOCTYPE') || text.includes('<html')) {
+                            debugLog('Received HTML error response');
+                            continue;
+                        }
+                    }
+                } catch (endpointError) {
+                    debugLog(`Login failed with endpoint ${endpoint}, method ${method}:`, endpointError);
+                    loginError = endpointError;
+                }
+            }
+
+            if (loginResponse) break;
+        }
+
+        // Fallback error handling if no successful response
+        if (!loginResponse) {
+            debugLog('All login attempts failed');
+            
+            const errorMessage = loginError 
+                ? `Login failed: ${loginError.message}` 
+                : 'Unable to log in. Please try again.';
+            
+            // Show error message
+            const messageContainer = document.getElementById('message-container');
+            if (messageContainer) {
+                messageContainer.innerHTML = `
+                    <div class="error-message">
+                        ${errorMessage}
+                    </div>
+                `;
+            }
+
+            // Redirect to login page
+            window.location.href = fallbackLoginUrl;
+            return;
+        }
+
+        // Parse response with multiple parsing strategies
+        let data;
+        const contentType = loginResponse.headers.get('content-type') || '';
+
+        try {
+            // Try JSON parsing first
+            if (contentType.includes('application/json')) {
+                data = await loginResponse.json();
+            } else {
+                // Fallback text parsing
+                const text = await loginResponse.text();
+                debugLog('Non-JSON login response:', text);
+
+                try {
+                    // Attempt to parse text as JSON
+                    data = JSON.parse(text);
+                } catch (parseError) {
+                    // Fallback parsing strategies
+                    if (text.includes('Login successful')) {
+                        data = { 
+                            message: 'Login successful', 
+                            redirect: successRedirect 
+                        };
+                    } else {
+                        data = {
+                            error: 'Invalid response format',
+                            details: text,
+                            parseError: parseError.message
+                        };
+                        debugLog('Failed to parse login response:', parseError);
+                    }
+                }
+            }
+        } catch (error) {
+            debugLog('Login response parsing error:', error);
+            data = { 
+                error: 'Unable to process login response', 
+                details: error.message 
+            };
+        }
+
+        debugLog('Parsed login response:', data);
+
+        // Handle login response
+        if (data.message === 'Login successful' || 
+            data.status === 'success' || 
+            data.success === true) {
+            // Determine redirect URL
+            const redirectUrl = data.redirect || successRedirect;
+            debugLog('Redirecting to:', redirectUrl);
+
+            // Ensure valid URL
+            const fullRedirectUrl = new URL(redirectUrl, window.location.origin).href;
+            debugLog('Full redirect URL:', fullRedirectUrl);
+
+            // Redirect
+            window.location.href = fullRedirectUrl;
+        } else {
+            // Show error message
+            const messageContainer = document.getElementById('message-container');
+            if (messageContainer) {
+                messageContainer.innerHTML = `
+                    <div class="error-message">
+                        ${data.error || data.details || 'Login failed. Please try again.'}
+                    </div>
+                `;
+            }
+
+            debugLog('Login failed:', data.error || 'Unknown error');
+            
+            // Redirect to login page
+            window.location.href = fallbackLoginUrl;
+        }
     };
 
     // Login form submission handler
@@ -112,194 +297,17 @@ document.addEventListener('DOMContentLoaded', function() {
         loginForm.addEventListener('submit', async function(event) {
             event.preventDefault();
             
-            // Comprehensive environment logging
-            const envInfo = getEnvironmentInfo();
-            debugLog('Environment Details:', envInfo);
-            
             // Clear previous messages
             const messageContainer = document.getElementById('message-container');
             messageContainer.innerHTML = '';
             
-            // Fallback URLs
-            const successRedirect = '/index';
-            const loginUrl = '/login';
-
-            // Timeout to ensure we handle cases where fetch fails
-            const submitTimer = setTimeout(() => {
-                debugLog('Login timeout triggered');
-                window.location.href = loginUrl;
-            }, 5000);
-
             // Collect login data
             const loginIdentifier = document.getElementById('loginIdentifier').value;
             const password = document.getElementById('password').value;
             const nextPage = document.getElementById('nextPage').value;
 
-            // Log login attempt with sanitized information
-            debugLog('Login Attempt', {
-                loginIdentifier: loginIdentifier.replace(/(.{2}).*@/, '$1***@'),
-                nextPage: nextPage || 'No next page specified'
-            });
-
-            // Logging function to capture detailed information
-            const logDetailedError = (context, error, response) => {
-                debugLog(`Detailed Error: ${context}`, {
-                    errorMessage: error.message,
-                    errorStack: error.stack,
-                    responseStatus: response ? response.status : 'N/A',
-                    responseHeaders: response ? Object.fromEntries(response.headers.entries()) : 'N/A'
-                });
-
-                if (response) {
-                    response.text().then(text => {
-                        debugLog(`Response Text for ${context}:`, text);
-                    }).catch(textError => {
-                        debugLog(`Could not read response text: ${textError.message}`);
-                    });
-                }
-            };
-
-            try {
-                // Determine login endpoint based on environment
-                const loginEndpoints = (() => {
-                    const endpoints = [
-                        `${envInfo.origin}/login`,
-                        `${envInfo.origin}/api/login`,
-                        '/login',
-                        '/api/login',
-                        'https://mavericka-crm.netlify.app/login'
-                    ];
-
-                    debugLog('Configured Login Endpoints:', endpoints);
-                    return endpoints;
-                })();
-
-                // Function to attempt login with multiple endpoints
-                const attemptLogin = async (endpoints) => {
-                    const loginPayload = {
-                        username: loginIdentifier,
-                        password: password,
-                        next: nextPage
-                    };
-
-                    for (const endpoint of endpoints) {
-                        try {
-                            debugLog(`Attempting login with endpoint: ${endpoint}`);
-                            
-                            const response = await fetch(endpoint, {
-                                method: 'POST',
-                                credentials: 'include',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'Accept': 'application/json',
-                                    'Cache-Control': 'no-cache',
-                                    'X-Requested-With': 'XMLHttpRequest',
-                                    'X-Debug-Env': JSON.stringify(envInfo)
-                                },
-                                body: JSON.stringify(loginPayload)
-                            });
-
-                            // Log full response details for debugging
-                            debugLog('Login Response:', {
-                                endpoint,
-                                status: response.status,
-                                statusText: response.statusText,
-                                headers: Object.fromEntries(response.headers.entries()),
-                                type: response.type,
-                                ok: response.ok
-                            });
-
-                            // If response is successful, return it
-                            if (response.ok) {
-                                return response;
-                            }
-
-                            // Log unsuccessful responses
-                            debugLog(`Unsuccessful login attempt with ${endpoint}:`, 
-                                response.status, response.statusText);
-                        } catch (endpointError) {
-                            debugLog(`Failed to login with endpoint ${endpoint}:`, endpointError);
-                        }
-                    }
-                    
-                    // If all endpoints fail
-                    throw new Error('All login endpoints failed');
-                };
-
-                // Attempt login
-                const response = await attemptLogin(loginEndpoints);
-
-                // Clear the timeout
-                clearTimeout(submitTimer);
-
-                // Handle response parsing
-                let result;
-                const contentType = response.headers.get('content-type') || '';
-                
-                if (contentType.includes('application/json')) {
-                    result = await response.json();
-                } else {
-                    // Try to parse text response
-                    const text = await response.text();
-                    debugLog('Non-JSON response text:', text);
-                    
-                    // Attempt to parse as JSON
-                    try {
-                        result = JSON.parse(text);
-                    } catch (parseError) {
-                        // Fallback error handling
-                        result = {
-                            error: 'Unexpected response format',
-                            details: text,
-                            parseError: parseError.message
-                        };
-                        logDetailedError('JSON Parsing', parseError, response);
-                    }
-                }
-
-                debugLog('Parsed login response:', result);
-
-                // Check for login success or handle potential error response
-                if (response.ok) {
-                    // Successful login
-                    messageContainer.innerHTML = `
-                        <div class="success-message">
-                            Login successful! Redirecting...
-                        </div>
-                    `;
-                    
-                    // Determine redirect URL
-                    const redirectUrl = result.redirect || successRedirect;
-                    debugLog('Redirecting to:', redirectUrl);
-                    
-                    // Ensure valid URL
-                    const fullRedirectUrl = new URL(redirectUrl, window.location.origin).href;
-                    debugLog('Full redirect URL:', fullRedirectUrl);
-                    
-                    // Redirect
-                    window.location.href = fullRedirectUrl;
-                } else {
-                    // Login failed
-                    messageContainer.innerHTML = `
-                        <div class="error-message">
-                            ${result.details || result.error || 'Login failed'}
-                        </div>
-                    `;
-                    debugLog('Login failed:', result);
-                }
-            } catch (error) {
-                // Clear the timeout
-                clearTimeout(submitTimer);
-
-                debugLog('Login error:', error);
-                logDetailedError('Network Error', error);
-                
-                messageContainer.innerHTML = `
-                    <div class="error-message">
-                        Network error: ${error.message}. Please try again.
-                    </div>
-                `;
-            }
+            // Perform login
+            await performLogin(loginIdentifier, password, nextPage);
         });
     }
 
