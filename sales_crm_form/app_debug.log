@@ -4920,3 +4920,130 @@ FROM crm_entry ORDER BY crm_entry.submission_time DESC
 2025-01-16 14:41:36,510 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:41:36] "[36mGET /styles.css HTTP/1.1[0m" 304 -
 2025-01-16 14:41:36,512 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:41:36] "[36mGET /logo.png HTTP/1.1[0m" 304 -
 2025-01-16 14:41:36,514 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:41:36] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 14:45:07,931 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:07] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 14:45:07,968 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:07] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:45:07,970 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:07] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 14:45:07,971 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:07] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:45:08,013 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 14:45:08,014 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 14:45:08,023 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 14:45:08,026 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:08] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 14:45:10,012 - root - INFO - Logging out user: Vladimir
+2025-01-16 14:45:10,013 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:10] "GET /logout HTTP/1.1" 200 -
+2025-01-16 14:45:10,023 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:10] "GET /login HTTP/1.1" 200 -
+2025-01-16 14:45:10,061 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:10] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:45:10,063 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:10] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:45:11,911 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:11] "POST /login HTTP/1.1" 200 -
+2025-01-16 14:45:11,924 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:11] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 14:45:11,960 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:11] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:45:11,963 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:11] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:45:11,964 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:11] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 14:45:14,089 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:14] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 14:45:14,131 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:14] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:45:14,133 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:14] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 14:45:14,134 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:14] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:45:14,159 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 14:45:14,161 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 14:45:14,170 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 14:45:14,174 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:14] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 14:45:14,858 - root - INFO - Logging out user: Vladimir
+2025-01-16 14:45:14,858 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:14] "GET /logout HTTP/1.1" 200 -
+2025-01-16 14:45:14,871 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:14] "GET /login HTTP/1.1" 200 -
+2025-01-16 14:45:14,907 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:14] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:45:14,909 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:14] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:45:16,428 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:16] "POST /login HTTP/1.1" 200 -
+2025-01-16 14:45:16,440 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:16] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 14:45:16,485 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:16] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:45:16,487 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:16] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:45:16,489 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:16] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 14:45:17,269 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:17] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 14:45:17,307 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:17] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:45:17,308 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:17] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:45:17,310 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:17] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 14:45:17,331 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 14:45:17,332 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 14:45:17,341 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 14:45:17,344 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:45:17] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 14:46:48,849 - root - INFO - Database tables created successfully
+2025-01-16 14:46:48,861 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 14:46:48,862 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 14:46:48,863 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 14:46:49,250 - root - INFO - Database tables created successfully
+2025-01-16 14:46:49,258 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 14:46:49,259 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 14:47:15,687 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:15] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 14:47:15,715 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:15] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:47:15,716 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:15] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:47:15,718 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:15] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 14:47:15,782 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 14:47:15,783 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 14:47:15,792 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 14:47:15,795 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:15] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 14:47:15,797 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:15] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-16 14:47:16,468 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:16] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-16 14:47:16,506 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:16] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:47:16,509 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:16] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:47:16,513 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:16] "GET /script.js HTTP/1.1" 200 -
+2025-01-16 14:47:17,248 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:17] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 14:47:17,283 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:17] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:47:17,285 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:17] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:47:17,286 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:17] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 14:47:17,313 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 14:47:17,314 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 14:47:17,322 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 14:47:17,325 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:17] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 14:47:18,089 - root - INFO - Logging out user: Vladimir
+2025-01-16 14:47:18,090 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:18] "GET /logout HTTP/1.1" 200 -
+2025-01-16 14:47:18,101 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:18] "GET /login HTTP/1.1" 200 -
+2025-01-16 14:47:18,144 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:18] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:47:18,147 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:18] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:47:19,908 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:19] "POST /login HTTP/1.1" 200 -
+2025-01-16 14:47:19,920 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:19] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 14:47:19,958 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:19] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:47:19,960 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:19] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:47:19,961 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:19] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 14:47:21,590 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:21] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 14:47:21,634 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:21] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:47:21,635 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:21] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:47:21,637 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:21] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 14:47:21,662 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 14:47:21,663 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 14:47:21,671 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 14:47:21,674 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:21] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 14:47:22,357 - root - INFO - Logging out user: Vladimir
+2025-01-16 14:47:22,358 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:22] "GET /logout HTTP/1.1" 200 -
+2025-01-16 14:47:22,368 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:22] "GET /login HTTP/1.1" 200 -
+2025-01-16 14:47:22,405 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:22] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:47:22,407 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:22] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:47:26,699 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:26] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-01-16 14:47:34,113 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:34] "POST /login HTTP/1.1" 200 -
+2025-01-16 14:47:34,126 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:34] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 14:47:34,171 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:34] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:47:34,174 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:34] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 14:47:34,174 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:34] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:47:36,694 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:36] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 14:47:36,735 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:36] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:47:36,737 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:36] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:47:36,739 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:36] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 14:47:36,763 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 14:47:36,764 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 14:47:36,773 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 14:47:36,776 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:36] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 14:47:38,658 - root - INFO - Logging out user: Vladimir
+2025-01-16 14:47:38,659 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:38] "GET /logout HTTP/1.1" 200 -
+2025-01-16 14:47:38,670 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:38] "GET /login HTTP/1.1" 200 -
+2025-01-16 14:47:38,713 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:38] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:47:38,717 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:38] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:47:40,481 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:40] "POST /login HTTP/1.1" 200 -
+2025-01-16 14:47:40,493 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:40] "[36mGET /index HTTP/1.1[0m" 304 -
+2025-01-16 14:47:40,534 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:40] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 14:47:40,539 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:40] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 14:47:40,539 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 14:47:40] "[36mGET /script.js HTTP/1.1[0m" 304 -

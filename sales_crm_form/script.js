@@ -91,9 +91,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Login form submission handler
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
-        loginForm.addEventListener('submit', function(event) {
+        loginForm.addEventListener('submit', async function(event) {
             event.preventDefault();
-
+            
+            // Clear previous messages
+            const messageContainer = document.getElementById('message-container');
+            messageContainer.innerHTML = '';
+            
             // Fallback URLs
             const successRedirect = '/index';
             const loginUrl = '/login';
@@ -105,22 +109,39 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 5000);
 
             // Collect login data
-            const formData = {
-                username: document.getElementById('username').value,
-                password: document.getElementById('password').value
-            };
+            const loginIdentifier = document.getElementById('loginIdentifier').value;
+            const password = document.getElementById('password').value;
+            const nextPage = document.getElementById('nextPage').value;
 
-            fetch('/login', {
-                method: 'POST',
-                credentials: 'same-origin',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'Cache-Control': 'no-cache'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => {
+            try {
+                console.log('Login attempt:', {
+                    loginIdentifier,
+                    nextPage: nextPage || 'No next page specified'
+                });
+
+                // Determine login endpoint (handle both local and deployed environments)
+                const loginEndpoint = window.location.hostname === 'localhost' 
+                    ? '/login' 
+                    : `https://${window.location.hostname}/login`;
+
+                const response = await fetch(loginEndpoint, {
+                    method: 'POST',
+                    credentials: 'same-origin',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Cache-Control': 'no-cache'
+                    },
+                    body: JSON.stringify({
+                        username: loginIdentifier,
+                        password: password,
+                        next: nextPage
+                    })
+                });
+
+                // Clear the timeout
+                clearTimeout(submitTimer);
+
                 // Log full response details for debugging
                 console.log('Login Response:', {
                     status: response.status,
@@ -130,76 +151,70 @@ document.addEventListener('DOMContentLoaded', function() {
                     ok: response.ok
                 });
 
-                // Check if response is OK
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                
-                // Try to get content type
+                // Handle non-JSON responses
+                let result;
                 const contentType = response.headers.get('content-type') || '';
-                console.log('Content-Type:', contentType);
-
-                // Multiple parsing strategies
+                
                 if (contentType.includes('application/json')) {
-                    return response.json();
-                }
-
-                // Try text parsing with multiple fallback strategies
-                return response.text().then(text => {
+                    result = await response.json();
+                } else {
+                    // Try to parse text response
+                    const text = await response.text();
                     console.warn('Non-JSON response text:', text);
                     
-                    // Strategy 1: Direct JSON parse
+                    // Attempt to parse as JSON
                     try {
-                        return JSON.parse(text);
-                    } catch (jsonParseError) {
-                        console.warn('JSON parse failed, trying alternative parsing');
+                        result = JSON.parse(text);
+                    } catch {
+                        // Fallback error handling
+                        result = {
+                            error: 'Unexpected response format',
+                            details: text
+                        };
                     }
+                }
 
-                    // Strategy 2: Check for specific success indicators
-                    if (text.includes('Login successful')) {
-                        return { message: 'Login successful', redirect: successRedirect };
-                    }
-
-                    // Strategy 3: Fallback to default
-                    console.error('Failed to parse login response');
-                    throw new Error('Invalid response format');
-                });
-            })
-            .then(data => {
-                // Clear the timeout
-                clearTimeout(submitTimer);
-
-                console.log('Parsed login response:', data);
+                console.log('Parsed login response:', result);
 
                 // Check for login success or handle potential error response
-                if (data.message === 'Login successful') {
-                    // Prefer provided redirect, fallback to default
-                    const redirectUrl = data.redirect || successRedirect;
-                    window.location.href = redirectUrl;
-                } else if (data.error) {
-                    console.error('Login failed:', data.error);
-                    alert(data.error);
-                    window.location.href = loginUrl;
+                if (response.ok) {
+                    // Successful login
+                    messageContainer.innerHTML = `
+                        <div class="success-message">
+                            Login successful! Redirecting...
+                        </div>
+                    `;
+                    
+                    // Determine redirect URL
+                    const redirectUrl = result.redirect || successRedirect;
+                    console.log('Redirecting to:', redirectUrl);
+                    
+                    // Ensure valid URL
+                    const fullRedirectUrl = new URL(redirectUrl, window.location.origin).href;
+                    console.log('Full redirect URL:', fullRedirectUrl);
+                    
+                    // Redirect
+                    window.location.href = fullRedirectUrl;
                 } else {
-                    console.error('Unexpected login response:', data);
-                    alert('Login failed. Redirecting to login.');
-                    window.location.href = loginUrl;
+                    // Login failed
+                    messageContainer.innerHTML = `
+                        <div class="error-message">
+                            ${result.details || result.error || 'Login failed'}
+                        </div>
+                    `;
+                    console.error('Login failed:', result);
                 }
-            })
-            .catch(error => {
+            } catch (error) {
                 // Clear the timeout
                 clearTimeout(submitTimer);
 
-                console.error('Login error details:', {
-                    name: error.name,
-                    message: error.message,
-                    stack: error.stack
-                });
-                
-                // Always provide a way to handle login failure
-                alert('An error occurred during login. Please try again.');
-                window.location.href = loginUrl;
-            });
+                console.error('Login error:', error);
+                messageContainer.innerHTML = `
+                    <div class="error-message">
+                        Network error. Please try again.
+                    </div>
+                `;
+            }
         });
     }
 
