@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory, redirect, url_for, render_template, flash
+from flask import Flask, request, jsonify, send_from_directory, redirect, url_for, render_template, flash, make_response
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
@@ -31,20 +31,26 @@ app = Flask(__name__,
             template_folder='.')
 app.config['SECRET_KEY'] = os.urandom(24)  # Important for session security
 
-# Configure CORS with more permissive settings
-CORS(app, resources={
+# Configure CORS with more flexible settings
+cors = CORS(app, resources={
     r"/*": {
-        "origins": "*",
+        "origins": [
+            "http://localhost:5000",
+            "http://127.0.0.1:5000",
+            "https://mavericka-crm.netlify.app",
+            "http://localhost:8000",  # Common dev server port
+            "http://127.0.0.1:8000",
+            "*"  # Be cautious with this in production
+        ],
+        "methods": ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
         "allow_headers": [
             "Content-Type", 
             "Authorization", 
-            "Accept", 
-            "Cache-Control", 
-            "X-Requested-With", 
-            "X-Debug-Env"
+            "Access-Control-Allow-Credentials", 
+            "X-Requested-With",
+            "Accept"
         ],
-        "supports_credentials": True,
-        "methods": ["GET", "POST", "OPTIONS", "HEAD"]
+        "supports_credentials": True
     }
 })
 
@@ -177,7 +183,13 @@ def generate_token(user):
 def login():
     # Handle CORS preflight request
     if request.method == 'OPTIONS':
-        return '', 204
+        # Preflight response
+        response = make_response()
+        response.headers.add("Access-Control-Allow-Origin", request.headers.get('Origin', '*'))
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+        response.headers.add('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
+        response.headers.add('Access-Control-Allow-Credentials', 'true')
+        return response, 204
 
     # Get next page from request or query parameters
     next_page = request.form.get('nextPage') or request.args.get('next') or url_for('index')
@@ -185,11 +197,16 @@ def login():
     if request.method == 'POST':
         # Parse JSON data
         data = request.get_json()
+        
+        # Log incoming request details for debugging
+        logging.info(f"Login request received. Method: {request.method}, Data: {data}")
+
         login_identifier = data.get('loginIdentifier')
         password = data.get('password')
 
         # Validate input
         if not login_identifier or not password:
+            logging.warning("Login attempt with missing credentials")
             return jsonify({
                 'success': False,
                 'error': 'Missing login credentials',
@@ -235,6 +252,10 @@ def login():
                     samesite='Strict', 
                     max_age=3600  # 1 hour
                 )
+
+                # Add CORS headers
+                response.headers.add("Access-Control-Allow-Origin", request.headers.get('Origin', '*'))
+                response.headers.add('Access-Control-Allow-Credentials', 'true')
 
                 return response, 200
             else:

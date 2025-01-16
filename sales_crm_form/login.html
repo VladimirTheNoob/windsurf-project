@@ -74,6 +74,16 @@
             }
         }
 
+        // Function to display detailed error message
+        function displayErrorMessage(message, details = '') {
+            messageContainer.innerHTML = `
+                <div class="error-message">
+                    ${message}
+                    ${details ? `<small>${details}</small>` : ''}
+                </div>
+            `;
+        }
+
         loginForm.addEventListener('submit', async function(event) {
             event.preventDefault();
             
@@ -100,9 +110,9 @@
 
             // Determine login endpoints with multiple fallback strategies
             const loginEndpoints = [
+                '/login',  // Relative path first
                 `${envInfo.origin}/login`,  // Current origin
                 `${envInfo.origin}/api/login`,
-                '/login',
                 'http://localhost:5000/login',
                 'http://127.0.0.1:5000/login'
             ];
@@ -150,6 +160,10 @@
 
                             // Check for HTML error pages
                             if (text.includes('<!DOCTYPE') || text.includes('<html')) {
+                                displayErrorMessage(
+                                    'Server Error', 
+                                    'Received HTML instead of JSON. Check server configuration.'
+                                );
                                 throw new Error('Received HTML instead of JSON');
                             }
 
@@ -157,6 +171,10 @@
                             try {
                                 responseData = JSON.parse(text);
                             } catch (parseError) {
+                                displayErrorMessage(
+                                    'Response Parsing Error', 
+                                    'Unable to parse server response.'
+                                );
                                 responseData = { 
                                     message: 'Login response could not be parsed', 
                                     details: text 
@@ -165,6 +183,10 @@
                         }
                     } catch (parseError) {
                         console.error('Response parsing error:', parseError);
+                        displayErrorMessage(
+                            'Response Error', 
+                            'Failed to parse server response.'
+                        );
                         throw parseError;
                     }
 
@@ -179,16 +201,25 @@
 
                     // Handle specific error scenarios
                     if (response.status === 401 || response.status === 403) {
-                        messageContainer.innerHTML = `
-                            <div class="error-message">
-                                Invalid credentials
-                                ${responseData.details ? `<small>${responseData.details}</small>` : ''}
-                            </div>
-                        `;
+                        displayErrorMessage(
+                            'Invalid Credentials', 
+                            responseData.details || 'Please check your username/email and password.'
+                        );
                         return;
                     }
                 } catch (endpointError) {
                     console.error(`Login failed with endpoint ${endpoint}:`, endpointError);
+                    
+                    // Specific error handling for connection issues
+                    if (endpointError.name === 'TypeError' && 
+                        (endpointError.message.includes('Failed to fetch') || 
+                         endpointError.message.includes('connection'))) {
+                        displayErrorMessage(
+                            'Connection Error', 
+                            `Unable to connect to ${endpoint}. Please check your server.`
+                        );
+                    }
+                    
                     loginError = endpointError;
                 }
             }
@@ -199,11 +230,7 @@
                     ? `Login failed: ${loginError.message}` 
                     : 'Unable to log in. Please try again.';
                 
-                messageContainer.innerHTML = `
-                    <div class="error-message">
-                        ${errorMessage}
-                    </div>
-                `;
+                displayErrorMessage('Login Failed', errorMessage);
                 return;
             }
 
