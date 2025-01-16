@@ -232,6 +232,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 ok: response.ok
             });
 
+            // Treat 401 as a potential logout success (already logged out)
+            if (response.status === 401) {
+                return { 
+                    message: 'Logout successful', 
+                    redirect: fallbackLoginUrl 
+                };
+            }
+
             // Check if response is OK
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);

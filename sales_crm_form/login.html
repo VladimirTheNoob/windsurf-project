@@ -15,7 +15,7 @@
         
         <form id="loginForm" class="login-form">
             <!-- Hidden input for next parameter -->
-            <input type="hidden" id="nextPage" name="next" value="{{ request.args.get('next') or '' }}">
+            <input type="hidden" id="nextPage" name="next" value="">
             
             <div class="form-group">
                 <label for="loginIdentifier">Username or Email:</label>
@@ -30,7 +30,7 @@
             
             <div class="form-actions">
                 <button type="submit">Login</button>
-                <a href="{{ url_for('register') }}" class="register-link">Register</a>
+                <a href="/register" class="register-link">Register</a>
             </div>
             
             <div id="message-container" class="message-container"></div>
@@ -43,6 +43,11 @@
         const messageContainer = document.getElementById('message-container');
         const nextPageInput = document.getElementById('nextPage');
         const loginIdentifierInput = document.getElementById('loginIdentifier');
+
+        // Try to get next page from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const nextPage = urlParams.get('next') || '';
+        nextPageInput.value = nextPage;
 
         loginForm.addEventListener('submit', async function(event) {
             event.preventDefault();
@@ -93,17 +98,17 @@
                     const redirectUrl = result.redirect || '/index';
                     console.log('Redirecting to:', redirectUrl);
                     
-                    // Redirect with full URL handling
-                    if (redirectUrl.startsWith('http') || redirectUrl.startsWith('//')) {
-                        window.location.href = redirectUrl;
-                    } else {
-                        window.location.href = window.location.origin + redirectUrl;
-                    }
+                    // Ensure valid URL
+                    const fullRedirectUrl = new URL(redirectUrl, window.location.origin).href;
+                    console.log('Full redirect URL:', fullRedirectUrl);
+                    
+                    // Redirect
+                    window.location.href = fullRedirectUrl;
                 } else {
                     // Login failed
                     messageContainer.innerHTML = `
                         <div class="error-message">
-                            ${result.error || 'Login failed'}
+                            ${result.details || result.error || 'Login failed'}
                         </div>
                     `;
                     console.error('Login failed:', result);

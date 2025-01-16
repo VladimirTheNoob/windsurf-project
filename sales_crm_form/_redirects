@@ -1,1 +1,6 @@
+# Redirect all routes to index.html for SPA routing
+/login /index.html 200
+/index /index.html 200
+/logout /index.html 200
+/retrieve_data /index.html 200
 /* /index.html 200

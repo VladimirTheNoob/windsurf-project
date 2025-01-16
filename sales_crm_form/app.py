@@ -143,67 +143,61 @@ def is_valid_email(email):
     return re.match(email_regex, email) is not None
 
 # Authentication Routes
-@app.route('/', methods=['GET'])
-def root():
-    return redirect(url_for('login'))
-
+@app.route('/')
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    # Get the 'next' parameter from request
-    next_page = request.args.get('next') or request.form.get('next')
-
-    # If user is already logged in, redirect to home or requested page
+    # If already logged in, redirect to index
     if current_user.is_authenticated:
-        logging.info(f"User already authenticated. Redirecting to {next_page or 'index'}")
-        if next_page:
-            return redirect(next_page)
         return redirect(url_for('index'))
-
+    
+    # Handle login form submission
     if request.method == 'POST':
-        # Attempt to parse JSON or form data
-        if request.is_json:
-            data = request.get_json()
-        else:
-            data = request.form
-
-        # Support both email and username login
-        login_identifier = data.get('username') or data.get('email')
-        password = data.get('password')
-
+        # Get JSON data from request
+        data = request.get_json()
+        
         # Validate input
-        if not login_identifier or not password:
-            logging.warning("Login attempt with missing credentials")
-            return jsonify({'error': 'Invalid credentials'}), 400
-
+        if not data or ('username' not in data and 'loginIdentifier' not in data) or 'password' not in data:
+            return jsonify({
+                'error': 'Invalid input',
+                'details': 'Username/Email and password are required'
+            }), 400
+        
+        # Support both username and loginIdentifier
+        login_identifier = data.get('username') or data.get('loginIdentifier')
+        password = data['password']
+        
         # Find user by email or username (case-insensitive)
         user = (User.query.filter(func.lower(User.email) == func.lower(login_identifier)).first() or 
                 User.query.filter(func.lower(User.username) == func.lower(login_identifier)).first())
-
-        # Verify credentials
+        
+        # Validate credentials
         if user and bcrypt.check_password_hash(user.password, password):
-            # Login successful
+            # Log in the user
             login_user(user)
             
-            # Log login success
-            logging.info(f"User {user.username} logged in successfully")
+            # Determine redirect URL (use next parameter if provided)
+            next_page = data.get('next') or url_for('index')
             
-            # Determine redirect URL
-            redirect_url = next_page or url_for('index')
-            logging.info(f"Redirecting to: {redirect_url}")
-            
-            # Return JSON response with redirect information
+            # Return success response with redirect
             return jsonify({
-                'message': 'Login successful', 
-                'redirect': redirect_url
+                'message': 'Login successful',
+                'redirect': next_page
             }), 200
         else:
-            # Login failed
-            logging.warning(f"Failed login attempt for identifier: {login_identifier}")
-            return jsonify({'error': 'Invalid username or password'}), 401
+            # Invalid credentials
+            return jsonify({
+                'error': 'Login failed',
+                'details': 'Invalid username, email, or password'
+            }), 401
+    
+    # GET request - render login page
+    return send_from_directory('.', 'login.html')
 
-    # GET request: render login page with next parameter
-    logging.info(f"Rendering login page with next parameter: {next_page}")
-    return render_template('login.html', next=next_page)
+@app.route('/index')
+@login_required
+def index():
+    # Serve index.html for authenticated users
+    return send_from_directory('.', 'index.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -241,12 +235,18 @@ def register():
         flash('An error occurred during registration')
         return render_template('register.html'), 500
 
-@app.route('/logout')
-@login_required
+@app.route('/logout', methods=['GET'])
 def logout():
+    # If user is not authenticated, return a success-like response
+    if not current_user.is_authenticated:
+        return jsonify({
+            'message': 'Logout successful',
+            'redirect': url_for('login', _external=True)
+        }), 200
+    
     try:
         # Log the user being logged out
-        username = current_user.username if current_user.is_authenticated else "Unknown User"
+        username = current_user.username
         logging.info(f"Logging out user: {username}")
         
         # Perform logout
@@ -275,16 +275,6 @@ def logout():
         return error_response, 500
 
 # Protect routes that require authentication
-@app.route('/index')
-@login_required
-def index():
-    try:
-        # Render the index template with the current user's information
-        return render_template('index.html', username=current_user.username)
-    except Exception as e:
-        logging.error(f"Error serving index: {str(e)}")
-        return "An error occurred", 500
-
 @app.route('/retrieve_data')
 def retrieve_data():
     # Check if user is authenticated
