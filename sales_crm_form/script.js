@@ -113,6 +113,28 @@ document.addEventListener('DOMContentLoaded', function() {
             const password = document.getElementById('password').value;
             const nextPage = document.getElementById('nextPage').value;
 
+            // Logging function to capture detailed information
+            const logDetailedError = (context, error, response) => {
+                console.group(`Login Error: ${context}`);
+                console.error('Error:', error);
+                
+                if (response) {
+                    console.log('Response Status:', response.status);
+                    console.log('Response Headers:', Object.fromEntries(response.headers.entries()));
+                    
+                    // Try to get response text for additional context
+                    response.text().then(text => {
+                        console.log('Response Text:', text);
+                        console.groupEnd();
+                    }).catch(textError => {
+                        console.error('Could not read response text:', textError);
+                        console.groupEnd();
+                    });
+                } else {
+                    console.groupEnd();
+                }
+            };
+
             try {
                 console.log('Login attempt:', JSON.stringify({
                     loginIdentifier,
@@ -128,39 +150,68 @@ document.addEventListener('DOMContentLoaded', function() {
                         return '/login';
                     }
                     
-                    // For deployed environments, use full Netlify URL
-                    return 'https://mavericka-crm.netlify.app/login';
+                    // Multiple fallback strategies for deployed environments
+                    const deployedEndpoints = [
+                        'https://mavericka-crm.netlify.app/login',
+                        '/login',
+                        '/api/login'
+                    ];
+                    
+                    return deployedEndpoints;
                 })();
 
-                const response = await fetch(loginEndpoint, {
-                    method: 'POST',
-                    credentials: 'include',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json',
-                        'Cache-Control': 'no-cache',
-                        'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    body: JSON.stringify({
-                        username: loginIdentifier,
-                        password: password,
-                        next: nextPage
-                    })
-                });
+                // Function to attempt login with multiple endpoints
+                const attemptLogin = async (endpoints) => {
+                    for (const endpoint of Array.isArray(endpoints) ? endpoints : [endpoints]) {
+                        try {
+                            console.log(`Attempting login with endpoint: ${endpoint}`);
+                            
+                            const response = await fetch(endpoint, {
+                                method: 'POST',
+                                credentials: 'include',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Accept': 'application/json',
+                                    'Cache-Control': 'no-cache',
+                                    'X-Requested-With': 'XMLHttpRequest'
+                                },
+                                body: JSON.stringify({
+                                    username: loginIdentifier,
+                                    password: password,
+                                    next: nextPage
+                                })
+                            });
+
+                            // Log full response details for debugging
+                            console.log('Login Response:', {
+                                endpoint,
+                                status: response.status,
+                                statusText: response.statusText,
+                                headers: Object.fromEntries(response.headers.entries()),
+                                type: response.type,
+                                ok: response.ok
+                            });
+
+                            // If response is successful, return it
+                            if (response.ok) {
+                                return response;
+                            }
+                        } catch (endpointError) {
+                            console.warn(`Failed to login with endpoint ${endpoint}:`, endpointError);
+                        }
+                    }
+                    
+                    // If all endpoints fail
+                    throw new Error('All login endpoints failed');
+                };
+
+                // Attempt login
+                const response = await attemptLogin(loginEndpoint);
 
                 // Clear the timeout
                 clearTimeout(submitTimer);
 
-                // Log full response details for debugging
-                console.log('Login Response:', {
-                    status: response.status,
-                    statusText: response.statusText,
-                    headers: Object.fromEntries(response.headers.entries()),
-                    type: response.type,
-                    ok: response.ok
-                });
-
-                // Handle non-JSON responses
+                // Handle response parsing
                 let result;
                 const contentType = response.headers.get('content-type') || '';
                 
@@ -181,6 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             details: text,
                             parseError: parseError.message
                         };
+                        logDetailedError('JSON Parsing', parseError, response);
                     }
                 }
 
@@ -219,6 +271,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 clearTimeout(submitTimer);
 
                 console.error('Login error:', error);
+                logDetailedError('Network Error', error);
+                
                 messageContainer.innerHTML = `
                     <div class="error-message">
                         Network error: ${error.message}. Please try again.
