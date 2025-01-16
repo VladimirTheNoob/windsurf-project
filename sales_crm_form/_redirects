@@ -28,3 +28,5 @@ https://*.netlify.app/login/* /login 200
 /api/logout/* /index.html 200
 /signout /index.html 200
 /signout/* /index.html 200
+/auth/logout /index.html 200
+/auth/logout/* /index.html 200
