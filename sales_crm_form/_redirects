@@ -10,12 +10,7 @@
 /api/logout /logout 200
 /api/submit_crm /submit_crm 200
 
-# Proxy configuration for API routes
-/api/login /login 200!
-/api/logout /logout 200!
-/api/submit_crm /submit_crm 200!
-
-# CORS configuration
+# Headers for CORS and API routes
 /api/login
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: POST, GET, OPTIONS
@@ -25,3 +20,18 @@
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: POST, GET, OPTIONS
   Access-Control-Allow-Headers: Content-Type, Authorization
+
+# Netlify headers configuration
+[[headers]]
+  for = "/api/login"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "POST, GET, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
+
+[[headers]]
+  for = "/api/logout"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "POST, GET, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
