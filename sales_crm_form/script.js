@@ -98,24 +98,45 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .then(response => {
+            // Log full response details for debugging
+            console.log('Logout Response:', {
+                status: response.status,
+                statusText: response.statusText,
+                headers: Object.fromEntries(response.headers.entries()),
+                type: response.type,
+                ok: response.ok
+            });
+
             // Check if response is OK
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             
-            // Clone the response to allow multiple reads
-            const responseClone = response.clone();
-            
-            // First try JSON parsing
-            return response.json().catch(() => {
-                // If JSON fails, try text parsing on the cloned response
-                return responseClone.text().then(text => {
-                    console.warn('Non-JSON response:', text);
+            // Try to get content type
+            const contentType = response.headers.get('content-type') || '';
+            console.log('Content-Type:', contentType);
+
+            // If content type suggests JSON, parse JSON
+            if (contentType.includes('application/json')) {
+                return response.json();
+            }
+
+            // If not JSON, try to get text and log it
+            return response.text().then(text => {
+                console.warn('Non-JSON response text:', text);
+                
+                // Try to parse text as JSON if possible
+                try {
+                    return JSON.parse(text);
+                } catch (parseError) {
+                    console.error('Failed to parse response text as JSON:', parseError);
                     throw new Error('Invalid response format');
-                });
+                }
             });
         })
         .then(data => {
+            console.log('Parsed logout response:', data);
+
             // Check for logout success or handle potential error response
             if (data.message === 'Logout successful') {
                 // Use full URL for redirection
@@ -129,7 +150,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .catch(error => {
-            console.error('Logout error:', error);
+            console.error('Logout error details:', {
+                name: error.name,
+                message: error.message,
+                stack: error.stack
+            });
             
             // More specific error handling
             if (error.message.includes('Invalid response')) {
