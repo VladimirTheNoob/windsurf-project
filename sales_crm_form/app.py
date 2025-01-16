@@ -13,6 +13,7 @@ import logging
 import urllib.parse
 import jwt
 import time
+import json
 
 # Configure logging
 logging.basicConfig(
@@ -180,33 +181,48 @@ def generate_token(user):
 
 # Authentication Routes
 @app.route('/login', methods=['GET', 'POST', 'OPTIONS'])
+@app.route('/api/login', methods=['GET', 'POST', 'OPTIONS'])
 def login():
-    # Handle CORS preflight request
+    # Handle CORS preflight request for both routes
     if request.method == 'OPTIONS':
         # Preflight response
         response = make_response()
-        response.headers.add("Access-Control-Allow-Origin", request.headers.get('Origin', '*'))
+        
+        # Allow origin from the request or use a default
+        origin = request.headers.get('Origin', '*')
+        response.headers.add("Access-Control-Allow-Origin", origin)
         response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
         response.headers.add('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
         response.headers.add('Access-Control-Allow-Credentials', 'true')
+        
         return response, 204
 
-    # Get next page from request or query parameters
-    next_page = request.form.get('nextPage') or request.args.get('next') or url_for('index')
-
+    # Determine the request content type and parse accordingly
     if request.method == 'POST':
-        # Parse JSON data
-        data = request.get_json()
+        # Try parsing JSON first
+        data = request.get_json(silent=True)
         
-        # Log incoming request details for debugging
-        logging.info(f"Login request received. Method: {request.method}, Data: {data}")
+        # If JSON parsing fails, try form data
+        if not data:
+            data = request.form.to_dict()
+        
+        # If still no data, try parsing raw data
+        if not data:
+            try:
+                data = json.loads(request.data.decode('utf-8'))
+            except:
+                data = {}
 
-        login_identifier = data.get('loginIdentifier')
+        # Log incoming request details for debugging
+        app.logger.info(f"Login request received. Method: {request.method}, Data: {data}")
+
+        # Extract login credentials
+        login_identifier = data.get('loginIdentifier') or data.get('username') or data.get('email')
         password = data.get('password')
 
         # Validate input
         if not login_identifier or not password:
-            logging.warning("Login attempt with missing credentials")
+            app.logger.warning("Login attempt with missing credentials")
             return jsonify({
                 'success': False,
                 'error': 'Missing login credentials',
@@ -225,7 +241,7 @@ def login():
             # Verify credentials
             if user and user.check_password(password):
                 # Log successful login attempt
-                logging.info(f"Successful login for user: {user.username}")
+                app.logger.info(f"Successful login for user: {user.username}")
 
                 # Create a session for the user
                 login_user(user)
@@ -233,13 +249,20 @@ def login():
                 # Generate a token (optional, for client-side storage)
                 token = generate_token(user)
 
+                # Determine next page (with fallback)
+                next_page = (
+                    data.get('nextPage') or 
+                    request.args.get('next') or 
+                    url_for('index')
+                )
+
                 # Prepare response
                 response_data = {
                     'success': True,
                     'message': 'Login successful',
                     'username': user.username,
                     'token': token,
-                    'nextPage': next_page or url_for('index')
+                    'nextPage': next_page
                 }
 
                 # Create JSON response
@@ -253,14 +276,15 @@ def login():
                     max_age=3600  # 1 hour
                 )
 
-                # Add CORS headers
-                response.headers.add("Access-Control-Allow-Origin", request.headers.get('Origin', '*'))
+                # Add CORS headers dynamically
+                origin = request.headers.get('Origin', '*')
+                response.headers.add("Access-Control-Allow-Origin", origin)
                 response.headers.add('Access-Control-Allow-Credentials', 'true')
 
                 return response, 200
             else:
                 # Log failed login attempt
-                logging.warning(f"Failed login attempt for identifier: {login_identifier}")
+                app.logger.warning(f"Failed login attempt for identifier: {login_identifier}")
                 
                 return jsonify({
                     'success': False,
@@ -270,7 +294,7 @@ def login():
 
         except Exception as e:
             # Log unexpected errors
-            logging.error(f"Login error: {str(e)}", exc_info=True)
+            app.logger.error(f"Login error: {str(e)}", exc_info=True)
             
             return jsonify({
                 'success': False,
@@ -278,8 +302,15 @@ def login():
                 'details': str(e)
             }), 500
 
-    # GET request: render login page
-    return render_template('login.html', next=next_page)
+    # GET request: render login page or return JSON
+    if request.headers.get('Accept', '').find('application/json') != -1:
+        return jsonify({
+            'message': 'Login page',
+            'methods': ['POST']
+        }), 200
+    
+    # Render login page for web browsers
+    return render_template('login.html')
 
 @app.route('/index')
 @login_required

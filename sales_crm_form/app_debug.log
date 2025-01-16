@@ -6569,3 +6569,26 @@ ly
 2025-01-16 16:44:46,000 - werkzeug - INFO -  * Restarting with stat
 2025-01-16 16:44:46,000 - werkzeug - INFO -  * Restarting with stat
 2025-01-16 16:44:46,070 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:59:00,254 - root - INFO - Database tables created successfully
+2025-01-16 16:59:00,261 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.8.0.4:5000
+2025-01-16 16:59:00,262 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 16:59:25,422 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:25] "GET /login HTTP/1.1" 200 -
+2025-01-16 16:59:25,477 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:25] "GET /styles.css HTTP/1.1" 200 -
+2025-01-16 16:59:25,675 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:25] "GET /logo.png HTTP/1.1" 200 -
+2025-01-16 16:59:26,048 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:26] "GET /favicon.ico HTTP/1.1" 200 -
+2025-01-16 16:59:31,632 - app - INFO - Login request received. Method: POST, Data: {'loginIdentifier': 'vladimir@mavericka.ru', 'password': '1111', 'nextPage': '/index.html'}
+2025-01-16 16:59:31,950 - app - INFO - Successful login for user: Vladimir
+2025-01-16 16:59:31,951 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:31] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:59:32,276 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:32] "GET /index.html HTTP/1.1" 200 -
+2025-01-16 16:59:32,309 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:32] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:59:32,562 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:32] "GET /script.js HTTP/1.1" 200 -
+2025-01-16 16:59:32,624 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:32] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:59:34,979 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:34] "GET /retrieve_data.html HTTP/1.1" 200 -
+2025-01-16 16:59:35,074 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:35] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 16:59:35,244 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:35] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 16:59:35,322 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:35] "GET /retrieve_data.js HTTP/1.1" 200 -
+2025-01-16 16:59:35,347 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:35] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 16:59:39,632 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:59:39] "GET /get_crm_entries HTTP/1.1" 200 -

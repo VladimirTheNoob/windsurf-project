@@ -111,8 +111,11 @@
             // Determine login endpoints with multiple fallback strategies
             const loginEndpoints = [
                 '/login',  // Relative path first
+                '/api/login',  // Alternative API route
                 `${envInfo.origin}/login`,  // Current origin
                 `${envInfo.origin}/api/login`,
+                'https://mavericka-crm.netlify.app/login',  // Netlify deployment
+                'https://mavericka-crm.netlify.app/api/login',
                 'http://localhost:5000/login',
                 'http://127.0.0.1:5000/login'
             ];
