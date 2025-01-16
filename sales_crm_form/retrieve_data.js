@@ -32,49 +32,102 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to fetch CRM entries
     async function fetchCRMEntries(salePerson = '', status = '') {
-        try {
-            // Construct URL with optional filters
-            const url = new URL('/get_crm_entries', window.location.origin);
-            
-            // Add filters to URL
-            if (salePerson) {
-                url.searchParams.append('sale_person', salePerson);
-                debugLog('Applying Sale Person Filter:', salePerson);
-            }
-            if (status) {
-                url.searchParams.append('status', status);
-                debugLog('Applying Status Filter:', status);
-            }
+        // Determine possible endpoints
+        const endpoints = [
+            `/get_crm_entries`,
+            `/api/get_crm_entries`,
+            `${window.location.origin}/get_crm_entries`,
+            `${window.location.origin}/api/get_crm_entries`,
+            `http://localhost:5000/get_crm_entries`,
+            `http://127.0.0.1:5000/get_crm_entries`
+        ];
 
-            debugLog('Fetching CRM Entries from URL:', url.toString());
-
-            const response = await fetch(url, {
-                method: 'GET',
-                credentials: 'same-origin',
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            debugLog('Response Status:', response.status, response.statusText);
-
-            // Check for non-OK responses
-            if (!response.ok) {
-                const errorText = await response.text();
-                debugLog('Error Response Text:', errorText);
+        for (const baseUrl of endpoints) {
+            try {
+                // Construct URL with optional filters
+                const url = new URL(baseUrl, window.location.origin);
                 
-                throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+                // Add filters to URL
+                if (salePerson) {
+                    url.searchParams.append('sale_person', salePerson);
+                    debugLog('Applying Sale Person Filter:', salePerson);
+                }
+                if (status) {
+                    url.searchParams.append('status', status);
+                    debugLog('Applying Status Filter:', status);
+                }
+
+                debugLog('Fetching CRM Entries from URL:', url.toString());
+
+                const response = await fetch(url, {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                debugLog('Response Status:', response.status, response.statusText);
+
+                // Check for non-OK responses
+                if (!response.ok) {
+                    const contentType = response.headers.get('content-type') || '';
+                    let errorText;
+
+                    try {
+                        // Try parsing as JSON first
+                        if (contentType.includes('application/json')) {
+                            errorText = await response.json();
+                        } else {
+                            // Fallback to text
+                            errorText = await response.text();
+                        }
+                    } catch (parseError) {
+                        errorText = 'Unable to parse error response';
+                    }
+
+                    debugLog('Error Response:', errorText);
+                    
+                    // If this endpoint fails, continue to next
+                    continue;
+                }
+
+                // Parse response
+                const contentType = response.headers.get('content-type') || '';
+                let data;
+
+                try {
+                    if (contentType.includes('application/json')) {
+                        data = await response.json();
+                    } else {
+                        // Attempt to parse text as JSON
+                        const text = await response.text();
+                        debugLog('Non-JSON response:', text);
+                        
+                        // Check for HTML error pages
+                        if (text.includes('<!DOCTYPE') || text.includes('<html')) {
+                            throw new Error('Received HTML instead of JSON');
+                        }
+
+                        data = JSON.parse(text);
+                    }
+                } catch (parseError) {
+                    debugLog('Response parsing error:', parseError);
+                    continue;
+                }
+
+                debugLog('Retrieved CRM Entries:', data);
+                return data;
+            } catch (error) {
+                debugLog(`Error fetching from ${baseUrl}:`, error);
+                // Continue to next endpoint
+                continue;
             }
-
-            const data = await response.json();
-            debugLog('Retrieved CRM Entries:', data);
-
-            return data;
-        } catch (error) {
-            debugLog('Error fetching CRM entries:', error);
-            alert(`Error retrieving entries: ${error.message}`);
-            return [];
         }
+
+        // If all endpoints fail
+        alert('Unable to retrieve CRM entries. Please check your connection.');
+        return [];
     }
 
     // Function to populate table

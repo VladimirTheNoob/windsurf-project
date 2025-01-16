@@ -393,66 +393,63 @@ def submit_crm():
             'details': str(e)
         }), 500
 
-@app.route('/get_crm_entries', methods=['GET'])
+@app.route('/get_crm_entries', methods=['GET', 'POST', 'OPTIONS'])
 @login_required
 def get_crm_entries():
+    # Handle CORS preflight request
+    if request.method == 'OPTIONS':
+        return '', 204
+
     try:
-        # Get query parameters
-        sale_person = request.args.get('sale_person', '').strip()
-        status = request.args.get('status', '').strip()
+        # Extract query parameters for filtering
+        sale_person = request.args.get('sale_person', type=str)
+        status = request.args.get('status', type=str)
 
-        # Log incoming filter parameters with more details
-        logging.info(f"Retrieving CRM entries - Sale Person: '{sale_person}', Status: '{status}'")
-
-        # Start with base query
+        # Base query
         query = CRMEntry.query
 
-        # Apply sale person filter with multiple matching strategies
+        # Apply filters if provided
         if sale_person:
-            # Try multiple matching strategies
-            query = query.filter(
-                or_(
-                    # Exact case-insensitive match
-                    func.lower(CRMEntry.sale_person) == func.lower(sale_person),
-                    # Partial case-insensitive match
-                    func.lower(CRMEntry.sale_person).like(f'%{sale_person.lower()}%')
-                )
-            )
-
-        # Apply status filter (case-insensitive)
+            query = query.filter(CRMEntry.sale_person == sale_person)
+        
         if status:
-            query = query.filter(func.lower(CRMEntry.status) == func.lower(status))
+            query = query.filter(CRMEntry.status == status)
 
         # Order by submission time, most recent first
         query = query.order_by(CRMEntry.submission_time.desc())
 
-        # Log the constructed query
-        logging.info(f"Constructed query: {query}")
-
-        # Execute query and convert to list of dictionaries
+        # Fetch entries
         entries = query.all()
+
+        # Convert entries to list of dictionaries
         entries_list = [entry.to_dict() for entry in entries]
 
-        # Log retrieved entries
-        logging.info(f"Retrieved {len(entries_list)} CRM entries")
+        # Return JSON response
+        response = jsonify(entries_list)
+        response.headers['Content-Type'] = 'application/json; charset=utf-8'
+        return response, 200
+
+    except SQLAlchemyError as e:
+        # Log database-related errors
+        logging.error(f"Database error retrieving CRM entries: {str(e)}", exc_info=True)
         
-        # If no entries found, log additional debugging info
-        if not entries_list:
-            # Check all entries in the database for debugging
-            all_entries = CRMEntry.query.all()
-            all_sale_persons = set(entry.sale_person for entry in all_entries)
-            logging.warning(f"No entries found. Filters - Sale Person: '{sale_person}', Status: '{status}'")
-            logging.warning(f"All sale persons in database: {all_sale_persons}")
-
-        return jsonify(entries_list), 200
-
-    except Exception as e:
-        # Log the full error details
-        logging.error(f"Error retrieving CRM entries: {str(e)}", exc_info=True)
-        return jsonify({
-            'error': 'Failed to retrieve CRM entries',
+        error_response = jsonify({
+            'error': 'Database error',
             'details': str(e)
-        }), 500
+        })
+        error_response.headers['Content-Type'] = 'application/json; charset=utf-8'
+        return error_response, 500
+    
+    except Exception as e:
+        # Log unexpected errors
+        logging.error(f"Unexpected error retrieving CRM entries: {str(e)}", exc_info=True)
+        
+        error_response = jsonify({
+            'error': 'Unexpected error',
+            'details': str(e)
+        })
+        error_response.headers['Content-Type'] = 'application/json; charset=utf-8'
+        return error_response, 500
 
 @app.route('/clear_crm_entries', methods=['DELETE'])
 @login_required
