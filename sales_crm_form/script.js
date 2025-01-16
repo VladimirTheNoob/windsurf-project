@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Comprehensive login function with multiple fallback strategies
-    const performLogin = async (loginIdentifier, password, nextPage = null) => {
+    const performLogin = async (loginData, fallbackNextPage = '/retrieve_data.html') => {
         // Logging utility
         const debugLog = (message, ...args) => {
             const timestamp = new Date().toISOString();
@@ -110,8 +110,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
             }
 
-            // Redirect to login page
-            window.location.href = '/login';
+            // Optional: Clear sensitive data
+            loginData.password = null;
         };
 
         // Environment detection
@@ -131,26 +131,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Determine login endpoints with multiple fallback strategies
         const loginEndpoints = [
-            `${envInfo.origin}/login`,
+            `${envInfo.origin}/login`,  // Current origin
             `${envInfo.origin}/api/login`,
             '/login',
-            '/api/login',
-            'https://mavericka-crm.netlify.app/login',
-            'https://mavericka-crm.netlify.app/api/login'
+            'http://localhost:5000/login',
+            'http://127.0.0.1:5000/login'
         ];
-
-        // Login payload
-        const loginPayload = {
-            username: loginIdentifier,
-            password: password,
-            next: nextPage || 'No next page specified'
-        };
 
         // Login methods to try
         const loginMethods = ['POST', 'GET'];
-
-        // Fallback redirect URLs
-        const successRedirect = '/index';
 
         let loginResponse;
         let loginError;
@@ -161,18 +150,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 try {
                     debugLog(`Attempting login with endpoint: ${endpoint}, method: ${method}`);
                     
-                    const response = await fetch(endpoint, {
+                    const fetchOptions = {
                         method: method,
                         credentials: 'include',
                         headers: {
                             'Content-Type': 'application/json',
                             'Accept': 'application/json, text/html',
                             'Cache-Control': 'no-cache',
-                            'X-Requested-With': 'XMLHttpRequest',
-                            'X-Debug-Env': JSON.stringify(envInfo)
+                            'X-Requested-With': 'XMLHttpRequest'
                         },
-                        body: method === 'POST' ? JSON.stringify(loginPayload) : undefined
-                    });
+                        body: JSON.stringify({
+                            loginIdentifier: loginData.loginIdentifier,
+                            password: loginData.password,
+                            nextPage: loginData.nextPage || fallbackNextPage
+                        })
+                    };
+
+                    // Remove body for GET requests
+                    if (method === 'GET') {
+                        delete fetchOptions.body;
+                        fetchOptions.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+                    }
+
+                    const response = await fetch(endpoint, fetchOptions);
 
                     debugLog('Login Response:', {
                         endpoint,
@@ -184,37 +184,51 @@ document.addEventListener('DOMContentLoaded', function() {
                         ok: response.ok
                     });
 
-                    // Handle response text for debugging
+                    // Parse response content
+                    let responseData;
                     const contentType = response.headers.get('content-type') || '';
-                    debugLog('Content-Type:', contentType);
 
-                    // Check for successful response or handle specific scenarios
-                    if (response.ok || response.status === 200) {
-                        loginResponse = response;
+                    try {
+                        if (contentType.includes('application/json')) {
+                            responseData = await response.json();
+                        } else {
+                            // Attempt to parse HTML or text response
+                            const text = await response.text();
+                            debugLog('Non-JSON login response:', text);
+
+                            // Check for HTML error pages
+                            if (text.includes('<!DOCTYPE') || text.includes('<html')) {
+                                throw new Error('Received HTML instead of JSON');
+                            }
+
+                            // Try parsing text as JSON
+                            try {
+                                responseData = JSON.parse(text);
+                            } catch (parseError) {
+                                responseData = { 
+                                    message: 'Login response could not be parsed', 
+                                    details: text 
+                                };
+                            }
+                        }
+                    } catch (parseError) {
+                        debugLog('Response parsing error:', parseError);
+                        throw parseError;
+                    }
+
+                    // Consider various success scenarios
+                    if (response.ok || 
+                        response.status === 200 || 
+                        response.status === 201 || 
+                        responseData.success === true) {
+                        loginResponse = { response, data: responseData };
                         break;
                     }
 
-                    // Detailed error handling for non-successful responses
-                    if (response.status === 404 || response.status === 500) {
-                        const text = await response.text();
-                        debugLog('Non-OK Response Text:', text);
-                        
-                        // Check if response is HTML error page
-                        if (text.includes('<!DOCTYPE') || text.includes('<html')) {
-                            debugLog('Received HTML error response');
-                            
-                            // Extract potential error message from HTML
-                            const errorMatch = text.match(/<title>(.*?)<\/title>/i);
-                            const errorMessage = errorMatch 
-                                ? errorMatch[1] 
-                                : 'Server returned an HTML error page';
-                            
-                            handleLoginError(
-                                'Login failed due to server configuration', 
-                                errorMessage
-                            );
-                            return;
-                        }
+                    // Handle specific error scenarios
+                    if (response.status === 401 || response.status === 403) {
+                        handleLoginError('Invalid credentials', responseData.details);
+                        return;
                     }
                 } catch (endpointError) {
                     debugLog(`Login failed with endpoint ${endpoint}, method ${method}:`, endpointError);
@@ -225,77 +239,36 @@ document.addEventListener('DOMContentLoaded', function() {
             if (loginResponse) break;
         }
 
-        // Fallback error handling if no successful response
+        // If no successful response, handle error
         if (!loginResponse) {
-            const errorMessage = loginError 
-                ? `Login failed: ${loginError.message}` 
-                : 'Unable to log in. Please try again.';
-            
-            handleLoginError(errorMessage);
-            return;
-        }
-
-        // Parse response with multiple parsing strategies
-        let data;
-        const contentType = loginResponse.headers.get('content-type') || '';
-
-        try {
-            // Try JSON parsing first
-            if (contentType.includes('application/json')) {
-                data = await loginResponse.json();
-            } else {
-                // Fallback text parsing
-                const text = await loginResponse.text();
-                debugLog('Non-JSON login response:', text);
-
-                try {
-                    // Attempt to parse text as JSON
-                    data = JSON.parse(text);
-                } catch (parseError) {
-                    // Fallback parsing strategies
-                    if (text.includes('Login successful')) {
-                        data = { 
-                            message: 'Login successful', 
-                            redirect: successRedirect 
-                        };
-                    } else {
-                        handleLoginError(
-                            'Invalid response format', 
-                            parseError.message
-                        );
-                        return;
-                    }
-                }
-            }
-        } catch (error) {
             handleLoginError(
-                'Unable to process login response', 
-                error.message
+                loginError 
+                    ? `Login failed: ${loginError.message}` 
+                    : 'Unable to log in. Please try again.'
             );
             return;
         }
 
-        debugLog('Parsed login response:', data);
+        // Extract redirect URL
+        const redirectUrl = 
+            loginResponse.data.redirect || 
+            loginResponse.data.nextPage || 
+            fallbackNextPage;
 
-        // Handle login response
-        if (data.message === 'Login successful' || 
-            data.status === 'success' || 
-            data.success === true) {
-            // Determine redirect URL
-            const redirectUrl = data.redirect || successRedirect;
-            debugLog('Redirecting to:', redirectUrl);
+        debugLog('Login successful. Redirecting to:', redirectUrl);
 
-            // Ensure valid URL
-            const fullRedirectUrl = new URL(redirectUrl, window.location.origin).href;
-            debugLog('Full redirect URL:', fullRedirectUrl);
+        // Ensure valid URL
+        const fullRedirectUrl = new URL(redirectUrl, window.location.origin).href;
+        debugLog('Full redirect URL:', fullRedirectUrl);
 
-            // Redirect
-            window.location.href = fullRedirectUrl;
-        } else {
-            handleLoginError(
-                data.error || data.details || 'Login failed. Please try again.'
-            );
+        // Optional: Store authentication token if provided
+        if (loginResponse.data.token) {
+            localStorage.setItem('authToken', loginResponse.data.token);
+            sessionStorage.setItem('authToken', loginResponse.data.token);
         }
+
+        // Redirect
+        window.location.href = fullRedirectUrl;
     };
 
     // Login form submission handler
@@ -314,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const nextPage = document.getElementById('nextPage').value;
 
             // Perform login
-            await performLogin(loginIdentifier, password, nextPage);
+            await performLogin({ loginIdentifier, password, nextPage });
         });
     }
 
