@@ -114,10 +114,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const nextPage = document.getElementById('nextPage').value;
 
             try {
-                console.log('Login attempt:', {
+                console.log('Login attempt:', JSON.stringify({
                     loginIdentifier,
                     nextPage: nextPage || 'No next page specified'
-                });
+                }));
 
                 // Determine login endpoint based on environment
                 const loginEndpoint = (() => {
@@ -128,8 +128,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         return '/login';
                     }
                     
-                    // For deployed environments, use full URL
-                    return 'https://mavericka-crm.netlify.app/login';
+                    // For deployed environments, use relative path with explicit API route
+                    return '/api/login';
                 })();
 
                 const response = await fetch(loginEndpoint, {
