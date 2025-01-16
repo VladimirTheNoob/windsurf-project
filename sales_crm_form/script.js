@@ -90,11 +90,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Logout functionality
     function handleLogout() {
+        // Fallback redirect URL
+        const fallbackLoginUrl = '/login';
+
+        // Timeout to ensure we redirect even if fetch fails
+        const redirectTimer = setTimeout(() => {
+            console.warn('Logout timeout: Forcing redirect');
+            window.location.href = fallbackLoginUrl;
+        }, 5000);
+
         fetch('/logout', {
             method: 'GET',
             credentials: 'same-origin',
             headers: {
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'Cache-Control': 'no-cache'
             }
         })
         .then(response => {
@@ -116,52 +126,66 @@ document.addEventListener('DOMContentLoaded', function() {
             const contentType = response.headers.get('content-type') || '';
             console.log('Content-Type:', contentType);
 
-            // If content type suggests JSON, parse JSON
+            // Multiple parsing strategies
             if (contentType.includes('application/json')) {
                 return response.json();
             }
 
-            // If not JSON, try to get text and log it
+            // Try text parsing with multiple fallback strategies
             return response.text().then(text => {
                 console.warn('Non-JSON response text:', text);
                 
-                // Try to parse text as JSON if possible
+                // Strategy 1: Direct JSON parse
                 try {
                     return JSON.parse(text);
-                } catch (parseError) {
-                    console.error('Failed to parse response text as JSON:', parseError);
-                    throw new Error('Invalid response format');
+                } catch (jsonParseError) {
+                    console.warn('JSON parse failed, trying alternative parsing');
                 }
+
+                // Strategy 2: Check for specific success indicators
+                if (text.includes('Logout successful')) {
+                    return { message: 'Logout successful', redirect: fallbackLoginUrl };
+                }
+
+                // Strategy 3: Fallback to default
+                console.error('Failed to parse logout response');
+                throw new Error('Invalid response format');
             });
         })
         .then(data => {
+            // Clear the timeout
+            clearTimeout(redirectTimer);
+
             console.log('Parsed logout response:', data);
 
             // Check for logout success or handle potential error response
             if (data.message === 'Logout successful') {
-                // Use full URL for redirection
-                window.location.href = data.redirect;
+                // Prefer provided redirect, fallback to default
+                const redirectUrl = data.redirect || fallbackLoginUrl;
+                window.location.href = redirectUrl;
             } else if (data.error) {
                 console.error('Logout failed:', data.error);
                 alert(data.error);
+                window.location.href = fallbackLoginUrl;
             } else {
                 console.error('Unexpected logout response:', data);
-                alert('Logout failed. Please try again.');
+                alert('Logout failed. Redirecting to login.');
+                window.location.href = fallbackLoginUrl;
             }
         })
         .catch(error => {
+            // Clear the timeout
+            clearTimeout(redirectTimer);
+
             console.error('Logout error details:', {
                 name: error.name,
                 message: error.message,
                 stack: error.stack
             });
             
-            // More specific error handling
-            if (error.message.includes('Invalid response')) {
-                alert('Server returned an unexpected response. Please try logging out again.');
-            } else {
-                alert('An error occurred during logout. Please try again.');
-            }
+            // Always provide a way to log out
+            alert('An error occurred during logout. Redirecting to login.');
+            window.location.href = fallbackLoginUrl;
         });
     }
 
