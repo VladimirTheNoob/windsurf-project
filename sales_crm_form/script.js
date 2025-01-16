@@ -119,14 +119,22 @@ document.addEventListener('DOMContentLoaded', function() {
                     nextPage: nextPage || 'No next page specified'
                 });
 
-                // Determine login endpoint (handle both local and deployed environments)
-                const loginEndpoint = window.location.hostname === 'localhost' 
-                    ? '/login' 
-                    : `https://${window.location.hostname}/login`;
+                // Determine login endpoint based on environment
+                const loginEndpoint = (() => {
+                    const hostname = window.location.hostname;
+                    const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1';
+                    
+                    if (isLocalhost) {
+                        return '/login';
+                    }
+                    
+                    // For deployed environments, use relative path
+                    return '/login';
+                })();
 
                 const response = await fetch(loginEndpoint, {
                     method: 'POST',
-                    credentials: 'same-origin',
+                    credentials: 'include', // Changed from same-origin to include
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',

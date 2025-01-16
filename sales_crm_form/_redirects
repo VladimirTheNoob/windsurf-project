@@ -5,7 +5,12 @@
 /retrieve_data /index.html 200
 /* /index.html 200
 
-# API route proxying
-/login /login 200
-/logout /logout 200
-/submit_crm /submit_crm 200
+# API route handling
+/login/* /login 200
+/logout/* /logout 200
+/submit_crm/* /submit_crm 200
+
+# Proxy API requests
+/login https://mavericka-crm.netlify.app/login 200
+/logout https://mavericka-crm.netlify.app/logout 200
+/submit_crm https://mavericka-crm.netlify.app/submit_crm 200
