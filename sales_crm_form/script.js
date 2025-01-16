@@ -103,10 +103,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             
-            // Try to parse as JSON, with fallback
+            // Clone the response to allow multiple reads
+            const responseClone = response.clone();
+            
+            // First try JSON parsing
             return response.json().catch(() => {
-                // If JSON parsing fails, try to get text
-                return response.text().then(text => {
+                // If JSON fails, try text parsing on the cloned response
+                return responseClone.text().then(text => {
                     console.warn('Non-JSON response:', text);
                     throw new Error('Invalid response format');
                 });
