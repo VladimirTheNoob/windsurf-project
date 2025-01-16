@@ -209,6 +209,47 @@ button:hover {
     background-color: #f0f0f0;
 }
 
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.navigation ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navigation a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.navigation a.active {
+    background-color: #007bff;
+    color: white;
+}
+
 @media screen and (max-width: 1200px) {
     .container {
         padding: 10px;
