@@ -6499,3 +6499,73 @@ ly
 2025-01-16 16:38:43,726 - root - INFO - Database tables created successfully
 2025-01-16 16:38:43,734 - werkzeug - WARNING -  * Debugger is active!
 2025-01-16 16:38:43,735 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 16:42:26,583 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:42:26] "[31m[1mGET /get_crm_entries HTTP/1.1[0m" 401 -
+2025-01-16 16:42:30,198 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:42:30] "OPTIONS /login HTTP/1.1" 200 -
+2025-01-16 16:42:30,444 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:42:30] "POST /login HTTP/1.1" 200 -
+2025-01-16 16:42:33,127 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 16:42:33] "[31m[1mGET /get_crm_entries HTTP/1.1[0m" 401 -
+2025-01-16 16:44:45,078 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,078 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,078 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,161 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,162 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,163 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,239 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,310 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,310 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,312 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,317 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,318 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,319 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,319 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,320 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,433 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,434 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,440 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,441 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,446 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,448 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,451 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,453 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,456 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,456 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,458 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,458 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,462 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,462 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,463 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,466 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,466 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,472 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,489 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,490 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,493 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,536 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,546 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,553 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,572 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,590 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,634 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,635 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,638 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,640 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,643 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,648 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,664 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,669 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,669 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,674 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,692 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,704 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,721 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,740 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,750 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,750 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,759 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,760 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,853 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:45,861 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,872 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:45,943 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 16:44:46,000 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:46,000 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 16:44:46,070 - werkzeug - INFO -  * Restarting with stat

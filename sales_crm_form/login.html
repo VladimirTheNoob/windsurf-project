@@ -62,6 +62,18 @@
         // Determine default redirect page
         const defaultRedirectPage = '/index.html';
 
+        // Function to store authentication token
+        function storeAuthToken(token) {
+            // Store in multiple ways for maximum compatibility
+            if (token) {
+                localStorage.setItem('authToken', token);
+                sessionStorage.setItem('authToken', token);
+                
+                // Set cookie with secure and httpOnly flags if possible
+                document.cookie = `authToken=${token}; path=/; SameSite=Strict; Secure`;
+            }
+        }
+
         loginForm.addEventListener('submit', async function(event) {
             event.preventDefault();
             
@@ -207,11 +219,8 @@
             const fullRedirectUrl = new URL(redirectUrl, window.location.origin).href;
             console.log('Full redirect URL:', fullRedirectUrl);
 
-            // Optional: Store authentication token if provided
-            if (loginResponse.data.token) {
-                localStorage.setItem('authToken', loginResponse.data.token);
-                sessionStorage.setItem('authToken', loginResponse.data.token);
-            }
+            // Store authentication token
+            storeAuthToken(loginResponse.data.token);
 
             // Redirect
             window.location.href = fullRedirectUrl;

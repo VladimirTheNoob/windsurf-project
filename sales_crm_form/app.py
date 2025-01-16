@@ -11,6 +11,8 @@ from sqlalchemy import func, or_
 from sqlalchemy.exc import SQLAlchemyError
 import logging
 import urllib.parse
+import jwt
+import time
 
 # Configure logging
 logging.basicConfig(
@@ -74,7 +76,7 @@ def handle_global_exception(e):
     # Return JSON response with error details
     return jsonify(error_details), 500
 
-# Modify login_required decorator to return JSON
+# Modify login_required decorator to return JSON with more context
 login_manager.unauthorized_handler(lambda: (
     jsonify({
         'error': 'Unauthorized',
@@ -115,6 +117,9 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
+
+    def check_password(self, password):
+        return bcrypt.check_password_hash(self.password, password)
 
 # CRM Entry Model
 class CRMEntry(db.Model):
@@ -158,56 +163,102 @@ def is_valid_email(email):
     email_regex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
     return re.match(email_regex, email) is not None
 
+# Generate token function
+def generate_token(user):
+    payload = {
+        'exp': int(time.time()) + 3600,  # Token expires in 1 hour
+        'iat': int(time.time()),
+        'sub': user.id
+    }
+    return jwt.encode(payload, app.config['SECRET_KEY'], algorithm='HS256')
+
 # Authentication Routes
-@app.route('/')
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST', 'OPTIONS'])
 def login():
-    # If already logged in, redirect to index
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    
-    # Handle login form submission
+    # Handle CORS preflight request
+    if request.method == 'OPTIONS':
+        return '', 204
+
+    # Get next page from request or query parameters
+    next_page = request.form.get('nextPage') or request.args.get('next') or url_for('index')
+
     if request.method == 'POST':
-        # Get JSON data from request
+        # Parse JSON data
         data = request.get_json()
-        
+        login_identifier = data.get('loginIdentifier')
+        password = data.get('password')
+
         # Validate input
-        if not data or ('username' not in data and 'loginIdentifier' not in data) or 'password' not in data:
+        if not login_identifier or not password:
             return jsonify({
-                'error': 'Invalid input',
-                'details': 'Username/Email and password are required'
+                'success': False,
+                'error': 'Missing login credentials',
+                'details': 'Please provide both login identifier and password'
             }), 400
-        
-        # Support both username and loginIdentifier
-        login_identifier = data.get('username') or data.get('loginIdentifier')
-        password = data['password']
-        
-        # Find user by email or username (case-insensitive)
-        user = (User.query.filter(func.lower(User.email) == func.lower(login_identifier)).first() or 
-                User.query.filter(func.lower(User.username) == func.lower(login_identifier)).first())
-        
-        # Validate credentials
-        if user and bcrypt.check_password_hash(user.password, password):
-            # Log in the user
-            login_user(user)
+
+        try:
+            # Find user by email or username
+            user = User.query.filter(
+                or_(
+                    func.lower(User.email) == func.lower(login_identifier),
+                    func.lower(User.username) == func.lower(login_identifier)
+                )
+            ).first()
+
+            # Verify credentials
+            if user and user.check_password(password):
+                # Log successful login attempt
+                logging.info(f"Successful login for user: {user.username}")
+
+                # Create a session for the user
+                login_user(user)
+
+                # Generate a token (optional, for client-side storage)
+                token = generate_token(user)
+
+                # Prepare response
+                response_data = {
+                    'success': True,
+                    'message': 'Login successful',
+                    'username': user.username,
+                    'token': token,
+                    'nextPage': next_page or url_for('index')
+                }
+
+                # Create JSON response
+                response = jsonify(response_data)
+                
+                # Set secure cookie for authentication
+                response.set_cookie('authToken', token, 
+                    httponly=True, 
+                    secure=True, 
+                    samesite='Strict', 
+                    max_age=3600  # 1 hour
+                )
+
+                return response, 200
+            else:
+                # Log failed login attempt
+                logging.warning(f"Failed login attempt for identifier: {login_identifier}")
+                
+                return jsonify({
+                    'success': False,
+                    'error': 'Invalid credentials',
+                    'details': 'The provided login credentials are incorrect'
+                }), 401
+
+        except Exception as e:
+            # Log unexpected errors
+            logging.error(f"Login error: {str(e)}", exc_info=True)
             
-            # Determine redirect URL (use next parameter if provided)
-            next_page = data.get('next') or url_for('index')
-            
-            # Return success response with redirect
             return jsonify({
-                'message': 'Login successful',
-                'redirect': next_page
-            }), 200
-        else:
-            # Invalid credentials
-            return jsonify({
-                'error': 'Login failed',
-                'details': 'Invalid username, email, or password'
-            }), 401
-    
-    # GET request - render login page
-    return send_from_directory('.', 'login.html')
+                'success': False,
+                'error': 'Login process failed',
+                'details': str(e)
+            }), 500
+
+    # GET request: render login page
+    return render_template('login.html', next=next_page)
 
 @app.route('/index')
 @login_required

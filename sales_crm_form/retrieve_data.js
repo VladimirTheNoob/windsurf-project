@@ -51,12 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
 
-        // Determine login URL
+        // Determine login URL with current page as next parameter
+        const currentPath = encodeURIComponent(window.location.pathname);
         const loginUrls = [
-            '/login.html',
-            `${window.location.origin}/login.html`,
-            'http://localhost:5000/login.html',
-            'http://127.0.0.1:5000/login.html'
+            `/login.html?next=${currentPath}`,
+            `${window.location.origin}/login.html?next=${currentPath}`,
+            `http://localhost:5000/login.html?next=${currentPath}`,
+            `http://127.0.0.1:5000/login.html?next=${currentPath}`
         ];
 
         // Try to redirect using the first available local URL
@@ -77,7 +78,24 @@ document.addEventListener('DOMContentLoaded', function() {
         };
 
         // Redirect after a short delay
-        setTimeout(redirectToLogin, 1000);
+        setTimeout(redirectToLogin, 500);
+    }
+
+    // Function to get authentication token
+    function getAuthToken() {
+        // Try multiple storage methods
+        const storageOptions = [
+            () => localStorage.getItem('authToken'),
+            () => sessionStorage.getItem('authToken'),
+            () => document.cookie.split('; ').find(row => row.startsWith('authToken='))?.split('=')[1]
+        ];
+
+        for (const getToken of storageOptions) {
+            const token = getToken();
+            if (token) return token;
+        }
+
+        return null;
     }
 
     // Function to fetch CRM entries with enhanced authentication handling
@@ -91,6 +109,9 @@ document.addEventListener('DOMContentLoaded', function() {
             `http://localhost:5000/get_crm_entries`,
             `http://127.0.0.1:5000/get_crm_entries`
         ];
+
+        // Get authentication token
+        const authToken = getAuthToken();
 
         for (const baseUrl of endpoints) {
             try {
@@ -109,12 +130,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 debugLog('Fetching CRM Entries from URL:', url.toString());
 
+                const headers = {
+                    'Accept': 'application/json'
+                };
+
+                // Add authentication token if available
+                if (authToken) {
+                    headers['Authorization'] = `Bearer ${authToken}`;
+                }
+
                 const response = await fetch(url, {
                     method: 'GET',
                     credentials: 'include', // Important for maintaining session
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: headers
                 });
 
                 debugLog('Response Status:', response.status, response.statusText);
