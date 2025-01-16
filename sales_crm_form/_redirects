@@ -21,8 +21,10 @@ https://*.netlify.app/login/* /login 200
 /authenticate /login 200
 /authenticate/* /login 200
 
-# Logout routes
+# Comprehensive logout routes
 /logout /index.html 200
 /logout/* /index.html 200
 /api/logout /index.html 200
 /api/logout/* /index.html 200
+/signout /index.html 200
+/signout/* /index.html 200

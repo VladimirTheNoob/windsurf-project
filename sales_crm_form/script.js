@@ -303,85 +303,92 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Logout functionality
-    function handleLogout() {
-        // Fallback redirect URL
-        const fallbackLoginUrl = '/login';
+    // Logout function with comprehensive error handling
+    const performLogout = async (fallbackLoginUrl = '/login') => {
+        try {
+            // Determine logout endpoint based on environment
+            const logoutEndpoints = [
+                `${window.location.origin}/logout`,
+                `${window.location.origin}/api/logout`,
+                '/logout',
+                '/api/logout'
+            ];
 
-        // Timeout to ensure we redirect even if fetch fails
-        const redirectTimer = setTimeout(() => {
-            console.warn('Logout timeout: Forcing redirect');
-            window.location.href = fallbackLoginUrl;
-        }, 5000);
+            let logoutResponse;
+            let logoutError;
 
-        fetch('/logout', {
-            method: 'GET',
-            credentials: 'same-origin',
-            headers: {
-                'Accept': 'application/json',
-                'Cache-Control': 'no-cache'
+            // Try multiple endpoints
+            for (const endpoint of logoutEndpoints) {
+                try {
+                    console.log(`Attempting logout with endpoint: ${endpoint}`);
+                    
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        credentials: 'include',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                            'Cache-Control': 'no-cache',
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    });
+
+                    console.log('Logout Response:', {
+                        endpoint,
+                        status: response.status,
+                        statusText: response.statusText,
+                        headers: Object.fromEntries(response.headers.entries()),
+                        type: response.type,
+                        ok: response.ok
+                    });
+
+                    if (response.ok) {
+                        logoutResponse = response;
+                        break;
+                    }
+                } catch (endpointError) {
+                    console.warn(`Logout failed with endpoint ${endpoint}:`, endpointError);
+                    logoutError = endpointError;
+                }
             }
-        })
-        .then(response => {
-            // Log full response details for debugging
-            console.log('Logout Response:', {
-                status: response.status,
-                statusText: response.statusText,
-                headers: Object.fromEntries(response.headers.entries()),
-                type: response.type,
-                ok: response.ok
-            });
 
-            // Treat 401 as a potential logout success (already logged out)
-            if (response.status === 401) {
-                return { 
+            if (!logoutResponse) {
+                throw logoutError || new Error('All logout attempts failed');
+            }
+
+            // Parse response
+            let data;
+            const contentType = logoutResponse.headers.get('content-type') || '';
+            
+            try {
+                if (contentType.includes('application/json')) {
+                    data = await logoutResponse.json();
+                } else {
+                    const text = await logoutResponse.text();
+                    console.warn('Non-JSON logout response:', text);
+                    
+                    try {
+                        data = JSON.parse(text);
+                    } catch (parseError) {
+                        data = {
+                            message: 'Logout successful',
+                            details: text,
+                            parseError: parseError.message
+                        };
+                        console.error('Failed to parse logout response:', parseError);
+                    }
+                }
+            } catch (parseError) {
+                console.error('Logout response parsing error:', parseError);
+                data = { 
                     message: 'Logout successful', 
-                    redirect: fallbackLoginUrl 
+                    parseError: parseError.message 
                 };
             }
 
-            // Check if response is OK
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            // Try to get content type
-            const contentType = response.headers.get('content-type') || '';
-            console.log('Content-Type:', contentType);
+            console.log('Logout response data:', data);
 
-            // Multiple parsing strategies
-            if (contentType.includes('application/json')) {
-                return response.json();
-            }
-
-            // Try text parsing with multiple fallback strategies
-            return response.text().then(text => {
-                console.warn('Non-JSON response text:', text);
-                
-                // Strategy 1: Direct JSON parse
-                try {
-                    return JSON.parse(text);
-                } catch (jsonParseError) {
-                    console.warn('JSON parse failed, trying alternative parsing');
-                }
-
-                // Strategy 2: Check for specific success indicators
-                if (text.includes('Logout successful')) {
-                    return { message: 'Logout successful', redirect: fallbackLoginUrl };
-                }
-
-                // Strategy 3: Fallback to default
-                console.error('Failed to parse logout response');
-                throw new Error('Invalid response format');
-            });
-        })
-        .then(data => {
-            // Clear the timeout
-            clearTimeout(redirectTimer);
-
-            console.log('Parsed logout response:', data);
-
-            // Check for logout success or handle potential error response
+            // Handle logout response
             if (data.message === 'Logout successful') {
                 // Prefer provided redirect, fallback to default
                 const redirectUrl = data.redirect || fallbackLoginUrl;
@@ -393,38 +400,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Redirect
                 window.location.href = fullRedirectUrl;
-            } else if (data.error) {
-                console.error('Logout failed:', data.error);
-                alert(data.error);
-                window.location.href = fallbackLoginUrl;
             } else {
-                console.error('Unexpected logout response:', data);
-                alert('Logout failed. Redirecting to login.');
-                window.location.href = fallbackLoginUrl;
+                console.error('Logout failed:', data.error || 'Unknown error');
+                alert(data.error || 'Logout failed. Please try again.');
             }
-        })
-        .catch(error => {
-            // Clear the timeout
-            clearTimeout(redirectTimer);
-
-            console.error('Logout error details:', {
-                name: error.name,
-                message: error.message,
-                stack: error.stack
-            });
-            
-            // Always provide a way to log out
-            alert('An error occurred during logout. Redirecting to login.');
-            window.location.href = fallbackLoginUrl;
-        });
-    }
+        } catch (error) {
+            console.error('Logout error details:', error);
+            alert(`Logout failed: ${error.message}`);
+        }
+    };
 
     // Add logout button event listener if it exists
     const logoutButton = document.getElementById('logoutBtn');
     if (logoutButton) {
         logoutButton.addEventListener('click', function(event) {
             event.preventDefault();
-            handleLogout();
+            performLogout();
         });
     }
 });
