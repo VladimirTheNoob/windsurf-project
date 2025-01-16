@@ -10,6 +10,7 @@ import re
 from sqlalchemy import func, or_
 from sqlalchemy.exc import SQLAlchemyError
 import logging
+import urllib.parse
 
 # Configure logging
 logging.basicConfig(
@@ -78,7 +79,11 @@ login_manager.unauthorized_handler(lambda: (
     jsonify({
         'error': 'Unauthorized',
         'details': 'Authentication required',
-        'redirect': url_for('login', _external=True)
+        'redirect': url_for('login', 
+            next=request.endpoint or request.path, 
+            reason=urllib.parse.quote('Please log in to access this page.'), 
+            _external=True
+        )
     }), 
     401
 ))

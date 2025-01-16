@@ -51,10 +51,33 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
 
-        // Optional: Redirect to login page after a short delay
-        setTimeout(() => {
-            window.location.href = '/login.html';
-        }, 2000);
+        // Determine login URL
+        const loginUrls = [
+            '/login.html',
+            `${window.location.origin}/login.html`,
+            'http://localhost:5000/login.html',
+            'http://127.0.0.1:5000/login.html'
+        ];
+
+        // Try to redirect using the first available local URL
+        const redirectToLogin = () => {
+            for (const loginUrl of loginUrls) {
+                try {
+                    debugLog(`Attempting to redirect to: ${loginUrl}`);
+                    window.location.href = loginUrl;
+                    return true;
+                } catch (error) {
+                    debugLog(`Failed to redirect to ${loginUrl}:`, error);
+                    continue;
+                }
+            }
+            
+            // Fallback alert if no URL works
+            alert('Unable to redirect to login page. Please manually navigate to login.');
+        };
+
+        // Redirect after a short delay
+        setTimeout(redirectToLogin, 1000);
     }
 
     // Function to fetch CRM entries with enhanced authentication handling

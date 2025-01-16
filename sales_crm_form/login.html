@@ -49,6 +49,19 @@
         const nextPage = urlParams.get('next') || '';
         nextPageInput.value = nextPage;
 
+        // Check for redirect reason
+        const redirectReason = urlParams.get('reason');
+        if (redirectReason) {
+            messageContainer.innerHTML = `
+                <div class="warning-message">
+                    ${decodeURIComponent(redirectReason)}
+                </div>
+            `;
+        }
+
+        // Determine default redirect page
+        const defaultRedirectPage = '/index.html';
+
         loginForm.addEventListener('submit', async function(event) {
             event.preventDefault();
             
@@ -57,7 +70,7 @@
             
             const loginIdentifier = loginIdentifierInput.value;
             const password = document.getElementById('password').value;
-            const nextPage = nextPageInput.value;
+            const nextPage = nextPageInput.value || defaultRedirectPage;
 
             // Environment detection
             const getEnvironmentInfo = () => {
@@ -186,7 +199,7 @@
             const redirectUrl = 
                 loginResponse.data.redirect || 
                 loginResponse.data.nextPage || 
-                '/index.html';
+                defaultRedirectPage;
 
             console.log('Login successful. Redirecting to:', redirectUrl);
 
