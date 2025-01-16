@@ -369,6 +369,20 @@ button:hover {
     margin-top: 20px;
 }
 
+.logout-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+}
+
 @media screen and (max-width: 1200px) {
     .container {
         padding: 10px;

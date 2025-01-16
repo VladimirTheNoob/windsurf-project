@@ -87,4 +87,43 @@ document.addEventListener('DOMContentLoaded', function() {
             showMessage('Network Error: Unable to submit CRM entry. Please check your connection.', true);
         }
     });
+
+    // Logout functionality
+    function handleLogout() {
+        console.log('Logout button clicked'); // Debug log
+        fetch('/logout', {
+            method: 'GET',
+            credentials: 'same-origin'
+        })
+        .then(response => {
+            console.log('Logout response:', response); // Debug log
+            return response.json();
+        })
+        .then(data => {
+            console.log('Logout data:', data); // Debug log
+            if (data.message === 'Logout successful') {
+                // Redirect to login page
+                window.location.href = data.redirect;
+            } else {
+                console.error('Logout failed:', data);
+                alert('Logout failed. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Logout error:', error);
+            alert('An error occurred during logout. Please try again.');
+        });
+    }
+
+    // Add logout button event listener if it exists
+    const logoutButton = document.getElementById('logoutBtn');
+    console.log('Logout button:', logoutButton); // Debug log
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            handleLogout();
+        });
+    } else {
+        console.error('Logout button not found'); // Debug log
+    }
 });

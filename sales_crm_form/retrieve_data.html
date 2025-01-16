@@ -16,6 +16,7 @@
         <nav class="navigation">
             <ul>
                 <li><a href="index.html" class="nav-button">Input Form</a></li>
+                <li><button id="logoutBtn" class="nav-button logout-button">Logout</button></li>
             </ul>
         </nav>
         
@@ -66,9 +67,9 @@
         </div>
     </div>
 
-    <script src="retrieve_data.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Sales Person Filter Logic
         const salesPersonFilterSelect = document.getElementById('salePerson');
         
         salesPersonFilterSelect.addEventListener('change', function() {
@@ -79,7 +80,34 @@
                 salePersonOtherInput.style.display = 'none';
             }
         });
+
+        // Logout Functionality
+        const logoutButton = document.getElementById('logoutBtn');
+        if (logoutButton) {
+            logoutButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                
+                fetch('/logout', {
+                    method: 'GET',
+                    credentials: 'same-origin'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message === 'Logout successful') {
+                        window.location.href = data.redirect;
+                    } else {
+                        console.error('Logout failed:', data);
+                        alert('Logout failed. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Logout error:', error);
+                    alert('An error occurred during logout. Please try again.');
+                });
+            });
+        }
     });
     </script>
+    <script src="retrieve_data.js"></script>
 </body>
 </html>

@@ -9,8 +9,7 @@ from datetime import datetime
 import re
 from sqlalchemy import func, or_
 from sqlalchemy.exc import SQLAlchemyError
-from faker import Faker
-import random
+import logging
 
 # Configure logging
 logging.basicConfig(
@@ -245,8 +244,26 @@ def register():
 @app.route('/logout')
 @login_required
 def logout():
-    logout_user()
-    return redirect(url_for('login'))
+    try:
+        # Log the user being logged out
+        username = current_user.username if current_user.is_authenticated else "Unknown User"
+        logging.info(f"Logging out user: {username}")
+        
+        # Perform logout
+        logout_user()
+        
+        # Return JSON response for frontend
+        return jsonify({
+            'message': 'Logout successful',
+            'redirect': url_for('login')
+        }), 200
+    except Exception as e:
+        # Log any unexpected errors
+        logging.error(f"Logout error: {str(e)}")
+        return jsonify({
+            'error': 'Logout failed',
+            'details': str(e)
+        }), 500
 
 # Protect routes that require authentication
 @app.route('/index')
@@ -481,58 +498,6 @@ def favicon():
     except Exception as e:
         logging.error(f"Favicon error: {str(e)}")
         return '', 404
-
-def generate_random_entries(num_entries=100):
-    # Create a Faker instance
-    fake = Faker()
-
-    # Predefined sales persons
-    sales_persons = ['Vladimir Belyakov', 'Eugen Genzelew', 'Konstantin Tokarev']
-    
-    # Predefined statuses
-    statuses = ['New Lead', 'In Progress', 'Negotiation', 'Closed Won', 'Closed Lost']
-
-    # Predefined cases and next steps
-    cases = [
-        ('Enterprise Software', 'Schedule Technical Demo'),
-        ('Cloud Migration', 'Initial Consultation'),
-        ('Digital Transformation', 'Prepare Proposal'),
-        ('Cybersecurity', 'Security Assessment'),
-        ('Data Analytics', 'Requirements Gathering')
-    ]
-
-    # Generate entries
-    entries = []
-    for _ in range(num_entries):
-        # Randomly select case and next steps
-        case, next_steps = random.choice(cases)
-
-        # Create entry
-        entry = CRMEntry(
-            person_name=fake.name(),
-            company_name=fake.company(),
-            department=fake.job(),
-            case=case,
-            next_steps=next_steps,
-            status=random.choice(statuses),
-            sale_person=random.choice(sales_persons),
-            description=fake.catch_phrase(),
-            submission_time=fake.date_time_between(start_date='-1y', end_date='now')
-        )
-        entries.append(entry)
-    
-    # Bulk insert
-    try:
-        db.session.bulk_save_objects(entries)
-        db.session.commit()
-        logging.info(f"Successfully inserted {num_entries} random entries")
-    except Exception as e:
-        db.session.rollback()
-        logging.error(f"Error inserting random entries: {str(e)}")
-
-# Optional: Uncomment to generate entries when needed
-with app.app_context():
-    generate_random_entries()
 
 # Create database tables
 with app.app_context():

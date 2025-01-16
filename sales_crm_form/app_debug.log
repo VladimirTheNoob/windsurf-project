@@ -3378,3 +3378,527 @@ FROM crm_entry ORDER BY crm_entry.submission_time DESC
 2025-01-16 13:14:59,440 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:14:59] "[36mGET /styles.css HTTP/1.1[0m" 304 -
 2025-01-16 13:14:59,475 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:14:59] "[36mGET /logo.png HTTP/1.1[0m" 304 -
 2025-01-16 13:14:59,481 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:14:59] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:29:18,301 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:18] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:29:18,322 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:18] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:29:18,323 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:18] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:29:18,324 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:18] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:29:18,379 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:18] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-16 13:29:40,194 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-16 13:29:40,196 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-16 13:29:40,198 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-16 13:29:40,199 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-16 13:29:40,200 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-16 13:29:40,202 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-16 13:29:40,203 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-16 13:29:40,203 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-16 13:29:40,204 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-16 13:29:40,205 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-16 13:29:40,206 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-16 13:29:40,207 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-16 13:29:40,208 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-16 13:29:40,208 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-16 13:29:40,209 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-16 13:29:40,210 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-16 13:29:40,210 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-16 13:29:40,212 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-16 13:29:40,213 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 13:29:40,213 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 13:29:40,213 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-16 13:29:40,213 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-16 13:29:40,214 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-16 13:29:40,216 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-16 13:29:40,216 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-16 13:29:40,216 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-16 13:29:40,217 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-16 13:29:40,218 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-16 13:29:40,219 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-16 13:29:40,220 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-16 13:29:40,220 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-16 13:29:40,221 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-16 13:29:40,221 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-16 13:29:40,221 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-16 13:29:40,222 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-16 13:29:40,225 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-16 13:29:40,226 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-16 13:29:40,229 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-16 13:29:40,229 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 13:29:40,230 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 13:29:40,230 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 13:29:40,230 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-16 13:29:40,232 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-16 13:29:40,233 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 13:29:40,258 - root - INFO - Successfully inserted 100 random entries
+2025-01-16 13:29:40,258 - root - INFO - Database tables created successfully
+2025-01-16 13:29:40,271 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 13:29:40,271 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 13:29:40,272 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:29:40,705 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-16 13:29:40,707 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-16 13:29:40,708 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-16 13:29:40,710 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-16 13:29:40,711 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-16 13:29:40,712 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-16 13:29:40,713 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-16 13:29:40,713 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-16 13:29:40,714 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-16 13:29:40,715 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-16 13:29:40,716 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-16 13:29:40,717 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-16 13:29:40,718 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-16 13:29:40,718 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-16 13:29:40,719 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-16 13:29:40,720 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-16 13:29:40,721 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-16 13:29:40,723 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-16 13:29:40,723 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 13:29:40,723 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 13:29:40,723 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-16 13:29:40,724 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-16 13:29:40,724 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-16 13:29:40,726 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-16 13:29:40,727 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-16 13:29:40,727 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-16 13:29:40,727 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-16 13:29:40,729 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-16 13:29:40,730 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-16 13:29:40,731 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-16 13:29:40,731 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-16 13:29:40,732 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-16 13:29:40,732 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-16 13:29:40,732 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-16 13:29:40,733 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-16 13:29:40,736 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-16 13:29:40,737 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-16 13:29:40,740 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-16 13:29:40,741 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 13:29:40,741 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 13:29:40,741 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 13:29:40,741 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-16 13:29:40,743 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-16 13:29:40,743 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 13:29:40,771 - root - INFO - Successfully inserted 100 random entries
+2025-01-16 13:29:40,772 - root - INFO - Database tables created successfully
+2025-01-16 13:29:40,780 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:29:40,781 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:29:58,575 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:58] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:29:58,594 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:58] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:29:58,595 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:58] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:29:58,596 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:58] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:29:58,615 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:58] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-16 13:29:59,956 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:59] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-16 13:29:59,959 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:29:59,959 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:59] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:29:59,982 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:59] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:29:59,985 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:29:59] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:30:02,651 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:30:02,651 - root - INFO - Redirecting to: /index
+2025-01-16 13:30:02,652 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:02] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:30:02,664 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:02] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:30:02,693 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:02] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:30:02,696 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:02] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:30:02,696 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:02] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:30:04,972 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:04] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 13:30:05,001 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:05] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:30:05,003 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:05] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:30:05,004 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:05] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 13:30:05,010 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 13:30:05,011 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 13:30:05,022 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 13:30:05,026 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:05] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 13:30:13,493 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:13] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-16 13:30:13,522 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:13] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:30:13,526 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:13] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:30:13,526 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:13] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:30:15,362 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:15] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-16 13:30:15,365 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:30:15,366 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:15] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:30:15,389 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:15] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:30:15,392 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:15] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:30:17,743 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:30:17,743 - root - INFO - Redirecting to: /index
+2025-01-16 13:30:17,744 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:17] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:30:17,755 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:17] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:30:17,786 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:17] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:30:17,787 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:17] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:30:17,788 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:17] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:30:20,199 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:20] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 13:30:20,229 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:20] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:30:20,230 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:20] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:30:20,231 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:20] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 13:30:20,253 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 13:30:20,254 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 13:30:20,262 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 13:30:20,266 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:20] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 13:30:21,082 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:21] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-16 13:30:21,114 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:21] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:30:21,116 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:21] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:30:21,117 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:21] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:30:27,329 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:27] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 13:30:27,356 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:27] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:30:27,359 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:27] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:30:27,360 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:27] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 13:30:27,369 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 13:30:27,370 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 13:30:27,378 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 13:30:27,382 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:30:27] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 13:31:56,189 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 13:31:56,250 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:31:56,583 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 13:31:56,660 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:31:56,665 - root - INFO - Database tables created successfully
+2025-01-16 13:31:56,673 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:31:56,674 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:31:56,709 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 13:31:56,793 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:31:57,072 - root - INFO - Database tables created successfully
+2025-01-16 13:31:57,081 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:31:57,082 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:31:57,193 - root - INFO - Database tables created successfully
+2025-01-16 13:31:57,201 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:31:57,203 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:32:39,380 - root - INFO - Database tables created successfully
+2025-01-16 13:32:39,392 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 13:32:39,392 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 13:32:39,393 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:32:39,784 - root - INFO - Database tables created successfully
+2025-01-16 13:32:39,792 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:32:39,794 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:32:49,739 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:32:49] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-16 13:32:49,763 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:32:49] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:32:49,766 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:32:49] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:32:49,767 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:32:49] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:32:51,616 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:32:51] "[31m[1mGET /logout HTTP/1.1[0m" 401 -
+2025-01-16 13:34:18,072 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 13:34:18,127 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:34:18,481 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 13:34:18,544 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:34:18,551 - root - INFO - Database tables created successfully
+2025-01-16 13:34:18,559 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:34:18,561 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:34:18,578 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 13:34:18,636 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:34:18,955 - root - INFO - Database tables created successfully
+2025-01-16 13:34:18,963 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:34:18,964 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:34:19,046 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-16 13:34:19,061 - root - INFO - Database tables created successfully
+2025-01-16 13:34:19,070 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:34:19,071 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:34:19,109 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:34:19,485 - root - INFO - Database tables created successfully
+2025-01-16 13:34:19,493 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:34:19,495 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:34:28,214 - root - INFO - Database tables created successfully
+2025-01-16 13:34:28,228 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 13:34:28,228 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 13:34:28,229 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:34:28,613 - root - INFO - Database tables created successfully
+2025-01-16 13:34:28,621 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:34:28,623 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:34:52,343 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:34:52] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-16 13:34:52,364 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:34:52] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:34:52,365 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:34:52] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:34:52,366 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:34:52] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:34:52,388 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:34:52] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-16 13:34:53,520 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:34:53] "[31m[1mGET /logout HTTP/1.1[0m" 401 -
+2025-01-16 13:35:02,037 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:35:02] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-16 13:35:02,051 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:35:02,056 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:35:02] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:35:02,068 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:35:02] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:35:02,069 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:35:02] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:35:05,744 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:35:05,744 - root - INFO - Redirecting to: /index
+2025-01-16 13:35:05,745 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:35:05] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:35:05,760 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:35:05] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:35:05,785 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:35:05] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:35:05,788 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:35:05] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:35:05,790 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:35:05] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:35:07,921 - root - INFO - Logging out user: Vladimir
+2025-01-16 13:35:07,921 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:35:07] "GET /logout HTTP/1.1" 200 -
+2025-01-16 13:37:22,990 - root - INFO - Database tables created successfully
+2025-01-16 13:37:23,002 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 13:37:23,002 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 13:37:23,003 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:37:23,377 - root - INFO - Database tables created successfully
+2025-01-16 13:37:23,385 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:37:23,387 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:37:55,563 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:37:55] "[31m[1mGET /logout HTTP/1.1[0m" 401 -
+2025-01-16 13:37:55,596 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:37:55] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-16 13:37:57,279 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:37:57] "[31m[1mGET /index HTTP/1.1[0m" 401 -
+2025-01-16 13:38:00,176 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:38:00] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-16 13:38:00,189 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:38:00,190 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:38:00] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:38:00,217 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:38:00] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:38:00,219 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:38:00] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:38:02,862 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:38:02,863 - root - INFO - Redirecting to: /index
+2025-01-16 13:38:02,863 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:38:02] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:38:02,875 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:38:02] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:38:02,905 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:38:02] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:38:02,907 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:38:02] "GET /script.js HTTP/1.1" 200 -
+2025-01-16 13:38:02,907 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:38:02] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:38:04,743 - root - INFO - Logging out user: Vladimir
+2025-01-16 13:38:04,743 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:38:04] "GET /logout HTTP/1.1" 200 -
+2025-01-16 13:39:13,573 - root - INFO - Database tables created successfully
+2025-01-16 13:39:13,584 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 13:39:13,584 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 13:39:13,585 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:39:13,968 - root - INFO - Database tables created successfully
+2025-01-16 13:39:13,976 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:39:13,977 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:39:45,165 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:45] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-16 13:39:45,176 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:39:45,177 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:45] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:39:45,190 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:45] "GET /styles.css HTTP/1.1" 200 -
+2025-01-16 13:39:45,191 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:45] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:39:48,892 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:39:48,892 - root - INFO - Redirecting to: /index
+2025-01-16 13:39:48,892 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:48] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:39:48,904 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:48] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:39:48,928 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:48] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:39:48,930 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:48] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:39:48,931 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:48] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:39:52,511 - root - INFO - Logging out user: Vladimir
+2025-01-16 13:39:52,512 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:52] "GET /logout HTTP/1.1" 200 -
+2025-01-16 13:39:52,520 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:39:52,521 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:52] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:39:52,553 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:52] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:39:52,554 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:52] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:39:54,397 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:39:54,398 - root - INFO - Redirecting to: /index
+2025-01-16 13:39:54,398 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:54] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:39:54,408 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:54] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:39:54,434 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:54] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:39:54,436 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:54] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:39:54,437 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:54] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:39:56,891 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:56] "GET /retrieve_data.html HTTP/1.1" 200 -
+2025-01-16 13:39:56,919 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:56] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:39:56,920 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:56] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:39:56,921 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:56] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 13:39:56,927 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 13:39:56,929 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 13:39:56,936 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 13:39:56,938 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:39:56] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 13:40:03,200 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:03] "GET /index.html HTTP/1.1" 200 -
+2025-01-16 13:40:03,225 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:03] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:40:03,227 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:03] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:40:03,227 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:03] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:40:03,979 - root - INFO - Logging out user: Vladimir
+2025-01-16 13:40:03,979 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:03] "GET /logout HTTP/1.1" 200 -
+2025-01-16 13:40:04,001 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:40:04,002 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:04] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:40:04,036 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:04] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:40:04,037 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:04] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:40:05,757 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:40:05,757 - root - INFO - Redirecting to: /index
+2025-01-16 13:40:05,757 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:05] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:40:05,767 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:05] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:40:05,798 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:05] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:40:05,799 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:05] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:40:05,800 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:05] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:40:06,661 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:06] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 13:40:06,693 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:06] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:40:06,695 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:06] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:40:06,695 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:06] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 13:40:06,700 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 13:40:06,701 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 13:40:06,706 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 13:40:06,708 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:40:06] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 13:43:10,463 - root - INFO - Database tables created successfully
+2025-01-16 13:43:10,476 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 13:43:10,477 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 13:43:10,477 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:43:10,850 - root - INFO - Database tables created successfully
+2025-01-16 13:43:10,858 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:43:10,860 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:43:28,328 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:28] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-16 13:43:28,355 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:28] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:43:28,355 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:28] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:43:28,356 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:28] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:43:30,473 - root - INFO - Logging out user: Vladimir
+2025-01-16 13:43:30,473 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:30] "GET /logout HTTP/1.1" 200 -
+2025-01-16 13:43:30,482 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:43:30,482 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:30] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:43:30,514 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:30] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:43:30,515 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:30] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:43:32,178 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:43:32,178 - root - INFO - Redirecting to: /index
+2025-01-16 13:43:32,179 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:32] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:43:32,191 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:32] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:43:32,221 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:32] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:43:32,222 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:32] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:43:32,224 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:32] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:43:33,984 - root - INFO - Logging out user: Vladimir
+2025-01-16 13:43:33,984 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:33] "GET /logout HTTP/1.1" 200 -
+2025-01-16 13:43:33,996 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:43:33,996 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:33] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:43:34,029 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:34] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:43:34,030 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:34] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:43:35,612 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:43:35,612 - root - INFO - Redirecting to: /index
+2025-01-16 13:43:35,613 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:35] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:43:35,625 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:35] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:43:35,655 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:35] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:43:35,657 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:35] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:43:35,657 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:35] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:43:36,792 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:36] "GET /retrieve_data.html HTTP/1.1" 200 -
+2025-01-16 13:43:36,824 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:36] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:43:36,826 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:36] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:43:36,827 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:36] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:43:36,828 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:36] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 13:43:36,834 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 13:43:36,835 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 13:43:36,845 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 13:43:36,849 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:36] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 13:43:40,907 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:40] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 13:43:40,927 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:40] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:43:40,931 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:40] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:43:40,932 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:40] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:43:40,934 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:40] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 13:43:40,940 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 13:43:40,941 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 13:43:40,950 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 13:43:40,954 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:40] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 13:43:40,955 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:43:40] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-16 13:44:59,279 - root - INFO - Database tables created successfully
+2025-01-16 13:44:59,293 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 13:44:59,293 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 13:44:59,294 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:44:59,669 - root - INFO - Database tables created successfully
+2025-01-16 13:44:59,677 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:44:59,678 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:45:08,156 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:08] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-16 13:45:08,186 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:08] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:45:08,186 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:08] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:45:08,187 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:08] "GET /script.js HTTP/1.1" 200 -
+2025-01-16 13:45:10,187 - root - INFO - Logging out user: Vladimir
+2025-01-16 13:45:10,187 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:10] "GET /logout HTTP/1.1" 200 -
+2025-01-16 13:45:10,197 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:45:10,197 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:10] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:45:10,227 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:10] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:45:10,228 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:10] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:45:11,630 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:45:11,630 - root - INFO - Redirecting to: /index
+2025-01-16 13:45:11,631 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:11] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:45:11,646 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:11] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:45:11,676 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:11] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:45:11,677 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:11] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:45:11,680 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:11] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:45:13,836 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:13] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 13:45:13,867 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:13] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:45:13,939 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:13] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:45:13,952 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:13] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:45:13,955 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:13] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 13:45:13,965 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 13:45:13,966 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 13:45:13,975 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 13:45:13,981 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:13] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 13:45:17,763 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:17] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:45:48,959 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:48] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 13:45:48,983 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:48] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:45:48,985 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:48] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:45:48,986 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:48] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:45:49,002 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:49] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 13:45:49,008 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 13:45:49,009 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 13:45:49,017 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 13:45:49,021 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:49] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 13:45:49,143 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:45:49] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-16 13:46:55,942 - root - INFO - Database tables created successfully
+2025-01-16 13:46:55,954 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 13:46:55,954 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 13:46:55,955 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 13:46:56,334 - root - INFO - Database tables created successfully
+2025-01-16 13:46:56,342 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 13:46:56,344 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 13:47:09,520 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:09] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-16 13:47:09,549 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:09] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:47:09,551 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:09] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:47:09,552 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:09] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:47:11,101 - root - INFO - Logging out user: Vladimir
+2025-01-16 13:47:11,101 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:11] "GET /logout HTTP/1.1" 200 -
+2025-01-16 13:47:11,113 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:47:11,114 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:11] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:47:11,149 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:11] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:47:11,150 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:11] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:47:12,600 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:47:12,601 - root - INFO - Redirecting to: /index
+2025-01-16 13:47:12,601 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:12] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:47:12,615 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:12] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:47:12,646 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:12] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:47:12,647 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:12] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:47:12,648 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:12] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:47:13,461 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:13] "GET /retrieve_data.html HTTP/1.1" 200 -
+2025-01-16 13:47:13,497 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:13] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:47:13,499 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:13] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:47:13,500 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:13] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 13:47:13,516 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 13:47:13,516 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 13:47:13,521 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 13:47:13,523 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:13] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 13:47:15,346 - root - INFO - Logging out user: Vladimir
+2025-01-16 13:47:15,347 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:15] "GET /logout HTTP/1.1" 200 -
+2025-01-16 13:47:15,356 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:47:15,356 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:15] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:47:15,388 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:15] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:47:15,388 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:15] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:47:17,070 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:47:17,071 - root - INFO - Redirecting to: /index
+2025-01-16 13:47:17,071 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:17] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:47:17,082 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:17] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:47:17,118 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:17] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:47:17,119 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:17] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:47:17,120 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:17] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:47:18,870 - root - INFO - Logging out user: Vladimir
+2025-01-16 13:47:18,871 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:18] "GET /logout HTTP/1.1" 200 -
+2025-01-16 13:47:18,880 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:47:18,881 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:18] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:47:18,913 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:18] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:47:18,913 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:18] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:47:20,196 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:47:20,196 - root - INFO - Redirecting to: /index
+2025-01-16 13:47:20,197 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:20] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:47:20,208 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:20] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:47:20,247 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:20] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:47:20,249 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:20] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:47:20,249 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:20] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 13:47:21,051 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:21] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-16 13:47:21,086 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:21] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:47:21,088 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:21] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:47:21,089 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:21] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-16 13:47:21,111 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 13:47:21,111 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 13:47:21,122 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 13:47:21,126 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:21] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 13:47:21,909 - root - INFO - Logging out user: Vladimir
+2025-01-16 13:47:21,909 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:21] "GET /logout HTTP/1.1" 200 -
+2025-01-16 13:47:21,918 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 13:47:21,918 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:21] "GET /login HTTP/1.1" 200 -
+2025-01-16 13:47:21,959 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:21] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:47:21,961 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:21] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:47:23,287 - root - INFO - User Vladimir logged in successfully
+2025-01-16 13:47:23,287 - root - INFO - Redirecting to: /index
+2025-01-16 13:47:23,288 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:23] "POST /login HTTP/1.1" 200 -
+2025-01-16 13:47:23,299 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:23] "GET /index HTTP/1.1" 200 -
+2025-01-16 13:47:23,337 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:23] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 13:47:23,339 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:23] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 13:47:23,339 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:47:23] "[36mGET /script.js HTTP/1.1[0m" 304 -
