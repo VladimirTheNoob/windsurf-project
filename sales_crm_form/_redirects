@@ -1,12 +1,18 @@
 # SPA routing
 /* /index.html 200
 
-# Proxy routes with multiple fallbacks
+# Catch-all login routes
 /login /login 200
 /login/* /login 200
 /api/login /login 200
 /api/login/* /login 200
 
-# Netlify-specific routing
+# Wildcard routes for various domains
 https://mavericka-crm.netlify.app/login /login 200
 https://mavericka-crm.netlify.app/login/* /login 200
+https://*.netlify.app/login /login 200
+https://*.netlify.app/login/* /login 200
+
+# Fallback routes
+/auth /login 200
+/auth/* /login 200

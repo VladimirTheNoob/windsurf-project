@@ -142,27 +142,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 }));
 
                 // Determine login endpoint based on environment
-                const loginEndpoint = (() => {
+                const loginEndpoints = (() => {
                     const hostname = window.location.hostname;
                     const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1';
                     
                     if (isLocalhost) {
-                        return '/login';
+                        return ['/login', '/api/login'];
                     }
                     
                     // Multiple fallback strategies for deployed environments
-                    const deployedEndpoints = [
-                        'https://mavericka-crm.netlify.app/login',
+                    return [
+                        `${window.location.origin}/login`,
+                        `${window.location.origin}/api/login`,
                         '/login',
-                        '/api/login'
+                        '/api/login',
+                        'https://mavericka-crm.netlify.app/login'
                     ];
-                    
-                    return deployedEndpoints;
                 })();
 
                 // Function to attempt login with multiple endpoints
                 const attemptLogin = async (endpoints) => {
-                    for (const endpoint of Array.isArray(endpoints) ? endpoints : [endpoints]) {
+                    const loginPayload = {
+                        username: loginIdentifier,
+                        password: password,
+                        next: nextPage
+                    };
+
+                    for (const endpoint of endpoints) {
                         try {
                             console.log(`Attempting login with endpoint: ${endpoint}`);
                             
@@ -175,11 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     'Cache-Control': 'no-cache',
                                     'X-Requested-With': 'XMLHttpRequest'
                                 },
-                                body: JSON.stringify({
-                                    username: loginIdentifier,
-                                    password: password,
-                                    next: nextPage
-                                })
+                                body: JSON.stringify(loginPayload)
                             });
 
                             // Log full response details for debugging
@@ -196,6 +198,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             if (response.ok) {
                                 return response;
                             }
+
+                            // Log unsuccessful responses
+                            console.warn(`Unsuccessful login attempt with ${endpoint}:`, 
+                                response.status, response.statusText);
                         } catch (endpointError) {
                             console.warn(`Failed to login with endpoint ${endpoint}:`, endpointError);
                         }
@@ -206,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
 
                 // Attempt login
-                const response = await attemptLogin(loginEndpoint);
+                const response = await attemptLogin(loginEndpoints);
 
                 // Clear the timeout
                 clearTimeout(submitTimer);
