@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales CRM Input Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.png" alt="Company Logo" class="logo">
+        </div>
+        <h1>Sales CRM Input Form</h1>
+        <form id="salesCrmForm">
+            <div class="form-group">
+                <label for="personName">Person Name:</label>
+                <input type="text" id="personName" name="personName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="companyName">Company Name:</label>
+                <input type="text" id="companyName" name="companyName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <input type="text" id="department" name="department">
+            </div>
+            
+            <div class="form-group">
+                <label for="case">Case:</label>
+                <input type="text" id="case" name="case">
+            </div>
+            
+            <div class="form-group">
+                <label for="nextSteps">Next Steps:</label>
+                <textarea id="nextSteps" name="nextSteps" rows="3"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select id="status" name="status">
+                    <option value="">Select Status</option>
+                    <option value="new">New</option>
+                    <option value="in_progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                    <option value="on_hold">On Hold</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="salePerson">Sales Person:</label>
+                <select id="salePerson" name="salePerson" required>
+                    <option value="">Select Sales Person</option>
+                    <option value="Vladimir Belyakov">Vladimir Belyakov</option>
+                    <option value="Eugen Genzelew">Eugen Genzelew</option>
+                    <option value="Konstantin Tokarev">Konstantin Tokarev</option>
+                </select>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

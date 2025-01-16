@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Data Retrieval</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.png" alt="Company Logo" class="logo">
+        </div>
+        <h1>CRM Data Retrieval</h1>
+        
+        <div class="controls-container">
+            <div class="form-group">
+                <label for="salesPersonFilter">Sales Person:</label>
+                <select id="salesPersonFilter" name="salesPersonFilter">
+                    <option value="">All Sales Persons</option>
+                    <option value="Vladimir Belyakov">Vladimir Belyakov</option>
+                    <option value="Eugen Genzelew">Eugen Genzelew</option>
+                    <option value="Konstantin Tokarev">Konstantin Tokarev</option>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button id="retrieveAllBtn">Retrieve All Data</button>
+                <button id="retrieveFilteredBtn">Retrieve Filtered Data</button>
+                <button id="clearDataBtn">Clear All Data</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-standalone-container">
+        <table id="crmDataTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Person Name</th>
+                    <th>Company Name</th>
+                    <th>Department</th>
+                    <th>Case</th>
+                    <th>Next Steps</th>
+                    <th>Status</th>
+                    <th>Description</th>
+                    <th>Sales Person</th>
+                    <th>Submission Time</th>
+                </tr>
+            </thead>
+            <tbody id="crmDataBody">
+                <!-- Data will be dynamically populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="retrieve_data.js"></script>
+</body>
+</html>
