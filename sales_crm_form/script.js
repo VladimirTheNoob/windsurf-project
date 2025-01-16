@@ -88,6 +88,121 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Login form submission handler
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Fallback URLs
+            const successRedirect = '/index';
+            const loginUrl = '/login';
+
+            // Timeout to ensure we handle cases where fetch fails
+            const submitTimer = setTimeout(() => {
+                console.warn('Login timeout: Forcing redirect');
+                window.location.href = loginUrl;
+            }, 5000);
+
+            // Collect login data
+            const formData = {
+                username: document.getElementById('username').value,
+                password: document.getElementById('password').value
+            };
+
+            fetch('/login', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'Cache-Control': 'no-cache'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                // Log full response details for debugging
+                console.log('Login Response:', {
+                    status: response.status,
+                    statusText: response.statusText,
+                    headers: Object.fromEntries(response.headers.entries()),
+                    type: response.type,
+                    ok: response.ok
+                });
+
+                // Check if response is OK
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                // Try to get content type
+                const contentType = response.headers.get('content-type') || '';
+                console.log('Content-Type:', contentType);
+
+                // Multiple parsing strategies
+                if (contentType.includes('application/json')) {
+                    return response.json();
+                }
+
+                // Try text parsing with multiple fallback strategies
+                return response.text().then(text => {
+                    console.warn('Non-JSON response text:', text);
+                    
+                    // Strategy 1: Direct JSON parse
+                    try {
+                        return JSON.parse(text);
+                    } catch (jsonParseError) {
+                        console.warn('JSON parse failed, trying alternative parsing');
+                    }
+
+                    // Strategy 2: Check for specific success indicators
+                    if (text.includes('Login successful')) {
+                        return { message: 'Login successful', redirect: successRedirect };
+                    }
+
+                    // Strategy 3: Fallback to default
+                    console.error('Failed to parse login response');
+                    throw new Error('Invalid response format');
+                });
+            })
+            .then(data => {
+                // Clear the timeout
+                clearTimeout(submitTimer);
+
+                console.log('Parsed login response:', data);
+
+                // Check for login success or handle potential error response
+                if (data.message === 'Login successful') {
+                    // Prefer provided redirect, fallback to default
+                    const redirectUrl = data.redirect || successRedirect;
+                    window.location.href = redirectUrl;
+                } else if (data.error) {
+                    console.error('Login failed:', data.error);
+                    alert(data.error);
+                    window.location.href = loginUrl;
+                } else {
+                    console.error('Unexpected login response:', data);
+                    alert('Login failed. Redirecting to login.');
+                    window.location.href = loginUrl;
+                }
+            })
+            .catch(error => {
+                // Clear the timeout
+                clearTimeout(submitTimer);
+
+                console.error('Login error details:', {
+                    name: error.name,
+                    message: error.message,
+                    stack: error.stack
+                });
+                
+                // Always provide a way to handle login failure
+                alert('An error occurred during login. Please try again.');
+                window.location.href = loginUrl;
+            });
+        });
+    }
+
     // Logout functionality
     function handleLogout() {
         // Fallback redirect URL
