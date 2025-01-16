@@ -252,18 +252,24 @@ def logout():
         # Perform logout
         logout_user()
         
-        # Return JSON response for frontend
-        return jsonify({
+        # Return JSON response for frontend with explicit content type
+        response = jsonify({
             'message': 'Logout successful',
-            'redirect': url_for('login')
-        }), 200
+            'redirect': url_for('login', _external=True)
+        })
+        response.headers['Content-Type'] = 'application/json'
+        return response, 200
     except Exception as e:
         # Log any unexpected errors
         logging.error(f"Logout error: {str(e)}")
-        return jsonify({
+        
+        # Return error JSON response
+        error_response = jsonify({
             'error': 'Logout failed',
             'details': str(e)
-        }), 500
+        })
+        error_response.headers['Content-Type'] = 'application/json'
+        return error_response, 500
 
 # Protect routes that require authentication
 @app.route('/index')

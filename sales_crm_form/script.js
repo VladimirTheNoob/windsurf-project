@@ -98,28 +98,38 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .then(response => {
-            // Check if response is OK and is JSON
+            // Check if response is OK
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            const contentType = response.headers.get('content-type');
-            if (!contentType || !contentType.includes('application/json')) {
-                throw new TypeError("Oops, we haven't got JSON!");
-            }
-            return response.json();
+            
+            // Try to parse as JSON, with fallback
+            return response.json().catch(() => {
+                // If JSON parsing fails, try to get text
+                return response.text().then(text => {
+                    console.warn('Non-JSON response:', text);
+                    throw new Error('Invalid response format');
+                });
+            });
         })
         .then(data => {
+            // Check for logout success or handle potential error response
             if (data.message === 'Logout successful') {
+                // Use full URL for redirection
                 window.location.href = data.redirect;
+            } else if (data.error) {
+                console.error('Logout failed:', data.error);
+                alert(data.error);
             } else {
-                console.error('Logout failed:', data);
+                console.error('Unexpected logout response:', data);
                 alert('Logout failed. Please try again.');
             }
         })
         .catch(error => {
             console.error('Logout error:', error);
+            
             // More specific error handling
-            if (error.message.includes('JSON')) {
+            if (error.message.includes('Invalid response')) {
                 alert('Server returned an unexpected response. Please try logging out again.');
             } else {
                 alert('An error occurred during logout. Please try again.');
