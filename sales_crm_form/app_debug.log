@@ -3378,3 +3378,1498 @@ FROM crm_entry ORDER BY crm_entry.submission_time DESC
 2025-01-16 13:14:59,440 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:14:59] "[36mGET /styles.css HTTP/1.1[0m" 304 -
 2025-01-16 13:14:59,475 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:14:59] "[36mGET /logo.png HTTP/1.1[0m" 304 -
 2025-01-16 13:14:59,481 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 13:14:59] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 18:37:29,616 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-16 18:37:29,619 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-16 18:37:29,620 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-16 18:37:29,622 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-16 18:37:29,623 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-16 18:37:29,624 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-16 18:37:29,625 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-16 18:37:29,625 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-16 18:37:29,626 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-16 18:37:29,628 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-16 18:37:29,628 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-16 18:37:29,630 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-16 18:37:29,630 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-16 18:37:29,631 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-16 18:37:29,631 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-16 18:37:29,632 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-16 18:37:29,633 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-16 18:37:29,635 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-16 18:37:29,635 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 18:37:29,635 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 18:37:29,635 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-16 18:37:29,636 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-16 18:37:29,636 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-16 18:37:29,638 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-16 18:37:29,639 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-16 18:37:29,639 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-16 18:37:29,640 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-16 18:37:29,641 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-16 18:37:29,642 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-16 18:37:29,643 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-16 18:37:29,643 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-16 18:37:29,643 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-16 18:37:29,644 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-16 18:37:29,644 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-16 18:37:29,645 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-16 18:37:29,648 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-16 18:37:29,649 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-16 18:37:29,652 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-16 18:37:29,652 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 18:37:29,652 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 18:37:29,652 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 18:37:29,652 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-16 18:37:29,655 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-16 18:37:29,656 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 18:37:29,680 - root - INFO - Successfully inserted 100 random entries
+2025-01-16 18:37:29,681 - root - INFO - Database tables created successfully
+2025-01-16 18:37:29,695 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-16 18:37:29,696 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-16 18:37:29,696 - werkzeug - INFO -  * Restarting with stat
+2025-01-16 18:37:30,098 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-16 18:37:30,101 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-16 18:37:30,102 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-16 18:37:30,104 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-16 18:37:30,104 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-16 18:37:30,106 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-16 18:37:30,106 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-16 18:37:30,107 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-16 18:37:30,108 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-16 18:37:30,109 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-16 18:37:30,110 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-16 18:37:30,111 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-16 18:37:30,112 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-16 18:37:30,112 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-16 18:37:30,113 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-16 18:37:30,114 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-16 18:37:30,114 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-16 18:37:30,116 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-16 18:37:30,117 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 18:37:30,117 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 18:37:30,117 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-16 18:37:30,118 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-16 18:37:30,118 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-16 18:37:30,120 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-16 18:37:30,121 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-16 18:37:30,121 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-16 18:37:30,122 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-16 18:37:30,123 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-16 18:37:30,124 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-16 18:37:30,125 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-16 18:37:30,125 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-16 18:37:30,125 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-16 18:37:30,126 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-16 18:37:30,126 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-16 18:37:30,127 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-16 18:37:30,129 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-16 18:37:30,131 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-16 18:37:30,133 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-16 18:37:30,134 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 18:37:30,134 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 18:37:30,134 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 18:37:30,134 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-16 18:37:30,136 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-16 18:37:30,137 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-16 18:37:30,160 - root - INFO - Successfully inserted 100 random entries
+2025-01-16 18:37:30,161 - root - INFO - Database tables created successfully
+2025-01-16 18:37:30,169 - werkzeug - WARNING -  * Debugger is active!
+2025-01-16 18:37:30,170 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-16 18:37:50,216 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:37:50] "[33mGET /api/login HTTP/1.1[0m" 404 -
+2025-01-16 18:37:50,326 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:37:50] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-16 18:37:56,235 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:37:56] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-16 18:37:56,541 - root - INFO - Rendering login page with next parameter: None
+2025-01-16 18:37:56,552 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:37:56] "GET /login HTTP/1.1" 200 -
+2025-01-16 18:37:56,962 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:37:56] "GET /styles.css HTTP/1.1" 200 -
+2025-01-16 18:37:56,965 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:37:56] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 18:37:59,116 - root - INFO - User Vladimir logged in successfully
+2025-01-16 18:37:59,117 - root - INFO - Redirecting to: /index
+2025-01-16 18:37:59,119 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:37:59] "POST /login HTTP/1.1" 200 -
+2025-01-16 18:37:59,437 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:37:59] "GET /index HTTP/1.1" 200 -
+2025-01-16 18:37:59,468 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:37:59] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 18:37:59,769 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:37:59] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 18:37:59,781 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:37:59] "GET /script.js HTTP/1.1" 200 -
+2025-01-16 18:38:01,451 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:38:01] "GET /retrieve_data.html HTTP/1.1" 200 -
+2025-01-16 18:38:01,543 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:38:01] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 18:38:01,713 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:38:01] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 18:38:01,792 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:38:01] "GET /retrieve_data.js HTTP/1.1" 200 -
+2025-01-16 18:38:01,801 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-16 18:38:01,802 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-16 18:38:01,818 - root - INFO - Retrieved 607 CRM entries
+2025-01-16 18:38:01,822 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:38:01] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-16 18:38:06,172 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:38:06] "GET /index.html HTTP/1.1" 200 -
+2025-01-16 18:38:06,265 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:38:06] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-16 18:38:06,436 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:38:06] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-16 18:38:06,513 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:38:06] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-16 18:38:21,304 - root - DEBUG - Submit CRM Request Received
+2025-01-16 18:38:21,304 - root - DEBUG - Request Method: POST
+2025-01-16 18:38:21,304 - root - DEBUG - Request Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Content-Length': '200', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 YaBrowser/24.12.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Chromium";v="130", "YaBrowser";v="24.12", "Not?A_Brand";v="99", "Yowser";v="2.5"', 'Content-Type': 'application/json', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:5000', 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:5000/index.html', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'ru,en;q=0.9,bg;q=0.8', 'Cookie': 'session=.eJwtzjEOwjAMRuG7ZGbwHztt3MtUTmwL1pZOiLvTgf3p6fuUPY84n2V7H1c8yv7yshUwuapLVa_UFKzZG0hqk6jBOUkWWKOIoVI9Q4UMddhKxrPZnfY0gJZYeHFIeLc6ePjq64DNGB3321XEkBqT2NG554QgUW7Idcbx15TvD2OeLtw.Z4kn1w.v_l3yg9VsNSZzPD2GnYrAMrv_I0'}
+2025-01-16 18:38:21,304 - root - DEBUG - Request Content Type: application/json
+2025-01-16 18:38:21,304 - root - DEBUG - Parsed JSON data: {'person_name': 'Fedor', 'company_name': 'Fedor and Fedor', 'department': 'Sales', 'case': 'Finance', 'next_steps': 'wqerqwe', 'status': 'Closed Won', 'description': 'ewqrqwerq', 'sale_person': 'Konstantin Tokarev'}
+2025-01-16 18:38:21,308 - root - INFO - CRM entry added successfully for Fedor
+2025-01-16 18:38:21,311 - werkzeug - INFO - 127.0.0.1 - - [16/Jan/2025 18:38:21] "[35m[1mPOST /submit_crm HTTP/1.1[0m" 201 -
+2025-01-17 11:28:04,030 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:28:04,033 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:28:04,035 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:28:04,037 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:28:04,038 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:28:04,039 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:28:04,040 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:28:04,040 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:28:04,042 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:28:04,043 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:28:04,044 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:28:04,045 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:28:04,046 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:28:04,047 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:28:04,047 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:28:04,049 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:28:04,050 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:28:04,052 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:28:04,052 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:28:04,052 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:28:04,052 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:28:04,053 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:28:04,054 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:28:04,056 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:28:04,056 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:28:04,057 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:28:04,057 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:28:04,059 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:28:04,060 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:28:04,061 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:28:04,061 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:28:04,061 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:28:04,062 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:28:04,062 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:28:04,063 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:28:04,066 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:28:04,068 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:28:04,070 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:28:04,071 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:28:04,071 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:28:04,071 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:28:04,071 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:28:04,074 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:28:04,075 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:28:04,102 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:28:04,104 - root - INFO - Database tables created successfully
+2025-01-17 11:28:04,121 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 11:28:04,121 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 11:28:04,122 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:28:04,525 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:28:04,528 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:28:04,529 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:28:04,531 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:28:04,531 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:28:04,533 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:28:04,533 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:28:04,534 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:28:04,535 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:28:04,536 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:28:04,536 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:28:04,538 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:28:04,539 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:28:04,539 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:28:04,539 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:28:04,541 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:28:04,541 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:28:04,543 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:28:04,544 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:28:04,544 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:28:04,544 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:28:04,545 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:28:04,545 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:28:04,547 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:28:04,548 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:28:04,548 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:28:04,548 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:28:04,550 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:28:04,550 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:28:04,552 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:28:04,552 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:28:04,552 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:28:04,552 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:28:04,553 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:28:04,554 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:28:04,556 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:28:04,558 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:28:04,560 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:28:04,561 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:28:04,561 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:28:04,561 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:28:04,561 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:28:04,563 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:28:04,564 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:28:04,586 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:28:04,587 - root - INFO - Database tables created successfully
+2025-01-17 11:28:04,596 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:28:04,598 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:28:46,961 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:28:46] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-17 11:28:46,966 - root - INFO - Rendering login page with next parameter: None
+2025-01-17 11:28:46,972 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:28:46] "GET /login HTTP/1.1" 200 -
+2025-01-17 11:28:47,393 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:28:47] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:28:47,401 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:28:47] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:28:59,501 - root - INFO - User Vladimir logged in successfully
+2025-01-17 11:28:59,501 - root - INFO - Redirecting to: /index
+2025-01-17 11:28:59,503 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:28:59] "POST /login HTTP/1.1" 200 -
+2025-01-17 11:28:59,582 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:28:59] "GET /index HTTP/1.1" 200 -
+2025-01-17 11:28:59,834 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:28:59] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:28:59,928 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:28:59] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:28:59,930 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:28:59] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:29:00,164 - root - INFO - User Vladimir logged in successfully
+2025-01-17 11:29:00,164 - root - INFO - Redirecting to: /index
+2025-01-17 11:29:00,165 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:29:00] "POST /login HTTP/1.1" 200 -
+2025-01-17 11:29:04,266 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:29:04] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 11:29:04,421 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:29:04] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:29:04,514 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:29:04] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:29:04,606 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:29:04] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:29:04,619 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-17 11:29:04,621 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-17 11:29:04,641 - root - INFO - Retrieved 808 CRM entries
+2025-01-17 11:29:04,646 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:29:04] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:30:34,834 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:30:34] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:30:34,988 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:30:34] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:30:35,081 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:30:35] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:30:35,167 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:30:35] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:30:37,484 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:30:37] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-17 11:30:37,787 - root - INFO - Rendering login page with next parameter: None
+2025-01-17 11:30:37,788 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:30:37] "GET /login HTTP/1.1" 200 -
+2025-01-17 11:30:38,127 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:30:38] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:30:38,129 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:30:38] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:30:39,895 - root - INFO - User Vladimir logged in successfully
+2025-01-17 11:30:39,895 - root - INFO - Redirecting to: /index
+2025-01-17 11:30:39,896 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:30:39] "POST /login HTTP/1.1" 200 -
+2025-01-17 11:30:40,224 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:30:40] "GET /index HTTP/1.1" 200 -
+2025-01-17 11:30:40,246 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:30:40] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:30:40,470 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:30:40] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:30:40,564 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:30:40] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:35:36,745 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:36] "GET /index HTTP/1.1" 200 -
+2025-01-17 11:35:36,764 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:36] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:35:37,008 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:37] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:35:37,082 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:37] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:35:37,408 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:37] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-17 11:35:39,749 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:39] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 11:35:40,049 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:40] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:35:40,083 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:40] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:35:40,085 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:40] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:35:40,404 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-17 11:35:40,405 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-17 11:35:40,419 - root - INFO - Retrieved 808 CRM entries
+2025-01-17 11:35:40,423 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:40] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:35:41,599 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:41] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:35:41,917 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:41] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:35:41,947 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:41] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:35:41,948 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:41] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:35:49,001 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:49] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 11:35:49,107 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:49] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:35:49,265 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:49] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:35:49,342 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:49] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:35:49,350 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-17 11:35:49,351 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-17 11:35:49,371 - root - INFO - Retrieved 808 CRM entries
+2025-01-17 11:35:49,376 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:49] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:35:54,278 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:54] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:35:54,584 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:54] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:35:54,614 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:54] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:35:54,615 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:35:54] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:37:41,645 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-17 11:37:41,694 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:37:42,115 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:37:42,117 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:37:42,119 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:37:42,121 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:37:42,121 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:37:42,123 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:37:42,124 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:37:42,124 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:37:42,125 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:37:42,126 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:37:42,127 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:37:42,129 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:37:42,129 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:37:42,130 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:37:42,130 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:37:42,131 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:37:42,132 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:37:42,134 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:37:42,135 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:37:42,135 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:37:42,135 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:37:42,135 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:37:42,136 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:37:42,138 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:37:42,139 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:37:42,139 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:37:42,140 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:37:42,141 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:37:42,142 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:37:42,143 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:37:42,143 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:37:42,144 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:37:42,144 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:37:42,144 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:37:42,145 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:37:42,148 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:37:42,150 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:37:42,154 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:37:42,155 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:37:42,155 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:37:42,155 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:37:42,155 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:37:42,158 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:37:42,159 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:37:42,182 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:37:42,184 - root - INFO - Database tables created successfully
+2025-01-17 11:37:42,192 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:37:42,194 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:38:37,832 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:38:37,835 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:38:37,836 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:38:37,838 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:38:37,839 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:38:37,840 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:38:37,840 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:38:37,841 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:38:37,842 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:38:37,843 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:38:37,844 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:38:37,846 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:38:37,846 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:38:37,847 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:38:37,847 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:38:37,849 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:38:37,849 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:38:37,851 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:38:37,852 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:38:37,852 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:38:37,852 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:38:37,852 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:38:37,853 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:38:37,855 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:38:37,855 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:38:37,855 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:38:37,856 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:38:37,858 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:38:37,859 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:38:37,861 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:38:37,861 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:38:37,861 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:38:37,862 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:38:37,863 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:38:37,864 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:38:37,867 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:38:37,868 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:38:37,871 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:38:37,872 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:38:37,872 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:38:37,872 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:38:37,872 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:38:37,874 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:38:37,875 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:38:37,897 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:38:37,898 - root - INFO - Database tables created successfully
+2025-01-17 11:38:37,913 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 11:38:37,913 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 11:38:37,914 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:38:38,319 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:38:38,321 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:38:38,323 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:38:38,324 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:38:38,325 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:38:38,326 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:38:38,327 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:38:38,327 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:38:38,328 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:38:38,329 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:38:38,330 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:38:38,331 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:38:38,332 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:38:38,332 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:38:38,333 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:38:38,334 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:38:38,335 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:38:38,336 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:38:38,337 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:38:38,337 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:38:38,337 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:38:38,338 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:38:38,338 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:38:38,340 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:38:38,340 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:38:38,341 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:38:38,341 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:38:38,343 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:38:38,344 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:38:38,345 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:38:38,345 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:38:38,346 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:38:38,346 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:38:38,347 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:38:38,347 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:38:38,350 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:38:38,352 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:38:38,354 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:38:38,355 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:38:38,355 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:38:38,355 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:38:38,355 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:38:38,357 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:38:38,358 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:38:38,380 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:38:38,381 - root - INFO - Database tables created successfully
+2025-01-17 11:38:38,389 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:38:38,390 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:38:56,162 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:38:56] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:38:56,180 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:38:56] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:38:56,404 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:38:56] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:38:56,481 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:38:56] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:38:56,823 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:38:56] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-17 11:38:57,830 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:38:57] "[31m[1mGET /logout HTTP/1.1[0m" 401 -
+2025-01-17 11:39:03,391 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:39:03] "[31m[1mGET /logout HTTP/1.1[0m" 401 -
+2025-01-17 11:39:06,707 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:39:06] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:39:09,061 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:39:09] "[31m[1mGET /logout HTTP/1.1[0m" 401 -
+2025-01-17 11:39:59,628 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-17 11:39:59,693 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:40:00,103 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:40:00,106 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:40:00,107 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:40:00,109 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:40:00,110 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:40:00,111 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:40:00,112 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:40:00,112 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:40:00,113 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:40:00,114 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:40:00,115 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:40:00,117 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:40:00,117 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:40:00,118 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:40:00,118 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:40:00,119 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:40:00,120 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:40:00,122 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:40:00,122 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:00,122 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:00,122 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:40:00,123 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:40:00,123 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:40:00,125 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:40:00,126 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:40:00,126 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:40:00,127 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:40:00,128 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:40:00,129 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:40:00,130 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:40:00,130 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:40:00,130 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:40:00,131 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:40:00,131 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:40:00,132 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:40:00,135 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:40:00,136 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:40:00,139 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:40:00,140 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:00,140 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:00,140 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:00,140 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:40:00,142 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:40:00,143 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:00,167 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:40:00,169 - root - INFO - Database tables created successfully
+2025-01-17 11:40:00,176 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:40:00,178 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:40:18,260 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:40:18,262 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:40:18,264 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:40:18,265 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:40:18,266 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:40:18,267 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:40:18,268 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:40:18,268 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:40:18,269 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:40:18,271 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:40:18,271 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:40:18,273 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:40:18,273 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:40:18,274 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:40:18,274 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:40:18,275 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:40:18,276 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:40:18,278 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:40:18,278 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:18,278 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:18,278 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:40:18,279 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:40:18,279 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:40:18,281 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:40:18,282 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:40:18,282 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:40:18,282 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:40:18,284 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:40:18,284 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:40:18,286 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:40:18,286 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:40:18,286 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:40:18,287 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:40:18,287 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:40:18,287 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:40:18,291 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:40:18,292 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:40:18,295 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:40:18,295 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:18,295 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:18,295 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:18,295 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:40:18,298 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:40:18,299 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:18,323 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:40:18,325 - root - INFO - Database tables created successfully
+2025-01-17 11:40:18,336 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 11:40:18,336 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 11:40:18,337 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:40:18,743 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:40:18,746 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:40:18,747 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:40:18,749 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:40:18,749 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:40:18,751 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:40:18,751 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:40:18,752 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:40:18,753 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:40:18,754 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:40:18,754 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:40:18,756 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:40:18,756 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:40:18,757 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:40:18,757 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:40:18,759 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:40:18,759 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:40:18,761 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:40:18,762 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:18,762 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:18,762 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:40:18,762 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:40:18,763 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:40:18,764 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:40:18,765 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:40:18,765 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:40:18,766 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:40:18,767 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:40:18,768 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:40:18,769 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:40:18,769 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:40:18,769 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:40:18,770 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:40:18,770 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:40:18,771 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:40:18,773 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:40:18,775 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:40:18,777 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:40:18,778 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:18,778 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:18,778 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:18,778 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:40:18,780 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:40:18,780 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:40:18,804 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:40:18,806 - root - INFO - Database tables created successfully
+2025-01-17 11:40:18,813 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:40:18,815 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:41:09,477 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:09] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-17 11:41:09,481 - root - INFO - Rendering login page with next parameter: None
+2025-01-17 11:41:09,487 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:09] "GET /login HTTP/1.1" 200 -
+2025-01-17 11:41:09,786 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:09] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:41:09,820 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:09] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:41:14,563 - root - INFO - User Vladimir logged in successfully
+2025-01-17 11:41:14,563 - root - INFO - Redirecting to: /index
+2025-01-17 11:41:14,564 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:14] "POST /login HTTP/1.1" 200 -
+2025-01-17 11:41:14,598 - root - INFO - Current User Authenticated: True
+2025-01-17 11:41:14,598 - root - INFO - Current User ID: 1
+2025-01-17 11:41:14,598 - root - INFO - Current Username: Vladimir
+2025-01-17 11:41:14,601 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:14] "GET /index HTTP/1.1" 200 -
+2025-01-17 11:41:14,888 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:14] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:41:14,942 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:14] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:41:14,943 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:14] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:41:21,275 - root - INFO - Attempting to log out user: Vladimir
+2025-01-17 11:41:21,275 - root - INFO - User Vladimir logged out successfully
+2025-01-17 11:41:21,276 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:21] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-17 11:41:21,587 - root - INFO - Rendering login page with next parameter: None
+2025-01-17 11:41:21,588 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:21] "GET /login HTTP/1.1" 200 -
+2025-01-17 11:41:21,934 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:21] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:41:21,935 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:21] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:41:24,734 - root - INFO - User Vladimir logged in successfully
+2025-01-17 11:41:24,734 - root - INFO - Redirecting to: /index
+2025-01-17 11:41:24,735 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:24] "POST /login HTTP/1.1" 200 -
+2025-01-17 11:41:25,049 - root - INFO - Current User Authenticated: True
+2025-01-17 11:41:25,049 - root - INFO - Current User ID: 1
+2025-01-17 11:41:25,049 - root - INFO - Current Username: Vladimir
+2025-01-17 11:41:25,050 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:25] "GET /index HTTP/1.1" 200 -
+2025-01-17 11:41:25,081 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:25] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:41:25,315 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:25] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:41:25,390 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:25] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:41:26,821 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:26] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 11:41:26,910 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:26] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:41:27,081 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:27] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:41:27,174 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:27] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:41:27,181 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-17 11:41:27,181 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-17 11:41:27,215 - root - INFO - Retrieved 1408 CRM entries
+2025-01-17 11:41:27,223 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:27] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:41:28,331 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:28] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:41:28,432 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:28] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:41:28,587 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:28] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:41:28,679 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:28] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:41:36,540 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:36] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:41:36,850 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:36] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:41:36,862 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:36] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:41:36,863 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:36] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:41:37,235 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:37] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-17 11:41:44,751 - root - INFO - Attempting to log out user: Vladimir
+2025-01-17 11:41:44,751 - root - INFO - User Vladimir logged out successfully
+2025-01-17 11:41:44,752 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:44] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-17 11:41:45,070 - root - INFO - Rendering login page with next parameter: None
+2025-01-17 11:41:45,071 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:45] "GET /login HTTP/1.1" 200 -
+2025-01-17 11:41:45,412 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:45] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:41:45,415 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:45] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:41:47,472 - root - INFO - User Vladimir logged in successfully
+2025-01-17 11:41:47,473 - root - INFO - Redirecting to: /index
+2025-01-17 11:41:47,474 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:47] "POST /login HTTP/1.1" 200 -
+2025-01-17 11:41:47,792 - root - INFO - Current User Authenticated: True
+2025-01-17 11:41:47,792 - root - INFO - Current User ID: 1
+2025-01-17 11:41:47,792 - root - INFO - Current Username: Vladimir
+2025-01-17 11:41:47,793 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:47] "GET /index HTTP/1.1" 200 -
+2025-01-17 11:41:47,823 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:47] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:41:48,058 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:48] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:41:48,131 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:48] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:41:54,995 - root - INFO - Current User Authenticated: True
+2025-01-17 11:41:54,995 - root - INFO - Current User ID: 1
+2025-01-17 11:41:54,995 - root - INFO - Current Username: Vladimir
+2025-01-17 11:41:54,996 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:54] "GET /index HTTP/1.1" 200 -
+2025-01-17 11:41:55,017 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:55] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:41:55,255 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:55] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:41:55,330 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:55] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:41:55,691 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:55] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-17 11:41:57,770 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:57] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 11:41:58,082 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:58] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:41:58,128 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:58] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:41:58,130 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:58] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:41:58,447 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-17 11:41:58,448 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-17 11:41:58,472 - root - INFO - Retrieved 1408 CRM entries
+2025-01-17 11:41:58,479 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:41:58] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:42:01,047 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:42:01] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:42:01,362 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:42:01] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:42:01,392 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:42:01] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:42:01,393 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:42:01] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:43:40,461 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-17 11:43:40,527 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:43:40,959 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:43:40,962 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:43:40,963 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:43:40,965 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:43:40,966 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:43:40,967 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:43:40,968 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:43:40,968 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:43:40,969 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:43:40,971 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:43:40,971 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:43:40,973 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:43:40,973 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:43:40,974 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:43:40,974 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:43:40,976 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:43:40,976 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:43:40,978 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:43:40,978 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:40,978 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:40,979 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:43:40,979 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:43:40,980 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:43:40,981 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:43:40,982 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:43:40,982 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:43:40,983 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:43:40,984 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:43:40,985 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:43:40,986 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:43:40,986 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:43:40,987 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:43:40,987 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:43:40,988 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:43:40,988 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:43:40,991 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:43:40,993 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:43:40,995 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:43:40,996 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:40,996 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:40,996 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:40,996 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:43:40,998 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:43:40,999 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:41,026 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:43:41,028 - root - INFO - Database tables created successfully
+2025-01-17 11:43:41,036 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:43:41,037 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:43:56,129 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:43:56,131 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:43:56,133 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:43:56,135 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:43:56,135 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:43:56,137 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:43:56,137 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:43:56,137 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:43:56,139 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:43:56,140 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:43:56,140 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:43:56,142 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:43:56,143 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:43:56,143 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:43:56,144 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:43:56,145 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:43:56,146 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:43:56,147 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:43:56,148 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:56,148 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:56,148 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:43:56,149 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:43:56,149 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:43:56,151 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:43:56,152 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:43:56,152 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:43:56,153 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:43:56,154 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:43:56,155 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:43:56,156 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:43:56,156 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:43:56,156 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:43:56,157 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:43:56,157 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:43:56,158 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:43:56,161 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:43:56,162 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:43:56,165 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:43:56,165 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:56,165 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:56,165 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:56,165 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:43:56,168 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:43:56,168 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:56,194 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:43:56,195 - root - INFO - Database tables created successfully
+2025-01-17 11:43:56,209 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 11:43:56,209 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 11:43:56,210 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:43:56,644 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:43:56,646 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:43:56,647 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:43:56,649 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:43:56,650 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:43:56,651 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:43:56,652 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:43:56,652 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:43:56,653 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:43:56,655 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:43:56,655 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:43:56,657 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:43:56,657 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:43:56,658 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:43:56,658 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:43:56,659 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:43:56,660 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:43:56,662 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:43:56,662 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:56,663 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:56,663 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:43:56,663 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:43:56,664 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:43:56,665 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:43:56,666 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:43:56,666 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:43:56,667 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:43:56,668 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:43:56,669 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:43:56,670 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:43:56,670 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:43:56,670 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:43:56,671 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:43:56,671 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:43:56,671 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:43:56,674 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:43:56,676 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:43:56,678 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:43:56,679 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:56,679 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:56,679 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:56,679 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:43:56,681 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:43:56,682 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:43:56,706 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:43:56,708 - root - INFO - Database tables created successfully
+2025-01-17 11:43:56,716 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:43:56,718 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:44:09,304 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:44:09] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:44:09,324 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:44:09] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:44:09,543 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:44:09] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:44:09,635 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:44:09] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:44:09,998 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:44:09] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-17 11:44:10,738 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:44:10] "[31m[1mGET /logout HTTP/1.1[0m" 401 -
+2025-01-17 11:44:15,771 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:44:15] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:44:17,485 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:44:17] "[31m[1mGET /logout HTTP/1.1[0m" 401 -
+2025-01-17 11:44:17,780 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-17 11:44:18,004 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:44:18,429 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:44:18,432 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:44:18,433 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:44:18,435 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:44:18,436 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:44:18,437 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:44:18,438 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:44:18,438 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:44:18,440 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:44:18,441 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:44:18,441 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:44:18,443 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:44:18,444 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:44:18,444 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:44:18,445 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:44:18,446 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:44:18,447 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:44:18,449 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:44:18,450 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:18,450 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:18,450 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:44:18,450 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:44:18,451 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:44:18,453 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:44:18,454 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:44:18,454 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:44:18,454 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:44:18,456 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:44:18,457 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:44:18,458 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:44:18,458 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:44:18,459 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:44:18,459 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:44:18,459 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:44:18,460 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:44:18,463 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:44:18,466 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:44:18,468 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:44:18,469 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:18,469 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:18,469 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:18,469 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:44:18,472 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:44:18,472 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:18,503 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:44:18,505 - root - INFO - Database tables created successfully
+2025-01-17 11:44:18,512 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:44:18,514 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:44:29,580 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-17 11:44:29,835 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:44:30,528 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:44:30,531 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:44:30,532 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:44:30,534 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:44:30,535 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:44:30,536 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:44:30,537 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:44:30,537 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:44:30,538 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:44:30,539 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:44:30,540 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:44:30,542 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:44:30,542 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:44:30,543 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:44:30,543 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:44:30,545 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:44:30,545 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:44:30,548 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:44:30,548 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:30,548 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:30,548 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:44:30,549 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:44:30,549 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:44:30,552 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:44:30,552 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:44:30,552 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:44:30,553 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:44:30,555 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:44:30,555 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:44:30,557 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:44:30,557 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:44:30,557 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:44:30,558 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:44:30,558 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:44:30,559 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:44:30,562 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:44:30,563 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:44:30,566 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:44:30,566 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:30,566 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:30,567 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:30,567 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:44:30,569 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:44:30,569 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:30,595 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:44:30,597 - root - INFO - Database tables created successfully
+2025-01-17 11:44:30,605 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:44:30,607 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:44:49,648 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-17 11:44:49,695 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:44:50,114 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.address`.
+2025-01-17 11:44:50,117 - faker.factory - DEBUG - Provider `faker.providers.address` has been localized to `en_US`.
+2025-01-17 11:44:50,119 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.automotive`.
+2025-01-17 11:44:50,120 - faker.factory - DEBUG - Provider `faker.providers.automotive` has been localized to `en_US`.
+2025-01-17 11:44:50,121 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.bank`.
+2025-01-17 11:44:50,123 - faker.factory - DEBUG - Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+2025-01-17 11:44:50,123 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.barcode`.
+2025-01-17 11:44:50,123 - faker.factory - DEBUG - Provider `faker.providers.barcode` has been localized to `en_US`.
+2025-01-17 11:44:50,124 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.color`.
+2025-01-17 11:44:50,126 - faker.factory - DEBUG - Provider `faker.providers.color` has been localized to `en_US`.
+2025-01-17 11:44:50,126 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.company`.
+2025-01-17 11:44:50,128 - faker.factory - DEBUG - Provider `faker.providers.company` has been localized to `en_US`.
+2025-01-17 11:44:50,128 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.credit_card`.
+2025-01-17 11:44:50,129 - faker.factory - DEBUG - Provider `faker.providers.credit_card` has been localized to `en_US`.
+2025-01-17 11:44:50,129 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.currency`.
+2025-01-17 11:44:50,131 - faker.factory - DEBUG - Provider `faker.providers.currency` has been localized to `en_US`.
+2025-01-17 11:44:50,131 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.date_time`.
+2025-01-17 11:44:50,133 - faker.factory - DEBUG - Provider `faker.providers.date_time` has been localized to `en_US`.
+2025-01-17 11:44:50,133 - faker.factory - DEBUG - Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:50,133 - faker.factory - DEBUG - Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:50,134 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.geo`.
+2025-01-17 11:44:50,134 - faker.factory - DEBUG - Provider `faker.providers.geo` has been localized to `en_US`.
+2025-01-17 11:44:50,135 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.internet`.
+2025-01-17 11:44:50,137 - faker.factory - DEBUG - Provider `faker.providers.internet` has been localized to `en_US`.
+2025-01-17 11:44:50,138 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.isbn`.
+2025-01-17 11:44:50,138 - faker.factory - DEBUG - Provider `faker.providers.isbn` has been localized to `en_US`.
+2025-01-17 11:44:50,138 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.job`.
+2025-01-17 11:44:50,140 - faker.factory - DEBUG - Provider `faker.providers.job` has been localized to `en_US`.
+2025-01-17 11:44:50,141 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.lorem`.
+2025-01-17 11:44:50,142 - faker.factory - DEBUG - Provider `faker.providers.lorem` has been localized to `en_US`.
+2025-01-17 11:44:50,142 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.misc`.
+2025-01-17 11:44:50,142 - faker.factory - DEBUG - Provider `faker.providers.misc` has been localized to `en_US`.
+2025-01-17 11:44:50,143 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.passport`.
+2025-01-17 11:44:50,143 - faker.factory - DEBUG - Provider `faker.providers.passport` has been localized to `en_US`.
+2025-01-17 11:44:50,144 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.person`.
+2025-01-17 11:44:50,147 - faker.factory - DEBUG - Provider `faker.providers.person` has been localized to `en_US`.
+2025-01-17 11:44:50,150 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.phone_number`.
+2025-01-17 11:44:50,154 - faker.factory - DEBUG - Provider `faker.providers.phone_number` has been localized to `en_US`.
+2025-01-17 11:44:50,157 - faker.factory - DEBUG - Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:50,157 - faker.factory - DEBUG - Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:50,157 - faker.factory - DEBUG - Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:50,157 - faker.factory - DEBUG - Looking for locale `en_US` in provider `faker.providers.ssn`.
+2025-01-17 11:44:50,159 - faker.factory - DEBUG - Provider `faker.providers.ssn` has been localized to `en_US`.
+2025-01-17 11:44:50,160 - faker.factory - DEBUG - Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+2025-01-17 11:44:50,184 - root - INFO - Successfully inserted 100 random entries
+2025-01-17 11:44:50,186 - root - INFO - Database tables created successfully
+2025-01-17 11:44:50,194 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:44:50,196 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:45:51,326 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-17 11:45:51,374 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:45:51,787 - root - INFO - Database tables created successfully
+2025-01-17 11:45:51,795 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:45:51,796 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:46:03,828 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-17 11:46:03,891 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:46:04,317 - root - INFO - Database tables created successfully
+2025-01-17 11:46:04,325 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:46:04,326 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:46:15,358 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-17 11:46:15,429 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:46:15,786 - root - INFO - Database tables created successfully
+2025-01-17 11:46:15,794 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:46:15,795 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:46:22,815 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-17 11:46:22,859 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:46:23,302 - root - INFO - Database tables created successfully
+2025-01-17 11:46:23,310 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:46:23,312 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:46:57,489 - root - INFO - Database tables created successfully
+2025-01-17 11:46:57,501 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 11:46:57,501 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 11:46:57,502 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:46:57,884 - root - INFO - Database tables created successfully
+2025-01-17 11:46:57,894 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:46:57,895 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:47:15,245 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:15] "[32mGET / HTTP/1.1[0m" 302 -
+2025-01-17 11:47:15,253 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:15] "GET /login HTTP/1.1" 200 -
+2025-01-17 11:47:15,560 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:15] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:47:15,584 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:15] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:47:18,679 - root - INFO - User Vladimir logged in successfully
+2025-01-17 11:47:18,679 - root - INFO - Redirecting to: /index
+2025-01-17 11:47:18,681 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:18] "POST /login HTTP/1.1" 200 -
+2025-01-17 11:47:18,696 - root - INFO - Entering index route
+2025-01-17 11:47:18,696 - root - INFO - Current User Authenticated: True
+2025-01-17 11:47:18,697 - root - INFO - Current User Type: <class 'werkzeug.local.LocalProxy'>
+2025-01-17 11:47:18,697 - root - INFO - Current User Dict: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x0000022E06DB0910>, 'password': '$2b$12$ClrEgBTj3HuhOcoWchNNpOO6rpB9pEvjEUn9HBG9ug.ZKnqfaN3Le', 'id': 1, 'email': 'vladimir@mavericka.ru', 'username': 'Vladimir'}
+2025-01-17 11:47:18,697 - root - INFO - Rendering index with username: Vladimir
+2025-01-17 11:47:18,700 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:18] "GET /index HTTP/1.1" 200 -
+2025-01-17 11:47:19,006 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:19] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:47:19,037 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:19] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:47:19,038 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:19] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:47:21,441 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:21] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 11:47:21,579 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:21] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:47:21,705 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:21] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:47:21,794 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:21] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:47:21,804 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-17 11:47:21,806 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-17 11:47:21,846 - root - INFO - Retrieved 2008 CRM entries
+2025-01-17 11:47:21,858 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:21] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:47:22,885 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:22] "GET /index.html HTTP/1.1" 200 -
+2025-01-17 11:47:22,958 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:22] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:47:23,146 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:23] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:47:23,240 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:23] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:47:24,011 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:24] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 11:47:24,327 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:24] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:47:24,358 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:24] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:47:24,360 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:24] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:47:24,671 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-17 11:47:24,671 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-17 11:47:24,707 - root - INFO - Retrieved 2008 CRM entries
+2025-01-17 11:47:24,716 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:24] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:47:25,093 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:25] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:47:25,400 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:25] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:47:25,432 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:25] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:47:25,433 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:25] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:47:27,262 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:27] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:47:27,284 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:27] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:47:27,530 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:27] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:47:27,586 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:27] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:47:27,961 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:27] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-17 11:47:31,603 - root - INFO - User Vladimir logged out successfully
+2025-01-17 11:47:31,603 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:31] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-17 11:47:31,911 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:31] "GET /login HTTP/1.1" 200 -
+2025-01-17 11:47:32,249 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:32] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:47:32,250 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:32] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:47:33,724 - root - INFO - User Vladimir logged in successfully
+2025-01-17 11:47:33,725 - root - INFO - Redirecting to: /index
+2025-01-17 11:47:33,726 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:33] "POST /login HTTP/1.1" 200 -
+2025-01-17 11:47:34,050 - root - INFO - Entering index route
+2025-01-17 11:47:34,050 - root - INFO - Current User Authenticated: True
+2025-01-17 11:47:34,050 - root - INFO - Current User Type: <class 'werkzeug.local.LocalProxy'>
+2025-01-17 11:47:34,050 - root - INFO - Current User Dict: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x0000022E06C6AD50>, 'password': '$2b$12$ClrEgBTj3HuhOcoWchNNpOO6rpB9pEvjEUn9HBG9ug.ZKnqfaN3Le', 'id': 1, 'email': 'vladimir@mavericka.ru', 'username': 'Vladimir'}
+2025-01-17 11:47:34,050 - root - INFO - Rendering index with username: Vladimir
+2025-01-17 11:47:34,051 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:34] "GET /index HTTP/1.1" 200 -
+2025-01-17 11:47:34,086 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:34] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:47:34,309 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:34] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:47:34,387 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:34] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:47:37,771 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:37] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 11:47:37,861 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:37] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:47:38,017 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:38] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:47:38,127 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:38] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:47:38,135 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-17 11:47:38,136 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-17 11:47:38,170 - root - INFO - Retrieved 2008 CRM entries
+2025-01-17 11:47:38,185 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:38] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:47:40,136 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:40] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:47:40,242 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:40] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:47:40,397 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:40] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:47:40,489 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:40] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:47:50,273 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:50] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 11:47:50,590 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:50] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:47:50,620 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:50] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:47:50,621 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:50] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:47:50,931 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-17 11:47:50,932 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-17 11:47:50,950 - root - INFO - Retrieved 2008 CRM entries
+2025-01-17 11:47:50,955 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:47:50] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:49:21,361 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-17 11:49:21,489 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:49:21,915 - root - INFO - Database tables created successfully
+2025-01-17 11:49:21,925 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:49:21,926 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:50:20,544 - root - INFO - Database tables created successfully
+2025-01-17 11:50:20,555 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 11:50:20,555 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 11:50:20,556 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:50:20,910 - root - INFO - Database tables created successfully
+2025-01-17 11:50:20,918 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:50:20,919 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:50:44,553 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:44] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:50:44,620 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:44] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:50:44,789 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:44] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:50:44,899 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:44] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:50:46,056 - root - WARNING - Logout attempted by unauthenticated user
+2025-01-17 11:50:46,056 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:46] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-17 11:50:46,369 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:46] "GET /login HTTP/1.1" 200 -
+2025-01-17 11:50:46,712 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:46] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:50:46,712 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:46] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:50:48,237 - root - INFO - User Vladimir logged in successfully
+2025-01-17 11:50:48,237 - root - INFO - Redirecting to: /index
+2025-01-17 11:50:48,238 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:48] "POST /login HTTP/1.1" 200 -
+2025-01-17 11:50:48,561 - root - INFO - Entering index route
+2025-01-17 11:50:48,561 - root - INFO - Current User Authenticated: True
+2025-01-17 11:50:48,561 - root - INFO - Current User Type: <class 'werkzeug.local.LocalProxy'>
+2025-01-17 11:50:48,561 - root - INFO - Current User Dict: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x000001B52D81CB90>, 'password': '$2b$12$ClrEgBTj3HuhOcoWchNNpOO6rpB9pEvjEUn9HBG9ug.ZKnqfaN3Le', 'id': 1, 'email': 'vladimir@mavericka.ru', 'username': 'Vladimir'}
+2025-01-17 11:50:48,561 - root - INFO - Rendering index with username: Vladimir
+2025-01-17 11:50:48,562 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:48] "GET /index HTTP/1.1" 200 -
+2025-01-17 11:50:48,593 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:48] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:50:48,823 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:48] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:50:48,902 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:48] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:50:50,100 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:50] "GET /retrieve_data.html HTTP/1.1" 200 -
+2025-01-17 11:50:50,207 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:50] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:50:50,363 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:50] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:50:50,442 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:50] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:50:50,448 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-17 11:50:50,449 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-17 11:50:50,470 - root - INFO - Retrieved 2008 CRM entries
+2025-01-17 11:50:50,476 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:50] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:50:53,730 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:53] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:50:53,835 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:53] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:50:53,990 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:53] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:50:54,069 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:54] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:50:54,682 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:54] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 11:50:54,990 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:54] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:50:55,017 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:55] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:50:55,018 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:55] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:50:55,330 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-17 11:50:55,331 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-17 11:50:55,349 - root - INFO - Retrieved 2008 CRM entries
+2025-01-17 11:50:55,354 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:55] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:50:59,907 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:50:59] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:51:00,212 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:51:00] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:51:00,243 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:51:00] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:51:00,243 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:51:00] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:51:06,889 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:51:06] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 11:51:07,201 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:51:07] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:51:07,233 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:51:07] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:51:07,233 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:51:07] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:51:07,554 - root - INFO - Retrieving CRM entries - Sale Person: '', Status: ''
+2025-01-17 11:51:07,554 - root - INFO - Constructed query: SELECT crm_entry.id AS crm_entry_id, crm_entry.person_name AS crm_entry_person_name, crm_entry.company_name AS crm_entry_company_name, crm_entry.department AS crm_entry_department, crm_entry."case" AS crm_entry_case, crm_entry.next_steps AS crm_entry_next_steps, crm_entry.status AS crm_entry_status, crm_entry.description AS crm_entry_description, crm_entry.sale_person AS crm_entry_sale_person, crm_entry.submission_time AS crm_entry_submission_time 
+FROM crm_entry ORDER BY crm_entry.submission_time DESC
+2025-01-17 11:51:07,577 - root - INFO - Retrieved 2008 CRM entries
+2025-01-17 11:51:07,582 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:51:07] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:54:19,531 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-17 11:54:19,588 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:54:19,971 - root - INFO - Database tables created successfully
+2025-01-17 11:54:19,979 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:54:19,980 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:54:56,150 - root - INFO - Database tables created successfully
+2025-01-17 11:54:56,162 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 11:54:56,162 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 11:54:56,163 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:54:56,516 - root - INFO - Database tables created successfully
+2025-01-17 11:54:56,523 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:54:56,525 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 11:55:13,967 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:13] "GET /retrieve_data.html HTTP/1.1" 200 -
+2025-01-17 11:55:13,988 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:13] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:55:14,206 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:14] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:55:14,299 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:14] "GET /retrieve_data.js HTTP/1.1" 200 -
+2025-01-17 11:55:14,610 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:14] "[31m[1mGET /get_crm_entries HTTP/1.1[0m" 401 -
+2025-01-17 11:55:14,670 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:14] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-17 11:55:20,774 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:20] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:55:21,077 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:21] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:55:21,109 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:21] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:55:21,111 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:21] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:55:22,648 - root - WARNING - Logout attempted by unauthenticated user
+2025-01-17 11:55:22,649 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:22] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-17 11:55:22,778 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:22] "GET /login HTTP/1.1" 200 -
+2025-01-17 11:55:22,906 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:22] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:55:23,120 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:23] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:55:24,459 - root - INFO - User Vladimir logged in successfully
+2025-01-17 11:55:24,460 - root - INFO - Redirecting to: /index
+2025-01-17 11:55:24,461 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:24] "POST /login HTTP/1.1" 200 -
+2025-01-17 11:55:24,777 - root - INFO - Entering index route
+2025-01-17 11:55:24,777 - root - INFO - Current User Authenticated: True
+2025-01-17 11:55:24,777 - root - INFO - Current User Type: <class 'werkzeug.local.LocalProxy'>
+2025-01-17 11:55:24,777 - root - INFO - Current User Dict: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x0000016E17660550>, 'email': 'vladimir@mavericka.ru', 'id': 1, 'username': 'Vladimir', 'password': '$2b$12$ClrEgBTj3HuhOcoWchNNpOO6rpB9pEvjEUn9HBG9ug.ZKnqfaN3Le'}
+2025-01-17 11:55:24,778 - root - INFO - Rendering index with username: Vladimir
+2025-01-17 11:55:24,779 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:24] "GET /index HTTP/1.1" 200 -
+2025-01-17 11:55:24,807 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:24] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:55:25,039 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:25] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:55:25,116 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:25] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:55:26,350 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:26] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 11:55:26,437 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:26] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:55:26,609 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:26] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:55:26,702 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:26] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:55:26,750 - root - INFO - Retrieved 2008 CRM entries with filters: sale_person='', case=''
+2025-01-17 11:55:26,759 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:26] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:55:56,412 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:56] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:55:56,501 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:56] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:55:56,656 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:56] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:55:56,749 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:55:56] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:56:04,204 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:56:04] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 11:56:04,520 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:56:04] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:56:04,550 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:56:04] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:56:04,552 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:56:04] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 11:56:04,893 - root - INFO - Retrieved 2008 CRM entries with filters: sale_person='', case=''
+2025-01-17 11:56:04,901 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:56:04] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 11:57:11,445 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:57:11] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 11:57:11,540 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:57:11] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 11:57:11,694 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:57:11] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 11:57:11,788 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 11:57:11] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 11:59:10,317 - werkzeug - INFO -  * Detected change in 'c:\\Users\\belya\\CascadeProjects\\windsurf-project\\sales_crm_form\\app.py', reloading
+2025-01-17 11:59:10,404 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 11:59:10,808 - root - INFO - Database tables created successfully
+2025-01-17 11:59:10,816 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 11:59:10,818 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 12:00:13,516 - root - INFO - Database tables created successfully
+2025-01-17 12:00:13,529 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 12:00:13,530 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 12:00:13,531 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 12:00:13,884 - root - INFO - Database tables created successfully
+2025-01-17 12:00:13,892 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 12:00:13,894 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 12:01:01,044 - root - WARNING - Logout attempted by unauthenticated user
+2025-01-17 12:01:01,045 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:01] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-17 12:01:01,176 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:01] "GET /login HTTP/1.1" 200 -
+2025-01-17 12:01:01,389 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:01] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:01:01,512 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:01] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:01:02,899 - root - INFO - User Vladimir logged in successfully
+2025-01-17 12:01:02,899 - root - INFO - Redirecting to: /index
+2025-01-17 12:01:02,901 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:02] "POST /login HTTP/1.1" 200 -
+2025-01-17 12:01:03,220 - root - INFO - Entering index route
+2025-01-17 12:01:03,220 - root - INFO - Current User Authenticated: True
+2025-01-17 12:01:03,220 - root - INFO - Current User Type: <class 'werkzeug.local.LocalProxy'>
+2025-01-17 12:01:03,220 - root - INFO - Current User Dict: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x000001D0FB41C910>, 'email': 'vladimir@mavericka.ru', 'id': 1, 'username': 'Vladimir', 'password': '$2b$12$ClrEgBTj3HuhOcoWchNNpOO6rpB9pEvjEUn9HBG9ug.ZKnqfaN3Le'}
+2025-01-17 12:01:03,220 - root - INFO - Rendering index with username: Vladimir
+2025-01-17 12:01:03,222 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:03] "GET /index HTTP/1.1" 200 -
+2025-01-17 12:01:03,250 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:03] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:01:03,479 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:03] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:01:03,558 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:03] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 12:01:05,489 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:05] "GET /retrieve_data.html HTTP/1.1" 200 -
+2025-01-17 12:01:05,613 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:05] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:01:05,750 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:05] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:01:05,830 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:05] "GET /retrieve_data.js HTTP/1.1" 200 -
+2025-01-17 12:01:05,880 - root - INFO - Retrieved 2008 CRM entries with filters: sale_person='', case=''
+2025-01-17 12:01:05,889 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:05] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 12:01:16,384 - root - INFO - Retrieved 4 CRM entries with filters: sale_person='', case='Finance'
+2025-01-17 12:01:16,385 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:16] "GET /get_crm_entries?case=Finance HTTP/1.1" 200 -
+2025-01-17 12:01:24,582 - root - INFO - Retrieved 2008 CRM entries with filters: sale_person='', case=''
+2025-01-17 12:01:24,590 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:24] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 12:01:39,214 - root - INFO - Retrieved 426 CRM entries with filters: sale_person='', case='Cybersecurity'
+2025-01-17 12:01:39,216 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:01:39] "GET /get_crm_entries?case=Cybersecurity HTTP/1.1" 200 -
+2025-01-17 12:06:07,973 - root - INFO - Retrieved 2008 CRM entries with filters: sale_person='', case=''
+2025-01-17 12:06:07,981 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:06:07] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 12:09:48,239 - root - INFO - Database tables created successfully
+2025-01-17 12:09:48,253 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 12:09:48,253 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 12:09:48,254 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 12:09:48,605 - root - INFO - Database tables created successfully
+2025-01-17 12:09:48,613 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 12:09:48,615 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 12:10:17,410 - root - WARNING - Logout attempted by unauthenticated user
+2025-01-17 12:10:17,410 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:17] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-17 12:10:17,552 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:17] "GET /login HTTP/1.1" 200 -
+2025-01-17 12:10:17,700 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:17] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:10:17,905 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:17] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:10:19,368 - root - INFO - User Vladimir logged in successfully
+2025-01-17 12:10:19,368 - root - INFO - Redirecting to: /index
+2025-01-17 12:10:19,369 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:19] "POST /login HTTP/1.1" 200 -
+2025-01-17 12:10:19,696 - root - INFO - Entering index route
+2025-01-17 12:10:19,696 - root - INFO - Current User Authenticated: True
+2025-01-17 12:10:19,696 - root - INFO - Current User Type: <class 'werkzeug.local.LocalProxy'>
+2025-01-17 12:10:19,696 - root - INFO - Current User Dict: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x000001AEDB17C910>, 'email': 'vladimir@mavericka.ru', 'id': 1, 'username': 'Vladimir', 'password': '$2b$12$ClrEgBTj3HuhOcoWchNNpOO6rpB9pEvjEUn9HBG9ug.ZKnqfaN3Le'}
+2025-01-17 12:10:19,696 - root - INFO - Rendering index with username: Vladimir
+2025-01-17 12:10:19,699 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:19] "GET /index HTTP/1.1" 200 -
+2025-01-17 12:10:19,732 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:19] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:10:19,942 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:19] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:10:20,036 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:20] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 12:10:21,981 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:21] "GET /retrieve_data.html HTTP/1.1" 200 -
+2025-01-17 12:10:22,082 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:22] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:10:22,239 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:22] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:10:22,331 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:22] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 12:10:22,378 - root - INFO - Retrieved 2008 CRM entries with filters: sale_person='', case=''
+2025-01-17 12:10:22,386 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:10:22] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 12:14:21,089 - root - INFO - Database tables created successfully
+2025-01-17 12:14:21,102 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 12:14:21,102 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 12:14:21,103 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 12:14:21,457 - root - INFO - Database tables created successfully
+2025-01-17 12:14:21,466 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 12:14:21,467 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 12:14:46,262 - root - WARNING - Logout attempted by unauthenticated user
+2025-01-17 12:14:46,262 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:46] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-17 12:14:46,388 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:46] "GET /login HTTP/1.1" 200 -
+2025-01-17 12:14:46,550 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:46] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:14:46,745 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:46] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:14:48,000 - root - INFO - User Vladimir logged in successfully
+2025-01-17 12:14:48,000 - root - INFO - Redirecting to: /index
+2025-01-17 12:14:48,002 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:48] "POST /login HTTP/1.1" 200 -
+2025-01-17 12:14:48,331 - root - INFO - Entering index route
+2025-01-17 12:14:48,331 - root - INFO - Current User Authenticated: True
+2025-01-17 12:14:48,331 - root - INFO - Current User Type: <class 'werkzeug.local.LocalProxy'>
+2025-01-17 12:14:48,331 - root - INFO - Current User Dict: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x00000224D753C910>, 'email': 'vladimir@mavericka.ru', 'id': 1, 'username': 'Vladimir', 'password': '$2b$12$ClrEgBTj3HuhOcoWchNNpOO6rpB9pEvjEUn9HBG9ug.ZKnqfaN3Le'}
+2025-01-17 12:14:48,331 - root - INFO - Rendering index with username: Vladimir
+2025-01-17 12:14:48,334 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:48] "GET /index HTTP/1.1" 200 -
+2025-01-17 12:14:48,362 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:48] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:14:48,573 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:48] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:14:48,666 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:48] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 12:14:50,891 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:50] "GET /retrieve_data.html HTTP/1.1" 200 -
+2025-01-17 12:14:50,999 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:50] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:14:51,154 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:51] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:14:51,247 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:51] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 12:14:51,298 - root - INFO - Retrieved 2008 CRM entries with filters: sale_person='', case=''
+2025-01-17 12:14:51,307 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:14:51] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 12:15:29,908 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:15:29] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 12:15:29,945 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:15:29] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:15:30,157 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:15:30] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:15:30,248 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:15:30] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 12:15:30,593 - root - INFO - Retrieved 2008 CRM entries with filters: sale_person='', case=''
+2025-01-17 12:15:30,603 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:15:30] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 12:15:30,619 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:15:30] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-17 12:18:26,446 - root - INFO - Database tables created successfully
+2025-01-17 12:18:26,458 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 12:18:26,459 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 12:18:26,460 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 12:18:26,811 - root - INFO - Database tables created successfully
+2025-01-17 12:18:26,819 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 12:18:26,821 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 12:18:45,423 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:45] "GET /retrieve_data.html HTTP/1.1" 200 -
+2025-01-17 12:18:45,460 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:45] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:18:45,608 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:45] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:18:45,776 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:45] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 12:18:46,086 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:46] "[31m[1mGET /get_crm_entries HTTP/1.1[0m" 401 -
+2025-01-17 12:18:46,148 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:46] "[36mGET /favicon.ico HTTP/1.1[0m" 304 -
+2025-01-17 12:18:49,606 - root - WARNING - Logout attempted by unauthenticated user
+2025-01-17 12:18:49,607 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:49] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-17 12:18:49,940 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:49] "GET /login HTTP/1.1" 200 -
+2025-01-17 12:18:50,279 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:50] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:18:50,281 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:50] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:18:52,003 - root - INFO - User Vladimir logged in successfully
+2025-01-17 12:18:52,004 - root - INFO - Redirecting to: /index
+2025-01-17 12:18:52,005 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:52] "POST /login HTTP/1.1" 200 -
+2025-01-17 12:18:52,321 - root - INFO - Entering index route
+2025-01-17 12:18:52,321 - root - INFO - Current User Authenticated: True
+2025-01-17 12:18:52,322 - root - INFO - Current User Type: <class 'werkzeug.local.LocalProxy'>
+2025-01-17 12:18:52,322 - root - INFO - Current User Dict: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x000001FA1E90BD90>, 'email': 'vladimir@mavericka.ru', 'id': 1, 'username': 'Vladimir', 'password': '$2b$12$ClrEgBTj3HuhOcoWchNNpOO6rpB9pEvjEUn9HBG9ug.ZKnqfaN3Le'}
+2025-01-17 12:18:52,322 - root - INFO - Rendering index with username: Vladimir
+2025-01-17 12:18:52,324 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:52] "GET /index HTTP/1.1" 200 -
+2025-01-17 12:18:52,357 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:52] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:18:52,584 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:52] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:18:52,661 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:52] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 12:18:57,592 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:57] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 12:18:57,693 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:57] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:18:57,850 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:57] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:18:57,942 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:57] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 12:18:57,990 - root - INFO - Retrieved 2008 CRM entries with filters: sale_person='', case=''
+2025-01-17 12:18:57,999 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:18:57] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 12:30:01,215 - root - INFO - Database tables created successfully
+2025-01-17 12:30:01,229 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 12:30:01,229 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 12:30:01,230 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 12:30:01,625 - root - INFO - Database tables created successfully
+2025-01-17 12:30:01,633 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 12:30:01,635 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 12:30:27,793 - root - WARNING - Logout attempted by unauthenticated user
+2025-01-17 12:30:27,793 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:27] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-17 12:30:27,951 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:27] "GET /login HTTP/1.1" 200 -
+2025-01-17 12:30:28,084 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:28] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:30:28,296 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:28] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:30:29,744 - root - INFO - User Vladimir logged in successfully
+2025-01-17 12:30:29,744 - root - INFO - Redirecting to: /index
+2025-01-17 12:30:29,745 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:29] "POST /login HTTP/1.1" 200 -
+2025-01-17 12:30:30,060 - root - INFO - Entering index route
+2025-01-17 12:30:30,060 - root - INFO - Current User Authenticated: True
+2025-01-17 12:30:30,061 - root - INFO - Current User Type: <class 'werkzeug.local.LocalProxy'>
+2025-01-17 12:30:30,061 - root - INFO - Current User Dict: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x000001758DF7C910>, 'email': 'vladimir@mavericka.ru', 'id': 1, 'username': 'Vladimir', 'password': '$2b$12$ClrEgBTj3HuhOcoWchNNpOO6rpB9pEvjEUn9HBG9ug.ZKnqfaN3Le'}
+2025-01-17 12:30:30,061 - root - INFO - Rendering index with username: Vladimir
+2025-01-17 12:30:30,063 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:30] "GET /index HTTP/1.1" 200 -
+2025-01-17 12:30:30,099 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:30] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:30:30,320 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:30] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:30:30,413 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:30] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 12:30:31,579 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:31] "GET /retrieve_data.html HTTP/1.1" 200 -
+2025-01-17 12:30:31,686 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:31] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:30:31,828 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:31] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:30:31,921 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:31] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 12:30:31,970 - root - INFO - Retrieved 2008 CRM entries with filters: sale_person='', case=''
+2025-01-17 12:30:31,980 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:30:31] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 12:33:23,876 - root - INFO - Database tables created successfully
+2025-01-17 12:33:23,888 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-01-17 12:33:23,888 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-01-17 12:33:23,889 - werkzeug - INFO -  * Restarting with stat
+2025-01-17 12:33:24,242 - root - INFO - Database tables created successfully
+2025-01-17 12:33:24,249 - werkzeug - WARNING -  * Debugger is active!
+2025-01-17 12:33:24,251 - werkzeug - INFO -  * Debugger PIN: 578-954-094
+2025-01-17 12:33:43,724 - root - WARNING - Logout attempted by unauthenticated user
+2025-01-17 12:33:43,725 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:43] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-17 12:33:43,837 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:43] "GET /login HTTP/1.1" 200 -
+2025-01-17 12:33:44,016 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:44] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:33:44,192 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:44] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:33:45,567 - root - INFO - User Vladimir logged in successfully
+2025-01-17 12:33:45,568 - root - INFO - Redirecting to: /index
+2025-01-17 12:33:45,568 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:45] "POST /login HTTP/1.1" 200 -
+2025-01-17 12:33:45,892 - root - INFO - Entering index route
+2025-01-17 12:33:45,893 - root - INFO - Current User Authenticated: True
+2025-01-17 12:33:45,893 - root - INFO - Current User Type: <class 'werkzeug.local.LocalProxy'>
+2025-01-17 12:33:45,893 - root - INFO - Current User Dict: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x000001D98844C910>, 'email': 'vladimir@mavericka.ru', 'id': 1, 'username': 'Vladimir', 'password': '$2b$12$ClrEgBTj3HuhOcoWchNNpOO6rpB9pEvjEUn9HBG9ug.ZKnqfaN3Le'}
+2025-01-17 12:33:45,894 - root - INFO - Rendering index with username: Vladimir
+2025-01-17 12:33:45,896 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:45] "GET /index HTTP/1.1" 200 -
+2025-01-17 12:33:45,924 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:45] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:33:46,151 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:46] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:33:46,226 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:46] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 12:33:48,448 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:48] "GET /retrieve_data.html HTTP/1.1" 200 -
+2025-01-17 12:33:48,630 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:48] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:33:48,708 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:48] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:33:48,787 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:48] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 12:33:48,833 - root - INFO - Retrieved 2008 CRM entries with filters: sale_person='', case=''
+2025-01-17 12:33:48,841 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:33:48] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 12:47:08,510 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:08] "[36mGET /index.html HTTP/1.1[0m" 304 -
+2025-01-17 12:47:08,615 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:08] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:47:08,755 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:08] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:47:08,864 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:08] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 12:47:32,343 - root - INFO - User Vladimir logged out successfully
+2025-01-17 12:47:32,344 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:32] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-01-17 12:47:32,661 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:32] "GET /login HTTP/1.1" 200 -
+2025-01-17 12:47:32,999 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:32] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:47:33,000 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:33] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:47:40,947 - root - WARNING - Failed login attempt for identifier: ыйвайва
+2025-01-17 12:47:40,947 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:40] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-01-17 12:47:46,462 - root - INFO - User Vladimir logged in successfully
+2025-01-17 12:47:46,462 - root - INFO - Redirecting to: /index
+2025-01-17 12:47:46,463 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:46] "POST /login HTTP/1.1" 200 -
+2025-01-17 12:47:46,499 - root - INFO - Entering index route
+2025-01-17 12:47:46,499 - root - INFO - Current User Authenticated: True
+2025-01-17 12:47:46,499 - root - INFO - Current User Type: <class 'werkzeug.local.LocalProxy'>
+2025-01-17 12:47:46,499 - root - INFO - Current User Dict: {'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x000001D988316F90>, 'email': 'vladimir@mavericka.ru', 'id': 1, 'username': 'Vladimir', 'password': '$2b$12$ClrEgBTj3HuhOcoWchNNpOO6rpB9pEvjEUn9HBG9ug.ZKnqfaN3Le'}
+2025-01-17 12:47:46,499 - root - INFO - Rendering index with username: Vladimir
+2025-01-17 12:47:46,500 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:46] "GET /index HTTP/1.1" 200 -
+2025-01-17 12:47:46,777 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:46] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:47:46,840 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:46] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:47:46,841 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:47:46] "[36mGET /script.js HTTP/1.1[0m" 304 -
+2025-01-17 12:48:14,218 - root - DEBUG - Submit CRM Request Received
+2025-01-17 12:48:14,218 - root - DEBUG - Request Method: POST
+2025-01-17 12:48:14,219 - root - DEBUG - Request Headers: {'Host': 'localhost:5000', 'Connection': 'keep-alive', 'Content-Length': '252', 'Sec-Ch-Ua-Platform': '"Windows"', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 YaBrowser/24.12.0.0 Safari/537.36', 'Accept': 'application/json', 'Sec-Ch-Ua': '"Chromium";v="130", "YaBrowser";v="24.12", "Not?A_Brand";v="99", "Yowser";v="2.5"', 'Content-Type': 'application/json', 'Sec-Ch-Ua-Mobile': '?0', 'Origin': 'http://localhost:5000', 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-Mode': 'cors', 'Sec-Fetch-Dest': 'empty', 'Referer': 'http://localhost:5000/index', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept-Language': 'ru,en;q=0.9,bg;q=0.8', 'Cookie': 'remember_token=1|a68cc724b9eee961683eb306c3ee048c3dbe28e01a846f8646c521bcbfe1c2a27274c08e356a1632a6aefe962b60d5d9aa544d63a1a09f05bd67a935654353e5; session=.eJwtzjEOwjAMRuG7ZGbwHztt3MtUTmwL1pZOiLvTgf3p6fuUPY84n2V7H1c8yv7yshUwuapLVa_UFKzZG0hqk6jBOUkWWKOIoVI9Q4UMddhKxrPZnfY0gJZYeHFIeLc6ePjq64DNGB3321XEkBqT2NG554QgUW7Idcbx15TvD2OeLtw.Z4onQg.c9Ey4ikEBVRvyVqxjkMyBHIKd2I'}
+2025-01-17 12:48:14,219 - root - DEBUG - Request Content Type: application/json
+2025-01-17 12:48:14,219 - root - DEBUG - Parsed JSON data: {'person_name': 'Trump', 'company_name': 'DonaldCo', 'department': 'Дирекция', 'case': 'стартап-Публичный дом', 'next_steps': 'фыувафыва', 'status': 'Negotiation', 'description': 'фывафыва', 'sale_person': 'Eugen Genzelew'}
+2025-01-17 12:48:14,224 - root - INFO - CRM entry added successfully for Trump
+2025-01-17 12:48:14,228 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:48:14] "[35m[1mPOST /submit_crm HTTP/1.1[0m" 201 -
+2025-01-17 12:48:24,837 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:48:24] "[36mGET /retrieve_data.html HTTP/1.1[0m" 304 -
+2025-01-17 12:48:25,053 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:48:25] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2025-01-17 12:48:25,099 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:48:25] "[36mGET /logo.png HTTP/1.1[0m" 304 -
+2025-01-17 12:48:25,176 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:48:25] "[36mGET /retrieve_data.js HTTP/1.1[0m" 304 -
+2025-01-17 12:48:25,218 - root - INFO - Retrieved 2009 CRM entries with filters: sale_person='', case=''
+2025-01-17 12:48:25,227 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:48:25] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 12:48:45,040 - root - INFO - Retrieved 2009 CRM entries with filters: sale_person='', case=''
+2025-01-17 12:48:45,048 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:48:45] "GET /get_crm_entries HTTP/1.1" 200 -
+2025-01-17 12:49:19,640 - root - INFO - Retrieved 4 CRM entries with filters: sale_person='', case='Finance'
+2025-01-17 12:49:19,641 - werkzeug - INFO - 127.0.0.1 - - [17/Jan/2025 12:49:19] "GET /get_crm_entries?case=Finance HTTP/1.1" 200 -

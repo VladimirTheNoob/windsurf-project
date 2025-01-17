@@ -9,8 +9,15 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo-container">
-            <img src="logo.png" alt="Company Logo" class="logo">
+        <div class="header">
+            <div class="logo-container">
+                <img src="logo.png" alt="Company Logo" class="logo">
+            </div>
+            
+            <div class="user-info">
+                <span>Welcome, <strong id="username">{{ username }}</strong></span>
+                <a href="/logout" class="logout-btn">Logout</a>
+            </div>
         </div>
         
         <nav class="navigation">
@@ -22,16 +29,23 @@
         <h1>CRM Data Retrieval</h1>
         
         <div class="controls-container">
-            <div class="form-group">
-                <label for="salesPersonFilter">Sales Person:</label>
-                <select id="salePerson" name="sale_person">
-                    <option value="">All Sales Persons</option>
-                    <option value="Vladimir Belyakov">Vladimir Belyakov</option>
-                    <option value="Eugen Genzelew">Eugen Genzelew</option>
-                    <option value="Konstantin Tokarev">Konstantin Tokarev</option>
-                    <option value="Other">Other</option>
-                </select>
-                <input type="text" id="salePersonOther" name="sale_person" placeholder="Enter Sales Person Name" style="display: none; margin-left: 10px;">
+            <div class="filters-row">
+                <div class="form-group">
+                    <label for="salePerson">Sales Person:</label>
+                    <select id="salePerson" name="sale_person">
+                        <option value="">All Sales Persons</option>
+                        <option value="Vladimir Belyakov">Vladimir Belyakov</option>
+                        <option value="Eugen Genzelew">Eugen Genzelew</option>
+                        <option value="Konstantin Tokarev">Konstantin Tokarev</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <input type="text" id="salePersonOther" name="sale_person" placeholder="Enter Sales Person Name" style="display: none; margin-left: 10px;">
+                </div>
+                
+                <div class="form-group">
+                    <label for="caseFilter">Case:</label>
+                    <input type="text" id="caseFilter" name="case" placeholder="Filter by Case (e.g., Enterprise Software)">
+                </div>
             </div>
             
             <div class="button-group">
@@ -41,7 +55,7 @@
             </div>
         </div>
 
-        <div class="data-retrieval-wrapper">
+        <div class="table-container">
             <div class="table-scrollable-container">
                 <table id="crmDataTable">
                     <thead>
@@ -59,11 +73,141 @@
                         </tr>
                     </thead>
                     <tbody id="crmDataBody">
-                        <!-- Data will be dynamically populated here -->
+                        <!-- Data will be dynamically inserted here -->
                     </tbody>
                 </table>
             </div>
         </div>
+        
+        <style>
+            .controls-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: stretch;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto 20px;
+                padding: 10px;
+                background-color: #f4f4f4;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                gap: 10px;
+            }
+            
+            .filters-row {
+                display: flex;
+                justify-content: space-between;
+                gap: 10px;
+                width: 100%;
+            }
+            
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+            }
+            
+            .form-group label {
+                margin-bottom: 5px;
+                font-weight: bold;
+                font-size: 12px;
+            }
+            
+            #salePerson, 
+            #caseFilter {
+                width: 100%;
+                padding: 6px;
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                font-size: 13px;
+                box-sizing: border-box;
+            }
+            
+            .button-group {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                width: 100%;
+            }
+            
+            .button-group button {
+                flex: 1;
+                padding: 8px 12px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                font-size: 13px;
+                max-width: 250px;
+            }
+            
+            .button-group button:hover {
+                background-color: #45a049;
+            }
+            
+            .table-container {
+                width: 100%;
+                max-width: 1400px;
+                margin: 0 auto;
+                background-color: white;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            
+            .table-scrollable-container {
+                max-height: 500px;
+                overflow-x: auto;
+                overflow-y: auto;
+            }
+            
+            #crmDataTable {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 13px;
+            }
+            
+            #crmDataTable thead {
+                position: sticky;
+                top: 0;
+                background-color: #f1f1f1;
+                z-index: 10;
+            }
+            
+            #crmDataTable th, 
+            #crmDataTable td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+            
+            #crmDataTable tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            
+            #crmDataTable tr:hover {
+                background-color: #f5f5f5;
+            }
+            
+            @media (max-width: 768px) {
+                .filters-row,
+                .button-group {
+                    flex-direction: column;
+                }
+                
+                .button-group button {
+                    width: 100%;
+                    max-width: none;
+                }
+                
+                .table-scrollable-container {
+                    overflow-x: scroll;
+                }
+            }
+        </style>
+        
     </div>
 
     <script src="retrieve_data.js"></script>
@@ -78,6 +222,26 @@
             } else {
                 salePersonOtherInput.style.display = 'none';
             }
+        });
+
+        // Try to get username from localStorage
+        const storedUsername = localStorage.getItem('username');
+        const usernameElement = document.getElementById('username');
+        
+        if (storedUsername) {
+            usernameElement.textContent = storedUsername;
+        }
+
+        // Add logout event listener
+        const logoutBtn = document.querySelector('.logout-btn');
+        logoutBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            // Clear stored username
+            localStorage.removeItem('username');
+            
+            // Redirect to logout
+            window.location.href = '/logout';
         });
     });
     </script>

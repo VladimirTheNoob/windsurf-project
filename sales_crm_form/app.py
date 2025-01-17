@@ -5,12 +5,10 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user, login_
 from flask_bcrypt import Bcrypt
 import os
 import logging
-from datetime import datetime
+from datetime import datetime, timedelta
 import re
 from sqlalchemy import func, or_
 from sqlalchemy.exc import SQLAlchemyError
-from faker import Faker
-import random
 
 # Configure logging
 logging.basicConfig(
@@ -28,6 +26,8 @@ app = Flask(__name__,
             static_url_path='/', 
             template_folder='.')
 app.config['SECRET_KEY'] = os.urandom(24)  # Important for session security
+app.config['SESSION_TYPE'] = 'filesystem'
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=1)
 
 # Configure CORS with more permissive settings
 CORS(app, resources={
@@ -49,6 +49,8 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
+login_manager.session_protection = 'strong'
+login_manager.remember_cookie_duration = timedelta(days=1)
 
 # Global error handler
 @app.errorhandler(Exception)
@@ -183,7 +185,8 @@ def login():
         # Verify credentials
         if user and bcrypt.check_password_hash(user.password, password):
             # Login successful
-            login_user(user)
+            # Explicitly set remember=True to maintain session
+            login_user(user, remember=True)
             
             # Log login success
             logging.info(f"User {user.username} logged in successfully")
@@ -195,15 +198,15 @@ def login():
             # Return JSON response with redirect information
             return jsonify({
                 'message': 'Login successful', 
-                'redirect': redirect_url
+                'redirect': redirect_url,
+                'username': user.username  # Include username in response
             }), 200
         else:
             # Login failed
             logging.warning(f"Failed login attempt for identifier: {login_identifier}")
             return jsonify({'error': 'Invalid username or password'}), 401
 
-    # GET request: render login page with next parameter
-    logging.info(f"Rendering login page with next parameter: {next_page}")
+    # GET request: render login page
     return render_template('login.html', next=next_page)
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -243,23 +246,58 @@ def register():
         return render_template('register.html'), 500
 
 @app.route('/logout')
-@login_required
 def logout():
-    logout_user()
-    return redirect(url_for('login'))
+    try:
+        # Check if user is authenticated before attempting logout
+        if current_user.is_authenticated:
+            username = current_user.username
+            logout_user()
+            logging.info(f"User {username} logged out successfully")
+            return redirect(url_for('login'))
+        else:
+            # If not authenticated, log and redirect to login
+            logging.warning("Logout attempted by unauthenticated user")
+            return redirect(url_for('login'))
+    except Exception as e:
+        # Comprehensive error logging
+        logging.error(f"Logout error: {str(e)}", exc_info=True)
+        return jsonify({
+            'error': 'Logout failed', 
+            'details': str(e)
+        }), 500
 
 # Protect routes that require authentication
 @app.route('/index')
 @login_required
 def index():
     try:
-        # Render the index template with the current user's information
-        return render_template('index.html', username=current_user.username)
+        # Extensive logging for debugging authentication
+        logging.info("Entering index route")
+        logging.info(f"Current User Authenticated: {current_user.is_authenticated}")
+        
+        # Check if current_user is actually a User instance
+        if current_user.is_authenticated:
+            logging.info(f"Current User Type: {type(current_user)}")
+            logging.info(f"Current User Dict: {current_user.__dict__}")
+            
+            # Explicitly get username, with fallback
+            username = getattr(current_user, 'username', 'Unknown User')
+            logging.info(f"Rendering index with username: {username}")
+            
+            return render_template('index.html', username=username)
+        else:
+            logging.warning("Unauthenticated user attempting to access index")
+            return redirect(url_for('login'))
     except Exception as e:
-        logging.error(f"Error serving index: {str(e)}")
-        return "An error occurred", 500
+        # Comprehensive error logging
+        logging.error(f"Error in index route: {str(e)}", exc_info=True)
+        return jsonify({
+            'error': 'Internal Server Error', 
+            'details': str(e)
+        }), 500
 
 @app.route('/retrieve_data')
+@login_required
 def retrieve_data():
     # Check if user is authenticated
     if not current_user.is_authenticated:
@@ -268,7 +306,7 @@ def retrieve_data():
         return redirect(url_for('login', next=request.url))
     
     # Render the retrieve_data template for authenticated users
-    return render_template('retrieve_data.html')
+    return render_template('retrieve_data.html', username=current_user.username)
 
 # Routes
 @app.route('/submit_crm', methods=['POST', 'OPTIONS'])
@@ -370,57 +408,31 @@ def submit_crm():
 @login_required
 def get_crm_entries():
     try:
-        # Get query parameters
+        # Get filter parameters from request
         sale_person = request.args.get('sale_person', '').strip()
-        status = request.args.get('status', '').strip()
-
-        # Log incoming filter parameters with more details
-        logging.info(f"Retrieving CRM entries - Sale Person: '{sale_person}', Status: '{status}'")
-
+        case_filter = request.args.get('case', '').strip()
+        
         # Start with base query
         query = CRMEntry.query
-
-        # Apply sale person filter with multiple matching strategies
-        if sale_person:
-            # Try multiple matching strategies
-            query = query.filter(
-                or_(
-                    # Exact case-insensitive match
-                    func.lower(CRMEntry.sale_person) == func.lower(sale_person),
-                    # Partial case-insensitive match
-                    func.lower(CRMEntry.sale_person).like(f'%{sale_person.lower()}%')
-                )
-            )
-
-        # Apply status filter (case-insensitive)
-        if status:
-            query = query.filter(func.lower(CRMEntry.status) == func.lower(status))
-
-        # Order by submission time, most recent first
-        query = query.order_by(CRMEntry.submission_time.desc())
-
-        # Log the constructed query
-        logging.info(f"Constructed query: {query}")
-
-        # Execute query and convert to list of dictionaries
-        entries = query.all()
-        entries_list = [entry.to_dict() for entry in entries]
-
-        # Log retrieved entries
-        logging.info(f"Retrieved {len(entries_list)} CRM entries")
         
-        # If no entries found, log additional debugging info
-        if not entries_list:
-            # Check all entries in the database for debugging
-            all_entries = CRMEntry.query.all()
-            all_sale_persons = set(entry.sale_person for entry in all_entries)
-            logging.warning(f"No entries found. Filters - Sale Person: '{sale_person}', Status: '{status}'")
-            logging.warning(f"All sale persons in database: {all_sale_persons}")
-
-        return jsonify(entries_list), 200
-
+        # Apply sale person filter if provided
+        if sale_person:
+            query = query.filter(CRMEntry.sale_person.ilike(f'%{sale_person}%'))
+        
+        # Apply case filter if provided (case-insensitive partial match)
+        if case_filter:
+            query = query.filter(CRMEntry.case.ilike(f'%{case_filter}%'))
+        
+        # Execute query and convert to list of dictionaries
+        entries = [entry.to_dict() for entry in query.all()]
+        
+        # Log the number of entries retrieved
+        logging.info(f"Retrieved {len(entries)} CRM entries with filters: sale_person='{sale_person}', case='{case_filter}'")
+        
+        # Return entries as JSON
+        return jsonify(entries)
     except Exception as e:
-        # Log the full error details
+        # Log and return error
         logging.error(f"Error retrieving CRM entries: {str(e)}", exc_info=True)
         return jsonify({
             'error': 'Failed to retrieve CRM entries',
@@ -481,58 +493,6 @@ def favicon():
     except Exception as e:
         logging.error(f"Favicon error: {str(e)}")
         return '', 404
-
-def generate_random_entries(num_entries=100):
-    # Create a Faker instance
-    fake = Faker()
-
-    # Predefined sales persons
-    sales_persons = ['Vladimir Belyakov', 'Eugen Genzelew', 'Konstantin Tokarev']
-    
-    # Predefined statuses
-    statuses = ['New Lead', 'In Progress', 'Negotiation', 'Closed Won', 'Closed Lost']
-
-    # Predefined cases and next steps
-    cases = [
-        ('Enterprise Software', 'Schedule Technical Demo'),
-        ('Cloud Migration', 'Initial Consultation'),
-        ('Digital Transformation', 'Prepare Proposal'),
-        ('Cybersecurity', 'Security Assessment'),
-        ('Data Analytics', 'Requirements Gathering')
-    ]
-
-    # Generate entries
-    entries = []
-    for _ in range(num_entries):
-        # Randomly select case and next steps
-        case, next_steps = random.choice(cases)
-
-        # Create entry
-        entry = CRMEntry(
-            person_name=fake.name(),
-            company_name=fake.company(),
-            department=fake.job(),
-            case=case,
-            next_steps=next_steps,
-            status=random.choice(statuses),
-            sale_person=random.choice(sales_persons),
-            description=fake.catch_phrase(),
-            submission_time=fake.date_time_between(start_date='-1y', end_date='now')
-        )
-        entries.append(entry)
-    
-    # Bulk insert
-    try:
-        db.session.bulk_save_objects(entries)
-        db.session.commit()
-        logging.info(f"Successfully inserted {num_entries} random entries")
-    except Exception as e:
-        db.session.rollback()
-        logging.error(f"Error inserting random entries: {str(e)}")
-
-# Optional: Uncomment to generate entries when needed
-with app.app_context():
-    generate_random_entries()
 
 # Create database tables
 with app.app_context():
